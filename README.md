@@ -6,7 +6,7 @@
 
 ## Common Convention
 
-- โค้ดการทำงานหนึ่งบรรทัด มีการใส่ Semi-colon `;`
+- For implementation code should use 'Semi-colon -> ;' back of the line always.
   
   ```
   console.log(this.test);
@@ -185,47 +185,47 @@
 
 ### API test
 
-1. ติดตั้ง [postman](https://www.postman.com/downloads/)
+1. Install [postman](https://www.postman.com/downloads/)
 
 ### UI test
 
-1. ติดตั้ง Robot framework
+1. Install Robot framework
    
    ```
    download Python3.8.5 (www.python.org)
    ```
 
-2. ติดตั้ง PIP
+2. Install PIP
    
    ```
    sudo easy_install pip
    ```
 
-3. ติดตั้ง Robot framework
+3. Install Robot framework
    
    ```
    pip install robotframework
    ```
 
-4. ติดตั้ง selenium2library
+4. Install selenium2library
    
    ```
    pip install robotframework-selenium2library
    ```
 
-5. ติดตั้ง chrome driver
+5. Install chrome driver
    
    ```
    brew install chromedriver
    ```
 
-6. run robot framework
+6. Run robot framework
    
    ```
    robot atdd/ui/shopping_cart_success.robot
    ```
    
-   หรือใช้คำสั่งย่อ
+   or using command
    
    ```
    make run_robot
