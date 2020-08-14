@@ -5,27 +5,22 @@
     <span class="example-spacer"></span>
   </mat-toolbar>
 </div>
-<h1 style="font-family:'Courier New'; font-size: 30px; " class="p-4">Choose Your package</h1>
-
 <div class="d-flex flex-row">
-
-<div class="d-flex flex-row CountryCard ">
-<div class="row  ">
-  <mat-card class="col-md-9 p-0  mb-3 country container" *ngFor="let i of cap">
-    <mat-card-header class="HeadCountry w-100">
-    </mat-card-header>
-    <span class="p-5 matCountry d-flex flex justify-content-center align-items-center" (click)="packageDetail()">
-      {{i.name}} <img class="ml-5 " style="height: 30px; "
-        src="https://www.flaticon.com/premium-icon/icons/svg/792/792715.svg" alt="">
-    </span>
-  </mat-card>
-</div>
-
-</div >
+  <div class="p-2 flex-grow-1 bd-highlight">
+    <h1 style="font-family:'Courier New'; font-size: 30px; " class="p-4">Choose Your package</h1>
+    <mat-card class="col-md-9 p-0  mb-3 country" *ngFor="let i of cap">
+      <mat-card-header class="HeadCountry w-100">
+      </mat-card-header>
+      <span class="p-5 matCountry d-flex flex justify-content-center align-items-center" (click)="packageDetail()">
+        {{i.name}} <img class="ml-5 " style="height: 30px; "
+          src="https://www.flaticon.com/premium-icon/icons/svg/792/792715.svg" alt="">
+      </span>
+    </mat-card>
+  </div>
 
 <!-- *ngIf="status" -->
 <!-- <div class="vl">grgr</div> -->
-  <div class="p-2 bd-highlight ">
+  <div class="p-2 bd-highlight">
     <!-- <div class="vl"></div> -->
     <h1>Package</h1>
     <!-- <div class="row"></div> -->
