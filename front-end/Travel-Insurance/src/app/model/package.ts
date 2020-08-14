@@ -18,6 +18,8 @@ export class Package {
         public detail_g_price: string,
         public detail_h: string,
         public detail_h_price: string,
+        public detail_i: string,
+        public detail_i_price: string,
         public detail_j: string,
         public detail_j_price: string,
         public detail_k: string,
