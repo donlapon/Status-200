@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "Travel-Insurance"
+  "defaultProject": "Travel-Insurance",
+  "cli": {
+    "analytics": "66abf78a-a186-494e-9ac0-e59ddfc756ea"
+  }
 }

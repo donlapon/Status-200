@@ -1,28 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { DateService } from 'src/app/services/date.service';
-import { Date } from '../model/date';
+import { Country, mockCountries } from './../model/country';
+import { CountryService } from './../services/country.service';
+import { DateService } from './../services/date.service';
+import { Date } from './../model/date';
+
 @Component({
   selector: 'app-country-package',
   templateUrl: './country-package.component.html',
   styleUrls: ['./country-package.component.css']
 })
 export class CountryPackageComponent implements OnInit {
-  status: Boolean;
+  status: boolean;
   // picker:string = "";
-  date : FormGroup;
-  cap : string[] = ["Thai","England","Japan"];
-  pack : string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
-  constructor(private  fb:FormBuilder, private dateInject:DateService) { }
+  date: FormGroup;
+  // cap : string[] = ["Thai","England","Japan"];
+  cap: Country[] = [];
+  pack: string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
+  constructor(private  fb: FormBuilder,
+              private service: CountryService,
+              private dateInject: DateService) { }
 
   ngOnInit(): void {
     this.date =  this.fb.group({
       startDate : [''],
       endDate : ['']
-    })
+    });
+    this.getAll();
+  }
+  getAll(): void{
+    this.service.getAllCountry().subscribe((data) => {
+      return this.cap = data;
+    });
   }
   get f(){
-      return this.date.controls
+      return this.date.controls;
   }
   saveDate(){
 
@@ -37,6 +49,6 @@ export class CountryPackageComponent implements OnInit {
 
   }
   packageDetail(){
-    this.status =true;
+    this.status = true;
   }
 }

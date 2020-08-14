@@ -1,17 +1,10 @@
 export class Country {
-  constructor(public country_code: number, public country_name: String) {}
+    constructor(public code: string,
+                public name: string) {}
 }
-export const allCountry: Country[] = [
-  {
-    country_code: 1,
-    country_name: 'Switzerland',
-  },
-  {
-    country_code: 2,
-    country_name: 'Japan',
-  },
-  {
-    country_code: 3,
-    country_name: 'England',
-  },
+
+export const mockCountries: Country[] = [
+    {code: 'TH', name: 'Thailand'},
+    {code: 'CH', name: 'Switzerland'},
+    {code: 'JP', name: 'Japan'}
 ];
