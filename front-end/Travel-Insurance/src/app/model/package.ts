@@ -1,7 +1,7 @@
 export class Package {
     constructor(
-        public package_id: number,
-        public package_name: string,
+        // public packageId: number,
+        // public packageName: string,
         public detail_a: string,
         public detail_a_price: string,
         public detail_b: string,
@@ -19,7 +19,9 @@ export class Package {
         public detail_h: string,
         public detail_h_price: string,
         public detail_j: string,
+        public detail_i: string,
         public detail_j_price: string,
+        public detail_i_price: string,
         public detail_k: string,
         public detail_k_price: string,
         public detail_l: string,
@@ -32,8 +34,8 @@ export class Package {
 
 export const allPackage: Package[] = [
     {
-        package_id: 1,
-        package_name: "A",
+        // packageId: 1,
+        // packageName: 'A'
         detail_a: "Personal Accident Loss of Life, Dismemberment Loss of Sight or Total Permanent Disability from Accident",
         detail_a_price: "1,500,000",
         detail_b: "Medical Expenses Incurred Overseas",
@@ -60,10 +62,5 @@ export const allPackage: Package[] = [
         detail_l_price: "5,000",
         detail_m: "Loss or Damage of Baggage and Personal Effects from Natural Disasters",
         detail_m_price: "15,000"
-
-
-
-
-
     }
 ];
