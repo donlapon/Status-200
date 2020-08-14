@@ -1,0 +1,35 @@
+.country{
+    /* border: solid; */
+    /* padding: 40px; */
+    box-shadow: 0 8px 16px 0
+    
+    rgb(33, 83, 190) ;
+
+      }
+.matCountry{
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-family: 'Courier New';
+}
+.HeadCountry{
+    /* bottom: 40px; */
+    padding: 0;
+    position: relative;
+
+    background-color:  rgba(12, 61, 136, 0.781) ;
+    overflow:auto;
+    margin:auto; 
+    height:10px; 
+
+}
+.vl{
+    border-left: 1px solid;
+    margin-left: 300px;
+    position: absolute;
+    height: 500px;
+}
+
+.t{
+    height: 200px;
+    width: 200px;
+}
