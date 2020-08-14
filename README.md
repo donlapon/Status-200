@@ -32,7 +32,7 @@
 
 ## Directory Name
 
-- ใช้ตัวอักษรพิมพ์เล็กทั้งหมด เช่น
+- using lower case letter เช่น
   
   ```
   order
