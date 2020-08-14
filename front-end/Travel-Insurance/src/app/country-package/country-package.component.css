@@ -11,6 +11,9 @@
     font-size: 40px;
     font-family: 'Courier New';
 }
+.CountryCard:hover{
+    cursor: pointer;
+}
 .HeadCountry{
     /* bottom: 40px; */
     padding: 0;
