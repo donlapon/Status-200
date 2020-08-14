@@ -153,13 +153,13 @@
   startDay, endMonth
   ```
 
-- ชื่อตัวแปรเก็บค่าให้เติม "List" ต่อท้ายตัวแปรเสมอ เช่น
+- The name of variable which is collect the value should continue with the word 'List' always. Example,
   
   ```
   orderList
   ```
 
-- ชื่อตัวแปร Constant ให้ตังชื่อเป็นตัวอักษรพิมพ์ใหญ่ทั้งหมด เช่น
+- For variable 'Constant' please use all upper case lettler at all. Example,
   
   ```
   HOUR, MINUTE
@@ -167,7 +167,7 @@
 
 ---
 
-## ข้อตกลง Commit Message ร่วมกัน
+## Common Commit Message agreement
 
 ```
 [Created]: สร้างไฟล์ใหม่สำหรับ...
