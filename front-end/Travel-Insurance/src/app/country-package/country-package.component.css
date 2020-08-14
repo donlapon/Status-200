@@ -2,10 +2,12 @@
     /* border: solid; */
     /* padding: 40px; */
     box-shadow: 0 8px 16px 0
-    
     rgb(33, 83, 190) ;
 
       }
+.carlendar{
+    margin-top: 200px;
+}
 .matCountry{
     margin-bottom: 15px;
     font-size: 40px;
@@ -21,8 +23,8 @@
 
     background-color:  rgba(12, 61, 136, 0.781) ;
     overflow:auto;
-    margin:auto; 
-    height:10px; 
+    margin:auto;
+    height:10px;
 
 }
 .vl{
