@@ -6,30 +6,30 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "insurance_package")
 public class InsurancePackage {
-    @Field("package_name")
-    private String insurancePackageName;
+    @Field("country_code")
+    private String countryCode;
 
-    @Field("package_detail")
-    private DBObject insurancePackageDetail;
+    @Field("package_list")
+    private DBObject[] insurancePackageList;
 
-    public InsurancePackage(String insurancePackageName, DBObject insurancePackageDetail) {
-        this.insurancePackageName = insurancePackageName;
-        this.insurancePackageDetail = insurancePackageDetail;
+    public InsurancePackage(String countryCode, DBObject[] insurancePackageList) {
+        this.countryCode = countryCode;
+        this.insurancePackageList = insurancePackageList;
     }
 
-    public String getInsurancePackageName() {
-        return insurancePackageName;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setInsurancePackageName(String insurancePackageName) {
-        this.insurancePackageName = insurancePackageName;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
-    public DBObject getInsurancePackageDetail() {
-        return insurancePackageDetail;
+    public DBObject[] getInsurancePackageList() {
+        return insurancePackageList;
     }
 
-    public void setInsurancePackageDetail(DBObject insurancePackageDetail) {
-        this.insurancePackageDetail = insurancePackageDetail;
+    public void setInsurancePackageList(DBObject[] insurancePackageList) {
+        this.insurancePackageList = insurancePackageList;
     }
 }
