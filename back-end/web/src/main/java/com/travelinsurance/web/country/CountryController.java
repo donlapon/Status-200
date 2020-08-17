@@ -15,13 +15,16 @@ public class CountryController {
     @Autowired private CountryRepository countryRepository;
 
     @CrossOrigin
-    @GetMapping("/country")
+    @GetMapping("/v1/country")
     public List<CountryResponse> gettAllCountry() {
         List<CountryResponse> countryResponseList = new ArrayList<>();
         Iterable<Country> countries = countryRepository.findAll();
         for (Country country : countries) {
             countryResponseList.add(
-                    new CountryResponse(country.getCountryCode(), country.getCountryName()));
+                    new CountryResponse(
+                            country.getCountryCode(),
+                            country.getCountryName(),
+                            country.getImgUrl()));
         }
         return countryResponseList;
     }
