@@ -20,11 +20,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {ReactiveFormsModule}   from '@angular/forms';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { CountryPackageComponent } from './country-package/country-package.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountryPackageComponent
+    CountryPackageComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
