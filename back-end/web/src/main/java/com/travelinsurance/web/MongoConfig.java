@@ -8,12 +8,29 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 @Configuration
 public class MongoConfig {
+
+    private final String USERNAME = "aim";
+    private final String PASSWORD = "qwertyasdf";
+    private final String CLUSTER_NAME = "cluster0";
+    private final String DB_NAME = "status-200";
+
     public @Bean MongoClient mongoClient() {
-        return MongoClients.create(
-                "mongodb+srv://aim:qwertyasdf@cluster0.iocsi.mongodb.net/status-200?retryWrites=true&w=majority");
+        String uri =
+                String.join(
+                        "",
+                        "mongodb+srv://",
+                        USERNAME,
+                        ":",
+                        PASSWORD,
+                        "@",
+                        CLUSTER_NAME,
+                        ".iocsi.mongodb.net/",
+                        DB_NAME,
+                        "?retryWrites=true&w=majority");
+        return MongoClients.create(uri);
     }
 
     public @Bean MongoTemplate mongoTemplate() {
-        return new MongoTemplate(mongoClient(), "status-200");
+        return new MongoTemplate(mongoClient(), DB_NAME);
     }
 }
