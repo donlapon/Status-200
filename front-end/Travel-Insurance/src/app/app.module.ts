@@ -23,7 +23,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CountryPackageComponent } from './country-package/country-package.component';
 // import { PaymentComponent } from './payment/payment.component';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
-import { InsurancePremiumComponent } from './insurance-premium/insurance-premium.component';
+// import { InsurancePremiumComponent } from './insurance-premium/insurance-premium.component';
 import { TransactionDetailComponent } from './transaction-detail/transaction-detail.component';
 
 @NgModule({
@@ -32,7 +32,7 @@ import { TransactionDetailComponent } from './transaction-detail/transaction-det
     CountryPackageComponent,
     // PaymentComponent,
     UsersDetailComponent,
-    InsurancePremiumComponent,
+    // InsurancePremiumComponent,
     TransactionDetailComponent,
   ],
   imports: [
