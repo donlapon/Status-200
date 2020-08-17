@@ -1,6 +1,5 @@
 package com.travelinsurance.web.insurance_package;
 
-import com.travelinsurance.web.country.CountryResponse;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class InsurancePackageController {
         for (InsurancePackage insurancePackage : insurancePackages) {
             insurancePackageResponseList.add(
                     new InsurancePackageResponse(
-                            insurancePackage.getInsurancePackageName(),
-                            insurancePackage.getInsurancePackageDetail()));
+                            insurancePackage.getCountryCode(),
+                            insurancePackage.getInsurancePackageList()));
         }
         return insurancePackageResponseList;
     }

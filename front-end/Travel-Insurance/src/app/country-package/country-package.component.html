@@ -15,32 +15,51 @@
 
     <div class=" countryCard ">
       <div class="flex d-flex-column ">
-        <h1  class="p-4">Choose destination</h1>
+        <h1  class="p-4">Choose Destination</h1>
 
         <mat-card class=" p-0  mb-3 country " *ngFor="let i of cap">
           <mat-card-header class="headCountry ">
           </mat-card-header>
           <span class="matCountry d-flex flex  align-items-center " (click)="packageDetail()">
             {{i.countryName}} <img class="ml-5 " style="height: 30px; "
-              src="https://www.flaticon.com/premium-icon/icons/svg/792/792715.svg" alt="">
+              [src]="i.imgUrl" alt="">
           </span>
         </mat-card>
       </div>
 
       <form [formGroup]="date" (ngSubmit)="saveDate() " >
-        <div class="calendar flex d-flex ">
+        <div class="calendar">
       
-          <mat-form-field appearance="fill">
+          <!-- <mat-form-field appearance="fill">
             <mat-label>Enter a date range</mat-label>
-            <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Start date" formControlName="startDate">
-              <input matEndDate placeholder="End date" formControlName="endDate">
+            <mat-date-range-input [rangePicker]="picker"  >
+              <input matInput [matDatepickerFilter]="" [matDatepicker]="picker" placeholder="Choose a date"> 
+              <input matInput [min]="" [max]="maxDate" [matDatepicker]="picker"> 
+
+              <input matStartDate placeholder="Start date" formControlName="startDate" >
+              <input matEndDate placeholder="End date formControlName="endDate">
             </mat-date-range-input>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker class="datePicker"></mat-date-range-picker>
+            <mat-date-range-picker #picker class="datePicker"  ></mat-date-range-picker>
+          </mat-form-field> -->
+          
+          <mat-form-field class="startdate mr-3 "> 
+            <input matInput [min]="minDate" [max]="maxDate" formControlName="startDate" [formControl]="" [matDatepicker]="picker1" placeholder="Departure date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1 startView="year" [startAt]="minDate"></mat-datepicker>
           </mat-form-field>
-          <button type="submit" class="btn">Submit</button>
+          
+          <mat-form-field class=" enddate ml-3"> 
+            <input matInput [min]="minDate" [max]="maxDate" formControlName="endDate" [formControl]="" [matDatepicker]="picker2" placeholder="Arrival date">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker  #picker2 startView="year" [startAt]="minDate"></mat-datepicker>
+          </mat-form-field>
+        <!-- <button  type="submit" class="btn">Submit</button> -->
         </div>
+        <button  type="submit" class="btn mt-7">Submit</button>
+
+        <!-- <button type="submit" class="btn">Submit</button> -->
+
       </form>
 
 
@@ -50,11 +69,11 @@
       <!-- <div class="vl"></div> -->
       <h1>Package</h1>
       <!-- <div class="row"></div> -->
-      <table class='table t'>
+      <table class='table t  '>
         <thead>
           <tr>
             <th>
-              EN
+              Benifits
             </th>
             <th>
               Price(THB)
@@ -66,8 +85,11 @@
             <td class="test">
               {{p.detail}}
             </td>
-            <th>
-              {{p.detail_price|number : '2.2-2'}}
+            <th class="tablePrice">
+              <div class="flex d-flex justify-content-end">
+                {{p.detail_price|number : '2.2-2'}}
+
+              </div>
             </th>
           </tr>
 
