@@ -14,7 +14,7 @@
 
 ## Function And Parameter Naming Conventions
 
-- ส่วนที่เกี่ยวข้องกับ UI และคำนวณ จะใช้รูปแบบการตั้งชื่อแบบ **camelCase ขึ้นต้นต้วยตัวพิมพ์เล็ก**
+- About UI and calculate will using pattern for naming which is **camelCase begin with lower case**
   
   ```
   func homepage() //UI
@@ -23,7 +23,7 @@
 
 ## HTML Element ID
 
-- จะใช้รูปแบบการตั้งชื่อแบบ **camelCase ขึ้นต้นต้วยตัวพิมพ์เล็ก**
+- HTML Element will using name pattern **camelCase begin with lower case**
   
   ```
   receiverName
@@ -32,7 +32,7 @@
 
 ## Directory Name
 
-- using lower case letter เช่น
+- Using lower case letter. Example,
   
   ```
   order
@@ -41,7 +41,7 @@
 
 ## File Name
 
-- ใช้รูปแบบการตั้งชื่อฟังก์ชั่นแบบ **camelCase ขึ้นต้นต้วยตัวพิมพ์ใหญ่**
+- Using the pattern for File Name **camelCase begin with upper case**
   
   ```
   Order.js
@@ -50,7 +50,7 @@
 
 ## Test Name
 
-- ใช้รูปแบบการตั้งชื่อให้สื่อความหมาย เช่น
+- Using the pattern for explain describe such as...
   
   ```
   describe('CalculateTotalPrice', () => {
@@ -67,25 +67,23 @@
 
 ## Variable Name
 
-- ชื่อตัวแปรเป็นคำเดียวให้ตั้งชื่อเป็นพิมพ์เล็กทั้งหมด เช่น
-  
-  ```
+- Using the pattern for Variable Name must use lower case such as...   ```
   day, month, year
   ```
 
-- ชื่อตัวแปรมีความยาวตั้งแต่ 2 คำขึ้นไป ให้คำหลังขึ้นตันด้วยตัวอักษรตัวใหญ่เสมอ ในรูปแบบ **camelCase** เช่น
+- Name of parameter should have length more than 2 words by using upper case begin in format **camelCase** such as...
   
   ```
   startDay, endMonth
   ```
 
-- ชื่อตัวแปรเก็บค่าให้เติม "List" ต่อท้ายตัวแปรเสมอ เช่น
+- The variable for collect value should end with "List" always. Example, 
   
   ```
   orderList
   ```
 
-- ชื่อตัวแปร Constant ให้ตังชื่อเป็นตัวอักษรพิมพ์ใหญ่ทั้งหมด เช่น
+- The Constant variable should using all upper case such as....
   
   ```
   HOUR, MINUTE
@@ -97,7 +95,7 @@
 
 ## Function And Parameter Naming Conventions
 
-- ใช้รูปแบบการตั้งชื่อฟังก์ชั่นแบบ **camelCase ขึ้นต้นต้วยตัวพิมพ์เล็ก**
+- Using the pattern for function and parameter naming convention **camelCase begin with lower case**
   
   ```
   func calculateTotalPrice()
@@ -105,7 +103,7 @@
 
 ## Directory Name
 
-- ใช้ตัวอักษรพิมพ์เล็กทั้งหมด เช่น
+- using lower case all, Example
   
   ```
   order
@@ -114,7 +112,7 @@
 
 ## File Name
 
-- camelCase ขึ้นต้นด้วยตัวใหญ่ เช่น
+- camelCase begin with upper case, Example
   
   ```
   OrderService.java
@@ -124,7 +122,7 @@
 
 ## Package Name
 
-- ใช้ตัวอักษรพิมพ์เล็กทั้งหมด เช่น
+- using lower case all, Example
   
   ```
   order
@@ -133,7 +131,7 @@
 
 ## Test Function Name
 
-- ใช้รูปแบบการตั้งชื่อฟังก์ชันเป็นแบบ **Snake_Case** เช่น
+- The pattern Function name is **Snake_Case**, Example
   
   ```
   Test_CalculateAge_Input_Birth_Date_18042003_Should_be_16
@@ -141,13 +139,13 @@
 
 ## Variable Name
 
-- ชื่อตัวแปรเป็นคำเดียวให้ตั้งชื่อเป็นพิมพ์เล็กทั้งหมด เช่น
+- Name of parameter using lower case, Example
   
   ```
   day, month, year
   ```
 
-- ชื่อตัวแปรมีความยาวตั้งแต่ 2 คำขึ้นไป ให้คำหลังขึ้นตันด้วยตัวอักษรตัวใหญ่เสมอ ในรูปแบบ **camelCase** เช่น
+- Name of parameter should have length more than 2 words by using upper case begin in format **camelCase** such as
   
   ```
   startDay, endMonth
@@ -170,15 +168,15 @@
 ## Common Commit Message agreement
 
 ```
-[Created]: สร้างไฟล์ใหม่สำหรับ...
+[Created]: New file for...
 
-[Edited]: แก้ไข code ในไฟล์เดิมที่มีอยู่แล้ว รวมถึงกรณี refactor code
+[Edited]: Edit code in old file including case refactor code
 
-[Added]: กรณีเพิ่ม function, function test ใหม่เข้ามา
+[Added]: In case off function, function test new adding
 
-[Deleted]: ลบไฟล์ออก 'ชื่อไฟล์' เนื่องจาก...
+[Deleted]: Delete file 'File name' wherewith...
 
-* ให้เขียนรายละเอียดด้วยว่าแก้ไขอะไรและทำที่ตรงไหน
+* Press information your edit here...
 ```
 
 ## How to run Acceptance test (API and UI)
@@ -230,3 +228,4 @@
    ```
    make run_robot
    ```
+
