@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Country,CountryResponse, mockCountries  } from './../model/country';
+import { Country,CountryResponse  } from './../model/country';
 import { HttpClient } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ export class CountryService {
 
   getAllCountry(): Observable <Country[]>{
 
-    // return this.http.get<Country[]>("http://localhost:8080/country");
-    return of(mockCountries);
+    return this.http.get<Country[]>("http://localhost:8080/api/v1/country");
+    // return of(mockCountries);
   }
 }

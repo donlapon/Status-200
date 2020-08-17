@@ -14,6 +14,7 @@
 .country{
     /* border: solid; */
     /* padding: 40px; */
+    background-color: rgb(227, 233, 241);
     box-shadow: 0 8px 16px 0
     rgb(33, 83, 190) ;
       }
@@ -26,17 +27,19 @@
     margin-top: 20px;
     justify-content:space-between;
 }
-.calendar button{
+.container button{
     border: none;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     font-family: 'Courier New';
     border-radius:25px;
     text-transform: capitalize;
-     background-color:     rgb(33, 83, 190) ; 
+    background-color:     rgb(33, 83, 190) ; 
     color: white;
     outline: none;
     font-size: 20px;
     /* padding-top: 0px; */
+    margin : 100px 0px;
+    margin-left: 150px;
     width: 100px;
     height: 50px;
     padding: 0px; 
@@ -53,7 +56,7 @@
     justify-content: space-between;
     padding: 30px 12px;
 }
-.countryCard:hover{
+.country:hover{
     cursor: pointer;
 }
 
@@ -92,7 +95,7 @@
 }
 .package{
     margin-top: 20px;
-    margin-left: 120px;
+    margin-left: 150px;
 }
 @media(max-width:600px){
     .mainCountryPackage{
@@ -105,7 +108,7 @@
         display: flex;
     }
     .calendar button{
-        margin: auto;
+        margin: 0;
     }
     .matCountry{
         font-size: 20px;
@@ -113,4 +116,10 @@
     .package{
         margin: 20px auto;
     }
+.tablePrice{
+    margin-left: 300px;
+    /* justify-content: end;
+    display: flex;
+    flex-direction: row; */
+}
 }

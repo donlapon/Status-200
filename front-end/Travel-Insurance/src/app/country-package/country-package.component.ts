@@ -5,7 +5,7 @@ import { Package } from './../model/package';
 import { CountryService } from './../services/country.service';
 import { PackageService } from './../services/package.service';
 import { DateService } from './../services/date.service';
-import { Date } from './../model/date';
+import { DateTime } from './../model/dateTime';
 
 @Component({
   selector: 'app-country-package',
@@ -14,30 +14,52 @@ import { Date } from './../model/date';
 })
 export class CountryPackageComponent implements OnInit {
   status: boolean;
-  // picker:string = "";
   date: FormGroup;
-  // cap : string[] = ["Thai","England","Japan"];
   cap: Country[] = [];
   // dataSource = new MatTableDataSource<Product>();
-
+  minDate : Date;
+  maxDate : Date;
+  dt: DateTime;
   pk: Package[] = [];
   pack: string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
   constructor(private  fb: FormBuilder,
               private country: CountryService,
               private dateInject: DateService,
-              private packkage: PackageService) { }
+              private packkage: PackageService,
+              private datetime:  DateService
+              ) {
+           
+               }
 
   ngOnInit(): void {
     this.date =  this.fb.group({
       startDate : [''],
       endDate : ['']
     });
+    // console.log("de")
     this.getAllCountries();
     this. getAllPackage();
+    this.getDateTime();
+  }
+
+  getDate( ) :void{
+    // const currentYear = new Date().getFullYear;
+    this.minDate = new Date();
+   const  stDate =   this.dt.endDate.split("-");
+
+   const year = stDate[0];
+   const  month = stDate[1];
+    const day = stDate[2];
+    this.minDate = new Date();
+    this.maxDate = new Date( Number(year)
+    , Number(month)-1, Number(day));
+    console.log(this.maxDate)
   }
   getAllCountries(): void{
     this.country.getAllCountry().subscribe((data) => {
+      console.log(data)
       return this.cap = data;
+      
     });
   }
   getAllPackage(): void{
@@ -46,6 +68,15 @@ export class CountryPackageComponent implements OnInit {
       console.log(this.pk);
       return this.pk ;
     });
+  }
+
+  getDateTime(): void{
+    this.datetime.getDate().subscribe((data)=>{
+      this.dt = data;
+      this.getDate();
+
+      // console.log(this.dt)
+    })
   }
   get f(){
       return this.date.controls;
@@ -56,7 +87,7 @@ export class CountryPackageComponent implements OnInit {
     // let date = new Date();
      const  start_date:string  =  this.date.controls.startDate.value;
      const  end_date:string  =  this.date.controls.endDate.value;
-     const date = new Date(start_date, end_date)
+     const date = new DateTime(start_date, end_date)
    this.dateInject.postDate(date).subscribe(date=>{
        console.log("date Done")
     })
@@ -65,4 +96,11 @@ export class CountryPackageComponent implements OnInit {
   packageDetail(){
     this.status = true;
   }
+
+  // dateFilter(){
+
+  // }
+  // max(){
+  //   dateOfYear
+  // }
 }
