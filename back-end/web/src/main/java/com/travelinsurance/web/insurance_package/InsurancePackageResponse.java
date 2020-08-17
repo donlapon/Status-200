@@ -4,11 +4,11 @@ import com.mongodb.DBObject;
 
 public class InsurancePackageResponse {
     private String insurancePackageName;
-    private DBObject insurancePackageDetail;
+    private DBObject[] insurancePackageList;
 
-    public InsurancePackageResponse(String insurancePackageName, DBObject insurancePackageDetail) {
+    public InsurancePackageResponse(String insurancePackageName, DBObject[] insurancePackageList) {
         this.insurancePackageName = insurancePackageName;
-        this.insurancePackageDetail = insurancePackageDetail;
+        this.insurancePackageList = insurancePackageList;
     }
 
     public String getInsurancePackageName() {
@@ -19,11 +19,11 @@ public class InsurancePackageResponse {
         this.insurancePackageName = insurancePackageName;
     }
 
-    public DBObject getInsurancePackageDetail() {
-        return insurancePackageDetail;
+    public DBObject[] getInsurancePackageList() {
+        return insurancePackageList;
     }
 
-    public void setInsurancePackageDetail(DBObject insurancePackageDetail) {
-        this.insurancePackageDetail = insurancePackageDetail;
+    public void setInsurancePackageList(DBObject[] insurancePackageList) {
+        this.insurancePackageList = insurancePackageList;
     }
 }
