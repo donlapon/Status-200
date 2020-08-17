@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Country } from './../model/country';
+import { Package } from './../model/package';
 import { CountryService } from './../services/country.service';
+import { PackageService } from './../services/package.service';
 import { DateService } from './../services/date.service';
 import { Date } from './../model/date';
 
@@ -18,24 +20,31 @@ export class CountryPackageComponent implements OnInit {
   cap: Country[] = [];
   // dataSource = new MatTableDataSource<Product>();
 
+  pk: Package[] = [];
   pack: string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
   constructor(private  fb: FormBuilder,
-              private service: CountryService,
-              private dateInject: DateService) { }
+              private country: CountryService,
+              private dateInject: DateService,
+              private packkage: PackageService) { }
 
   ngOnInit(): void {
     this.date =  this.fb.group({
       startDate : [''],
       endDate : ['']
     });
-    this.getAll();
+    this.getAllCountries();
+    this. getAllPackage();
   }
-  getAll(): void{
-    this.service.getAllCountry().subscribe((data) => {
-      // console.log(data)
-      this.cap = data;
-      // console.log(this.cap)
-      return this.cap ;
+  getAllCountries(): void{
+    this.country.getAllCountry().subscribe((data) => {
+      return this.cap = data;
+    });
+  }
+  getAllPackage(): void{
+    this.packkage.getAllPackage().subscribe((data) =>{
+      this.pk = data;
+      console.log(this.pk);
+      return this.pk ;
     });
   }
   get f(){

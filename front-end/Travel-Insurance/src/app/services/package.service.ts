@@ -9,6 +9,8 @@ export class PackageService {
 
   constructor() { }
   getAllPackage(): Observable <Package[]>{
+    console.log("debug")
+    console.log(allPackage)
     return of(allPackage);
   }
 }

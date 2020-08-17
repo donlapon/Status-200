@@ -92,6 +92,7 @@
 }
 .package{
     margin-top: 20px;
+    margin-left: 120px;
 }
 @media(max-width:600px){
     .mainCountryPackage{
