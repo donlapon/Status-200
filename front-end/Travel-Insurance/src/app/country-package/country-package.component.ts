@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Country } from './../model/country';
 import { Package } from './../model/package';
 import { CountryService } from './../services/country.service';
@@ -33,8 +33,8 @@ export class CountryPackageComponent implements OnInit {
 
   ngOnInit(): void {
     this.date =  this.fb.group({
-      startDate : [''],
-      endDate : ['']
+      startDate : ['',Validators.requiredTrue],
+      endDate : ['',Validators.requiredTrue ]
     });
     // console.log("de")
     this.getAllCountries();
@@ -87,11 +87,11 @@ export class CountryPackageComponent implements OnInit {
     // let date = new Date();
      const  start_date:string  =  this.date.controls.startDate.value;
      const  end_date:string  =  this.date.controls.endDate.value;
-     const date = new DateTime(start_date, end_date)
+     const date = new DateTime(start_date, end_date);
    this.dateInject.postDate(date).subscribe(date=>{
        console.log("date Done")
     })
-
+    console.log(this.date.controls.startDate.invalid);
   }
   packageDetail(){
     this.status = true;
