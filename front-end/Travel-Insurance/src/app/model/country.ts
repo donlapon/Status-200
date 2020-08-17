@@ -1,10 +1,21 @@
 export class Country {
-    constructor(public code: string,
-                public name: string) {}
+    countryCode: string
+    countryName: string
+    constructor( countryCode: string,
+                 countryName: string) {
+                     this.countryCode = countryCode
+                     this.countryName = countryName
+                 }
 }
 
 export const mockCountries: Country[] = [
-    {code: 'TH', name: 'Thailand'},
-    {code: 'CH', name: 'Switzerland'},
-    {code: 'JP', name: 'Japan'}
+    {countryCode: 'TH', countryName: 'Thailand'},
+    {countryCode: 'CH', countryName: 'Switzerland'},
+    {countryCode: 'JP', countryName: 'Japan'}
 ];
+
+export interface CountryResponse{
+    countryCode: string;
+    countryName: string;
+
+}

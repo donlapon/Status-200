@@ -1,32 +1,81 @@
+.container{
+    max-width: 900px;
+    /* margin-left: 40px; */
+}
+
+.container h1{
+  font-family:'Courier New';
+  font-size: 30px;
+
+}
+.mainCountryCalendar{
+    justify-content: space-around;
+}
 .country{
     /* border: solid; */
     /* padding: 40px; */
     box-shadow: 0 8px 16px 0
     rgb(33, 83, 190) ;
-
       }
-.carlendar{
-    margin-top: 200px;
+.calendar{
+    /* margin-top: 50px; */
+    /* position: absolute; */
+
+    position: absolute;
+    padding: 0px;
+    margin-top: 20px;
+    justify-content:space-between;
 }
+.calendar button{
+    border: none;
+    margin-left: 15px;
+    font-family: 'Courier New';
+    border-radius:25px;
+    text-transform: capitalize;
+     background-color:     rgb(33, 83, 190) ; 
+    color: white;
+    outline: none;
+    font-size: 20px;
+    /* padding-top: 0px; */
+    width: 100px;
+    height: 50px;
+    padding: 0px; 
+}
+/* .calendar button :focus{
+  outline: none ;
+  border: none ;
+  cursor: none;
+} */
 .matCountry{
     margin-bottom: 15px;
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Courier New';
+    justify-content: space-between;
+    padding: 30px 12px;
 }
-.CountryCard:hover{
+.countryCard:hover{
     cursor: pointer;
 }
-.HeadCountry{
+
+.headCountry{
     /* bottom: 40px; */
     padding: 0;
     position: relative;
-
-    background-color:  rgba(12, 61, 136, 0.781) ;
+    background:  linear-gradient(to right,rgb(33, 83, 190),rgb(124, 156, 231));
+     /* rgb(33, 83, 190) ; */
     overflow:auto;
     margin:auto;
     height:10px;
 
 }
+::ng-deep .mat-datepicker-toggle{
+    color:rgb(33, 83, 190);
+    outline: none;
+    border: none;
+ }
+ ::ng-deep .mat-datepicker-toggle :focus{
+    outline: none;
+ }
 .vl{
     border-left: 1px solid;
     margin-left: 300px;
@@ -34,11 +83,34 @@
     height: 500px;
 }
 
-.t{
+.premium{
     height: 200px;
     width: 200px;
 }
 .image-fluid{
     height: 40px;
-    
+}
+.package{
+    margin-top: 20px;
+    margin-left: 120px;
+}
+@media(max-width:600px){
+    .mainCountryPackage{
+        flex-direction: column;
+        display: flex;
+    }
+    .calendar{
+        position: static;
+        flex-direction: column;
+        display: flex;
+    }
+    .calendar button{
+        margin: auto;
+    }
+    .matCountry{
+        font-size: 20px;
+    }
+    .package{
+        margin: 20px auto;
+    }
 }

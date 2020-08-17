@@ -18,6 +18,8 @@ export class CountryPackageComponent implements OnInit {
   date: FormGroup;
   // cap : string[] = ["Thai","England","Japan"];
   cap: Country[] = [];
+  // dataSource = new MatTableDataSource<Product>();
+
   pk: Package[] = [];
   pack: string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
   constructor(private  fb: FormBuilder,
@@ -40,7 +42,9 @@ export class CountryPackageComponent implements OnInit {
   }
   getAllPackage(): void{
     this.packkage.getAllPackage().subscribe((data) =>{
-      return this.pk = data;
+      this.pk = data;
+      console.log(this.pk);
+      return this.pk ;
     });
   }
   get f(){
