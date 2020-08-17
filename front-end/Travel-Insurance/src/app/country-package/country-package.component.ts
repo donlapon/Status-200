@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Country, mockCountries } from './../model/country';
+import { Country } from './../model/country';
 import { CountryService } from './../services/country.service';
 import { DateService } from './../services/date.service';
 import { Date } from './../model/date';
@@ -16,6 +16,8 @@ export class CountryPackageComponent implements OnInit {
   date: FormGroup;
   // cap : string[] = ["Thai","England","Japan"];
   cap: Country[] = [];
+  // dataSource = new MatTableDataSource<Product>();
+
   pack: string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
   constructor(private  fb: FormBuilder,
               private service: CountryService,
@@ -30,7 +32,10 @@ export class CountryPackageComponent implements OnInit {
   }
   getAll(): void{
     this.service.getAllCountry().subscribe((data) => {
-      return this.cap = data;
+      // console.log(data)
+      this.cap = data;
+      // console.log(this.cap)
+      return this.cap ;
     });
   }
   get f(){
