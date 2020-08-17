@@ -42,7 +42,7 @@ public class DateTimeController {
             @RequestParam(name = "arrival_date") String arrivalDateStr) {
         LocalDate departureDate = LocalDate.parse(departureDateStr);
         LocalDate arrivalDate = LocalDate.parse(arrivalDateStr);
-        long duration = DAYS.between(departureDate, arrivalDate);
+        long duration = DAYS.between(departureDate, arrivalDate) + 1;
         return new TravelTimeResponse(departureDate, arrivalDate, duration);
     }
 }
