@@ -1,0 +1,41 @@
+<div class="d-flex flex-row">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" >
+        <div class="card-body">
+          <!-- <h5 class="card-title">Premium</h5> -->
+          <p class="card-text">Premium&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;357.00 THB</p>
+          <p class="card-text">(Switzerland)&nbsp;&nbsp;&nbsp;PER PERSON</p>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="" (ngSubmit)="saveData()">
+    Titie
+    <select>
+        <option value="Miss">Miss</option>
+        <option value="Mrs">Mrs</option>
+        <option value="Mr">Mr</option>
+    </select>
+    <br>
+    First name:
+    <input formControlName="firstName" />
+    <br>
+    Last name:
+    <input formControlName="lastName" />
+    <br>
+    Citzen ID:
+    <input formControlName="citizenId" />
+    <br>
+    Date of Birth:
+    <input formControlName="dateOfBirth" />
+    <br>
+    Beneficially:
+    <input formControlName="beneficially" />
+    <br>
+    <img src="assets/person.png" alt="personPic" width="50" height="50">
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+</form>

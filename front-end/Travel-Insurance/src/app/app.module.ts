@@ -21,12 +21,18 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CountryPackageComponent } from './country-package/country-package.component';
+// import { PaymentComponent } from './payment/payment.component';
+import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { InsurancePremiumComponent } from './insurance-premium/insurance-premium.component';
 import { TransactionDetailComponent } from './transaction-detail/transaction-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryPackageComponent,
+    // PaymentComponent,
+    UsersDetailComponent,
+    InsurancePremiumComponent,
     TransactionDetailComponent,
   ],
   imports: [
