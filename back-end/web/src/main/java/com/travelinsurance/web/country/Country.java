@@ -11,9 +11,21 @@ public class Country {
     @Field("country_name")
     private String countryName;
 
-    public Country(String countryCode, String countryName) {
+    @Field("img_url")
+    private String imgUrl;
+
+    public Country(String countryCode, String countryName, String imgUrl) {
         this.countryCode = countryCode;
         this.countryName = countryName;
+        this.imgUrl = imgUrl;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getCountryCode() {
