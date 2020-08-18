@@ -27,12 +27,9 @@ public class InsurancePremiumController {
         LocalDate departureDate = LocalDate.parse(departureDateStr);
         LocalDate arrivalDate = LocalDate.parse(arrivalDateStr);
         long duration = DAYS.between(departureDate, arrivalDate) + 1;
-        List<InsurancePremium> insurancePremiumList =
+        InsurancePremium insurancePremium =
                 insurancePremiumRepository.findPricePerPersonByDuration(duration);
         return new TravelTimeResponse(
-                departureDate,
-                arrivalDate,
-                duration,
-                insurancePremiumList.get(0).getPricePerPerson());
+                departureDate, arrivalDate, duration, insurancePremium.getPricePerPerson());
     }
 }
