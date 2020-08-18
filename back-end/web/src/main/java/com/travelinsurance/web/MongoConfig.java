@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 @Configuration
 public class MongoConfig {
-
     private final String USERNAME = "aim";
     private final String PASSWORD = "qwertyasdf";
     private final String CLUSTER_NAME = "cluster0";

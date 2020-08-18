@@ -9,7 +9,7 @@ public class NewInsuredInfoRequest {
     private LocalDate arrivalDate;
     private long duration;
     private double totalPrice;
-    private long idNumber;
+    private String idNumber;
     private String titleName;
     private String firstname;
     private String lastname;
@@ -25,7 +25,7 @@ public class NewInsuredInfoRequest {
             LocalDate arrivalDate,
             long duration,
             double totalPrice,
-            long idNumber,
+            String idNumber,
             String titleName,
             String firstname,
             String lastname,
@@ -97,11 +97,11 @@ public class NewInsuredInfoRequest {
         this.totalPrice = totalPrice;
     }
 
-    public long getIdNumber() {
+    public String getIdNumber() {
         return idNumber;
     }
 
-    public void setIdNumber(long idNumber) {
+    public void setIdNumber(String idNumber) {
         this.idNumber = idNumber;
     }
 
