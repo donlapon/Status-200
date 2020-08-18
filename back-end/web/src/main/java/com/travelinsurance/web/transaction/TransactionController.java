@@ -2,7 +2,7 @@ package com.travelinsurance.web.transaction;
 
 import com.travelinsurance.web.insured_info.InsuredInfo;
 import com.travelinsurance.web.insured_info.InsuredInfoRepository;
-import com.travelinsurance.web.util.GenerateUniqueId;
+import com.travelinsurance.web.util.SequenceGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +33,7 @@ public class TransactionController {
             insuredInfo.setPaymentStatus(true);
             insuredInfoRepository.save(insuredInfo);
         }
-        tx.setRefId(GenerateUniqueId.get());
+        tx.setRefId(new SequenceGenerator().getUniqueId(10, 12));
         transactionRepository.save(tx);
         return new TransactionResponse(
                 tx.getRefId(),
