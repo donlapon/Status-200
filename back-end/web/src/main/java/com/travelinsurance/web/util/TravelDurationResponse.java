@@ -2,26 +2,15 @@ package com.travelinsurance.web.util;
 
 import java.time.LocalDate;
 
-public class TravelTimeResponse {
+public class TravelDurationResponse {
     private LocalDate startDate;
     private LocalDate endDate;
     private long duration;
-    private double totalPrice;
 
-    public TravelTimeResponse(
-            LocalDate startDate, LocalDate endDate, long duration, double totalPrice) {
+    public TravelDurationResponse(LocalDate startDate, LocalDate endDate, long duration) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.duration = duration;
-        this.totalPrice = totalPrice;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     public long getDuration() {
