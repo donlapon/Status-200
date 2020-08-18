@@ -2,14 +2,13 @@ package com.travelinsurance.web.insurance_premium;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
-import com.travelinsurance.web.country.Country;
-import com.travelinsurance.web.util.TravelTimeResponse;
-import io.swagger.v3.oas.models.security.SecurityScheme.In;
+import com.travelinsurance.web.util.TravelDurationWithTotalPriceResponse;
 import java.time.LocalDate;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,16 +19,15 @@ public class InsurancePremiumController {
     @Autowired private InsurancePremiumRepository insurancePremiumRepository;
 
     @CrossOrigin
-    @GetMapping("/v1/totalPrice")
-    public TravelTimeResponse getDuration(
-            @RequestParam(name = "departure_date") String departureDateStr,
-            @RequestParam(name = "arrival_date") String arrivalDateStr) {
-        LocalDate departureDate = LocalDate.parse(departureDateStr);
-        LocalDate arrivalDate = LocalDate.parse(arrivalDateStr);
+    @PostMapping("/v1/totalPrice")
+    public TravelDurationWithTotalPriceResponse getTotalPrice(
+            @RequestBody InsurancePremiumTotalPriceRequest request) {
+        LocalDate departureDate = request.getDepartureDate();
+        LocalDate arrivalDate = request.getArrivalDate();
         long duration = DAYS.between(departureDate, arrivalDate) + 1;
         InsurancePremium insurancePremium =
                 insurancePremiumRepository.findPricePerPersonByDuration(duration);
-        return new TravelTimeResponse(
+        return new TravelDurationWithTotalPriceResponse(
                 departureDate, arrivalDate, duration, insurancePremium.getPricePerPerson());
     }
 }
