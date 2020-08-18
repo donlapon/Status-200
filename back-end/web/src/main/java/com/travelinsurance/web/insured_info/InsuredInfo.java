@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection = "insurance_info")
 public class InsuredInfo {
     @Field("insurance_number")
-    private long insuranceNumber;
+    private String insuranceNumber;
 
     @Field("destination_country")
     private String destinationCountry;
@@ -27,8 +27,11 @@ public class InsuredInfo {
     @Field("total_price")
     private double totalPrice;
 
+    @Field("payment_status")
+    private boolean paymentStatus;
+
     @Field("id_number")
-    private long idNumber;
+    private String idNumber;
 
     @Field("title_name")
     private String titleName;
@@ -51,11 +54,19 @@ public class InsuredInfo {
     @Field("email")
     private String email;
 
-    public long getInsuranceNumber() {
+    public boolean isPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(boolean paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public String getInsuranceNumber() {
         return insuranceNumber;
     }
 
-    public void setInsuranceNumber(long insuranceNumber) {
+    public void setInsuranceNumber(String insuranceNumber) {
         this.insuranceNumber = insuranceNumber;
     }
 
@@ -107,11 +118,11 @@ public class InsuredInfo {
         this.totalPrice = totalPrice;
     }
 
-    public long getIdNumber() {
+    public String getIdNumber() {
         return idNumber;
     }
 
-    public void setIdNumber(long idNumber) {
+    public void setIdNumber(String idNumber) {
         this.idNumber = idNumber;
     }
 

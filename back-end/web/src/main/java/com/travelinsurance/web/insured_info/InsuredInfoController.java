@@ -34,6 +34,7 @@ public class InsuredInfoController {
             insuredInfo.setPhoneNumber(request.getPhoneNumber());
             insuredInfo.setEmail(request.getEmail());
             insuredInfo.setInsuranceNumber(GenerateUniqueId.get());
+            insuredInfo.setPaymentStatus(false);
             insuredInfoRepository.save(insuredInfo);
         }
     }
