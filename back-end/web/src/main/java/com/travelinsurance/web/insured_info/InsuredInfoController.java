@@ -1,6 +1,6 @@
 package com.travelinsurance.web.insured_info;
 
-import com.travelinsurance.web.util.GenerateUniqueId;
+import com.travelinsurance.web.util.SequenceGenerator;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,9 @@ public class InsuredInfoController {
             insuredInfo.setPhoneNumber(request.getPhoneNumber());
             insuredInfo.setEmail(request.getEmail());
             insuredInfo.setPaymentStatus(false);
-            String newInsuranceNumber = GenerateUniqueId.get();
+            String newInsuranceNumber = new SequenceGenerator().getUniqueId(3, 3);
+            String insuranceNumberPrefix = "ALV-";
+            newInsuranceNumber = insuranceNumberPrefix + newInsuranceNumber;
             insuredInfo.setInsuranceNumber(newInsuranceNumber);
             newInsuranceNumberList.add(newInsuranceNumber);
             insuredInfoRepository.save(insuredInfo);
