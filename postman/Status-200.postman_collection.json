@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "04cbfd99-ddc2-465b-a7aa-3a71002b73f7",
+		"_postman_id": "2004d8e3-64e2-459d-9595-dfeb22166c87",
 		"name": "Status-200",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c81c5b1b-5b9e-4e4c-a095-2144236e0c4d",
+						"id": "477a9103-327e-4545-ac9b-89338ccc02c6",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -57,12 +57,53 @@
 			"response": []
 		},
 		{
-			"name": "GetPackage",
+			"name": "PostDate",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "a0617a95-d793-4026-b0a3-52b638c7158b",
+						"id": "152b0cb5-f000-42ce-8783-f956e9a238b8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"response_body_string\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/insurance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"insurance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPackageList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "931c3be8-3fa2-4c63-b578-ebae8c8e21a5",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -102,6 +143,203 @@
 						"api",
 						"v1",
 						"package"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUserDetail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f75a490-1c48-4ef0-abe8-0185a7268e27",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/userdetail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"userdetail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInsurancePremium",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8de2d32a-792b-4e51-b477-990bfb6a3d76",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/insurance/:package_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"insurance",
+						":package_id"
+					],
+					"variable": [
+						{
+							"key": "package_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserDetail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8aebc810-676a-4d55-a506-7bb646ce1a2d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payment/insurance_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"insurance_id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostConfirmPayment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c77f6081-8285-4241-9c4a-375879708666",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payment/:insurance_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						":insurance_id"
+					],
+					"variable": [
+						{
+							"key": "insurance_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetConfirmPayment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d90d05e-c9f8-4ecc-b99a-c0d60158b604",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/payment/:insurance_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						":insurance_id"
+					],
+					"variable": [
+						{
+							"key": "insurance_id",
+							"value": ""
+						}
 					]
 				}
 			},
