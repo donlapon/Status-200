@@ -14,6 +14,8 @@ import { DateTime } from './../model/dateTime';
 })
 export class CountryPackageComponent implements OnInit {
   status: boolean;
+  cardStatus:boolean;
+  count: Number;
   date: FormGroup;
   cap: Country[] = [];
   // dataSource = new MatTableDataSource<Product>();
@@ -57,34 +59,37 @@ export class CountryPackageComponent implements OnInit {
   }
   getAllCountries(): void{
     this.country.getAllCountry().subscribe((data) => {
-      console.log(data)
-      return this.cap = data;
+      this.cap = data;
+
+    this.cap.forEach(country => {
+          country.status= false;
+
+      });
+      // console.log("t",this.cap)
+      return this.cap;
       
     });
   }
   getAllPackage(): void{
     this.packkage.getAllPackage().subscribe((data) =>{
+      
       this.pk = data;
-      console.log(this.pk);
+
       return this.pk ;
     });
   }
-
+  
   getDateTime(): void{
     this.datetime.getDate().subscribe((data)=>{
       this.dt = data;
       this.getDate();
 
-      // console.log(this.dt)
     })
   }
   get f(){
       return this.date.controls;
   }
   saveDate(){
-
-    // const no = new Date(this.date.controls.startDate.value)
-    // let date = new Date();
      const  start_date:string  =  this.date.controls.startDate.value;
      const  end_date:string  =  this.date.controls.endDate.value;
      const date = new DateTime(start_date, end_date);
@@ -93,14 +98,30 @@ export class CountryPackageComponent implements OnInit {
     })
     console.log(this.date.controls.startDate.invalid);
   }
-  packageDetail(){
-    this.status = true;
-  }
+  packageDetail(countryCode:string){
+    
+    this.cap.forEach(country => {
+      // if(!country.status ){
+      
+      if(countryCode == country.countryCode){
+        if(country.status){
+          country.status = false;
 
-  // dateFilter(){
+        }else{
+          country.status =true;
+        }
 
-  // }
-  // max(){
-  //   dateOfYear
-  // }
+
+      }
+    
+      // this.pk.forEach(element => {
+      //   console.log(          element[2].insurancePackageList
+      //     )
+      //     // element[2].insurancePackageList[0]
+      // });
+      console.log('package', this.pk[2].insurancePackageList);
+      
+    });
+
+ }
 }

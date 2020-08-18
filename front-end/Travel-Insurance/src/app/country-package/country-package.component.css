@@ -16,7 +16,7 @@
     /* padding: 40px; */
     background-color: rgb(227, 233, 241);
     box-shadow: 0 8px 16px 0
-    rgb(33, 83, 190) ;
+      rgb(33, 83, 190) ;
       }
 .calendar{
     /* margin-top: 50px; */
@@ -58,6 +58,12 @@
 }
 .country:hover{
     cursor: pointer;
+}
+
+.country.selected{
+    background-color: rgb(169, 196, 108);
+    box-shadow: 0 8px 16px 0
+      rgb(0, 0, 0) ;
 }
 
 .headCountry{

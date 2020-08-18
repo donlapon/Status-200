@@ -2,11 +2,17 @@ export class Country {
     countryCode: string
     countryName: string
     imgUrl :string
+    age : number;
+    status:boolean =true;
     constructor( countryCode: string,
-                 countryName: string) {
+                 countryName: string,
+                 status :boolean
+                 ) {
                      this.countryCode = countryCode
                      this.countryName = countryName
+                     this.status = status;
                  }
+
 }
 
 // export const mockCountries: Country[] = [

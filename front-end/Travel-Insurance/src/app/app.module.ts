@@ -25,6 +25,7 @@ import { CountryPackageComponent } from './country-package/country-package.compo
 import { UsersDetailComponent } from './users-detail/users-detail.component';
 // import { InsurancePremiumComponent } from './insurance-premium/insurance-premium.component';
 import { TransactionDetailComponent } from './transaction-detail/transaction-detail.component';
+import { ShowUserDetailComponent } from './show-user-detail/show-user-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TransactionDetailComponent } from './transaction-detail/transaction-det
     UsersDetailComponent,
     // InsurancePremiumComponent,
     TransactionDetailComponent,
+    ShowUserDetailComponent,
   ],
   imports: [
     BrowserModule,

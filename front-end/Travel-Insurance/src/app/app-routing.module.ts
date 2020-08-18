@@ -3,16 +3,18 @@ import { TransactionDetailComponent } from './transaction-detail/transaction-det
 import { CountryPackageComponent } from './country-package/country-package.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ShowUserDetailComponent } from './show-user-detail/show-user-detail.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/countrypackage', pathMatch: 'full'},
+  { path: '', redirectTo: '/countrypackage', pathMatch: 'full' },
   { path: 'transactiondetail', component: TransactionDetailComponent },
   { path: 'countrypackage', component: CountryPackageComponent },
   { path: 'userdetail', component: UsersDetailComponent },
+  { path: 'showuserdetail', component: ShowUserDetailComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
