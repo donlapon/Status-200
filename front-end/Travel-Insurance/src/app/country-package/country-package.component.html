@@ -8,10 +8,10 @@
       <div class="flex d-flex-column ">
         <h1  class="p-4">Choose Destination</h1>
 
-        <mat-card class=" p-0  mb-3 country " *ngFor="let i of cap">
+        <mat-card class=" p-0  mb-3 country " *ngFor="let i of cap, let k = index "  [class.selected]="i.status" >
           <mat-card-header class="headCountry ">
           </mat-card-header>
-          <span class="matCountry d-flex flex  align-items-center " (click)="packageDetail()">
+          <span class="matCountry d-flex flex  align-items-center " (click)="packageDetail(i.countryCode) ">
             {{i.countryName}} <img class="ml-5 " style="height: 30px; "
               [src]="i.imgUrl" alt="">
           </span>
@@ -20,19 +20,6 @@
 
       <form [formGroup]="date" (ngSubmit)="saveDate() " >
         <div class="calendar">
-      
-          <!-- <mat-form-field appearance="fill">
-            <mat-label>Enter a date range</mat-label>
-            <mat-date-range-input [rangePicker]="picker"  >
-              <input matInput [matDatepickerFilter]="" [matDatepicker]="picker" placeholder="Choose a date"> 
-              <input matInput [min]="" [max]="maxDate" [matDatepicker]="picker"> 
-
-              <input matStartDate placeholder="Start date" formControlName="startDate" >
-              <input matEndDate placeholder="End date formControlName="endDate">
-            </mat-date-range-input>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-date-range-picker #picker class="datePicker"  ></mat-date-range-picker>
-          </mat-form-field> -->
           
           <mat-form-field class="startdate mr-3 "> 
             <input matInput   [min]="minDate" [max]="maxDate" formControlName="startDate" [formControl]="" [matDatepicker]="picker1" placeholder="Departure date">
@@ -71,10 +58,10 @@
             </th>
           </tr>
         </thead>
-        <tbody *ngFor="let p of pk">
+        <tbody *ngFor="let p of pk; let i= index">
           <tr>
             <td class="test">
-              {{p.detail}}
+              {{p.insurancePackageList[i]}}
             </td>
             <th class="tablePrice">
               <div class="flex d-flex justify-content-end">

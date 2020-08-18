@@ -14,6 +14,8 @@ import { DateTime } from './../model/dateTime';
 })
 export class CountryPackageComponent implements OnInit {
   status: boolean;
+  cardStatus:boolean;
+  count: Number;
   date: FormGroup;
   cap: Country[] = [];
   // dataSource = new MatTableDataSource<Product>();
@@ -57,19 +59,33 @@ export class CountryPackageComponent implements OnInit {
   }
   getAllCountries(): void{
     this.country.getAllCountry().subscribe((data) => {
-      console.log(data)
-      return this.cap = data;
+      // console.log(data)
+      // var {countryCode, countryName} = {...this.date};
+
+      // const  cs:Country[] =[];
+        // cs.push(countryCode,countryName)
+      // Country c = new Country();
+      // {countryCode, countryName} = {...data};
+      // this.cap.status
+      this.cap = data;
+
+    this.cap.forEach(country => {
+          country.status= false;
+
+      });
+      // console.log("t",this.cap)
+      return this.cap;
       
     });
   }
   getAllPackage(): void{
     this.packkage.getAllPackage().subscribe((data) =>{
       this.pk = data;
-      console.log(this.pk);
+
       return this.pk ;
     });
   }
-
+  
   getDateTime(): void{
     this.datetime.getDate().subscribe((data)=>{
       this.dt = data;
@@ -93,8 +109,33 @@ export class CountryPackageComponent implements OnInit {
     })
     console.log(this.date.controls.startDate.invalid);
   }
-  packageDetail(){
+  packageDetail(countryCode:string){
+    
+    this.cap.forEach(country => {
+      // if(!country.status ){
+      
+      if(countryCode == country.countryCode){
+        if(country.status){
+          country.status = false;
+
+        }else{
+          country.status =true;
+        }
+
+
+      }
+    
+    // }
+    });
     this.status = true;
+  //  var {countryCode, countryName} = {...this.cap};
+
+  //   const  cs = new Country(countryCode,countryName,this.status);
+  //  if(this.cap[i].countryCode == code)
+    // this.cap.status
+    // this.cardStatus =true;
+    //  cs;
+      // this.status = true;
   }
 
   // dateFilter(){
