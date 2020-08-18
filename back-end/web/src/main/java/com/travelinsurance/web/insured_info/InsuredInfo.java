@@ -1,11 +1,15 @@
 package com.travelinsurance.web.insured_info;
 
 import java.time.LocalDate;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "insurance_info")
 public class InsuredInfo {
+    @Id private ObjectId id;
+
     @Field("insurance_number")
     private String insuranceNumber;
 
