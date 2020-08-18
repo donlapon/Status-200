@@ -1,0 +1,42 @@
+.image-fluid {
+  height: 40px;
+}
+.center {
+  margin: auto;
+  /* width: 50%; */
+  padding: 10px;
+  /* background-color: rgb(36, 71, 145); */
+}
+.top1 {
+  padding-top: 15px;
+}
+.card-text {
+  font-size: 20px;
+  font-weight: 400;
+}
+.card-text1 {
+  font-size: 17px;
+  font-weight: 200;
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
+.center1 {
+  margin: auto;
+}
+.btn {
+  width: 30%;
+  height: 30%;
+}
+.top3 {
+  padding-top: 30px;
+}
+.color {
+  border: 2px solid rgb(36, 71, 145);
+}
+.down {
+  padding-bottom: 15px;
+}

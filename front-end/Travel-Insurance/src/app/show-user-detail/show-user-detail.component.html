@@ -31,87 +31,42 @@
           <div class="form-row">
             <div class="form-group col-md-2">
               <label>Title</label>
-              <select class="form-control">
-                <option value="Miss">Miss</option>
-                <option value="Mrs">Mrs.</option>
-                <option value="Mr">Mr.</option>
-              </select>
             </div>
             <div class="form-group col-md-5">
               <label>Firstname</label>
-              <input
-                type="text"
-                class="form-control"
-                id=""
-                placeholder="Firstname"
-              />
             </div>
             <div class="form-group col-md-5">
               <label>Lastname</label>
-              <input
-                type="text"
-                class="form-control"
-                id=""
-                placeholder="Lastname"
-              />
             </div>
           </div>
         </div>
         <div class="col">
           <div class="form-row">
             <div class="form-group col-md-8">
-              <label> Citzen ID:</label>
-              <input
-                type="text"
-                class="form-control"
-                id=""
-                placeholder="CitzenID 13 digits"
-              />
+              <label>Citizen ID :</label>
             </div>
             <div class="form-group col-md-2">
               <label>Date of birth</label>
-              <!-- <br /> -->
-              <mat-form-field>
-                <!-- <mat-label>Birth date</mat-label> -->
-                <input matInput [matDatepicker]="picker1" [formControl]="" />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker1"
-                ></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-              </mat-form-field>
             </div>
           </div>
         </div>
 
         <div class="form-group col-md-12">
           <label> Beneficially</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Beneficially"
-          />
         </div>
 
         <div class="col">
           <div class="row">
             <div class="form-group col-md-4">
-              <label for="inputState">Quantity</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
+              <label>Quantity</label>
             </div>
             <div class="col align-self-center">
               <button
-                [routerLink]="'/showuserdetail'"
-                type="submit"
+                [routerLink]="'/transactiondetail'"
+                type="payment"
                 class="btn btn-primary"
               >
-                Submit
+                Payment
               </button>
             </div>
           </div>
