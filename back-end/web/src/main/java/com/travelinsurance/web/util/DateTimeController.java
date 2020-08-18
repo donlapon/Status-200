@@ -1,11 +1,7 @@
 package com.travelinsurance.web.util;
 
-import static java.time.temporal.ChronoUnit.DAYS;
-
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.concurrent.atomic.AtomicLong;
-import org.apache.tomcat.jni.Local;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,19 +16,27 @@ public class DateTimeController {
 
     @CrossOrigin
     @GetMapping("/v1/currentDateAndMaxArrivalDate")
-    public TravelTimeResponse getMaxDurationFromNow(
+    public TravelDurationResponse getMaxDurationFromNow(
             @RequestParam(name = "zone", defaultValue = "UTC+7") String zoneId) {
         LocalDate currentDate = LocalDate.now(ZoneId.of(zoneId));
         LocalDate maxArrivalDate = currentDate.plusDays(MAX_DURATION - 1);
-        return new TravelTimeResponse(currentDate, maxArrivalDate, 180, -1);
+        return new TravelDurationResponse(currentDate, maxArrivalDate, 180);
     }
 
     @CrossOrigin
     @GetMapping("/v1/maxArrivalDateFromDepartureDate")
-    public TravelTimeResponse getArrivalDate(
+    public TravelDurationResponse getArrivalDate(
             @RequestParam(name = "departure_date") String departureDateStr) {
         LocalDate departureDate = LocalDate.parse(departureDateStr);
         LocalDate maxArrivalDate = departureDate.plusDays(MAX_DURATION - 1);
-        return new TravelTimeResponse(departureDate, maxArrivalDate, 180, -1);
+        return new TravelDurationResponse(departureDate, maxArrivalDate, 180);
+    }
+
+    @CrossOrigin
+    @GetMapping("/v1/currentDate")
+    public CurrentDateResponse getCurrentDate(
+            @RequestParam(name = "zone", defaultValue = "UTC+7") String zoneId) {
+        LocalDate currentDate = LocalDate.now(ZoneId.of(zoneId));
+        return new CurrentDateResponse(currentDate);
     }
 }
