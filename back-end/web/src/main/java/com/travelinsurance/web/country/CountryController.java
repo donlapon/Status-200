@@ -15,7 +15,7 @@ public class CountryController {
     @Autowired private CountryRepository countryRepository;
 
     @CrossOrigin
-    @GetMapping("/v1/country")
+    @GetMapping("/v1/countrys")
     public List<CountryResponse> getAllCountry() {
         List<CountryResponse> countryResponseList = new ArrayList<>();
         Iterable<Country> countries = countryRepository.findAll();
