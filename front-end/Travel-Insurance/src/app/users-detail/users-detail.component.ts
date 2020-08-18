@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UserService } from './../services/user.service';
+import { UserDetail } from '../model/user-detail';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-users-detail',
@@ -9,22 +12,38 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class UsersDetailComponent implements OnInit {
 
   userDetailForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private userDetail: UserService
+              ) { }
 
   ngOnInit(): void {
     this.userDetailForm = this.formBuilder.group({
-      tiltle: [''],
-      firstName: [''],
-      lastName: [''],
-      citizenId: [''],
-      dateOfBirth: [''],
-      beneficially: [''],
-      number: ['']
+      title: ['', Validators.requiredTrue],
+      firstName: ['', Validators.requiredTrue],
+      lastName: ['', Validators.requiredTrue],
+      citizenId: ['', Validators.requiredTrue],
+      dateOfBirth: ['', Validators.requiredTrue],
+      beneficially: ['', Validators.requiredTrue],
+      numberOfTraveller: ['', Validators.requiredTrue]
     });
   }
 
+  get f(){
+    return this.userDetailForm.controls;
+}
   saveData(): void{
-
+    const user = new UserDetail(
+                                this.f.title.value,
+                                this.f.firstName.value,
+                                this.f.lastName.value,
+                                this.f.citizenId.value,
+                                this.f.dateOfBirth.value,
+                                this.f.beneficially.value,
+                                this.f.numberOfTraveller.value,
+                                );
+    this.userDetail.postUserDetail(user).subscribe(users => {
+      console.log('USER', users);
+    });
   }
 
 }

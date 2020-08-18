@@ -26,7 +26,7 @@
         </p>
       </div>
       <!-- Test -->
-      <form>
+      <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
         <div class="col">
           <div class="form-row">
             <div class="form-group col-md-2">
@@ -100,9 +100,9 @@
               <label for="inputState">Quantity</label>
               <select id="inputState" class="form-control">
                 <option selected>Choose...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                <option value=1>1</option>
+                <option value=1>2</option>
+                <option value=1>3</option>
               </select>
             </div>
             <div class="col align-self-center">
