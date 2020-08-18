@@ -59,14 +59,6 @@ export class CountryPackageComponent implements OnInit {
   }
   getAllCountries(): void{
     this.country.getAllCountry().subscribe((data) => {
-      // console.log(data)
-      // var {countryCode, countryName} = {...this.date};
-
-      // const  cs:Country[] =[];
-        // cs.push(countryCode,countryName)
-      // Country c = new Country();
-      // {countryCode, countryName} = {...data};
-      // this.cap.status
       this.cap = data;
 
     this.cap.forEach(country => {
@@ -80,6 +72,7 @@ export class CountryPackageComponent implements OnInit {
   }
   getAllPackage(): void{
     this.packkage.getAllPackage().subscribe((data) =>{
+      
       this.pk = data;
 
       return this.pk ;
@@ -91,16 +84,12 @@ export class CountryPackageComponent implements OnInit {
       this.dt = data;
       this.getDate();
 
-      // console.log(this.dt)
     })
   }
   get f(){
       return this.date.controls;
   }
   saveDate(){
-
-    // const no = new Date(this.date.controls.startDate.value)
-    // let date = new Date();
      const  start_date:string  =  this.date.controls.startDate.value;
      const  end_date:string  =  this.date.controls.endDate.value;
      const date = new DateTime(start_date, end_date);
@@ -125,23 +114,14 @@ export class CountryPackageComponent implements OnInit {
 
       }
     
-    // }
+      // this.pk.forEach(element => {
+      //   console.log(          element[2].insurancePackageList
+      //     )
+      //     // element[2].insurancePackageList[0]
+      // });
+      console.log('package', this.pk[2].insurancePackageList);
+      
     });
-    this.status = true;
-  //  var {countryCode, countryName} = {...this.cap};
 
-  //   const  cs = new Country(countryCode,countryName,this.status);
-  //  if(this.cap[i].countryCode == code)
-    // this.cap.status
-    // this.cardStatus =true;
-    //  cs;
-      // this.status = true;
-  }
-
-  // dateFilter(){
-
-  // }
-  // max(){
-  //   dateOfYear
-  // }
+ }
 }

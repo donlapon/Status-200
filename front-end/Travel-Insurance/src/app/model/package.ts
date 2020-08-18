@@ -1,7 +1,11 @@
 export class Package {
+    insurancePackageName:string;
+    insurancePackageList: [];
+
     constructor(
         // public packageId: number,
         // public packageName: string,
+        insurancePackageName:string,
         insurancePackageList:any,
         package_detail: any,
          detail_price: number,
