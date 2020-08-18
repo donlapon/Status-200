@@ -113,15 +113,15 @@ export class CountryPackageComponent implements OnInit {
 
 
       }
-    
       // this.pk.forEach(element => {
       //   console.log(          element[2].insurancePackageList
       //     )
       //     // element[2].insurancePackageList[0]
       // });
-      console.log('package', this.pk[2].insurancePackageList);
+      // console.log('package', this.pk[2].insurancePackageList);
       
     });
+    this.status = true;
 
  }
 }

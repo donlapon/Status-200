@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200818 17:32:23.818" rpa="false">
+<suite id="s1" name="Success 1 Traveller" source="C:\Users\tidanatkum\Desktop\Status-200\AllianzInsurance_robot\Success_1_Traveller.robot">
+<kw name="0. Go to Allianz Insurance website" library="keywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20200818 17:32:24.321" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:4200/countrypackage'.</msg>
+<status status="PASS" starttime="20200818 17:32:24.320" endtime="20200818 17:32:31.619"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:24.320" endtime="20200818 17:32:31.619"></status>
+</kw>
+<test id="s1-t1" name="1 traveller wants to buy insurance package A, 6 days for Switzerland trip">
+<kw name="Buy insurance package at Allianz Insurance website" library="keywords">
+<arguments>
+<arg>Ms.</arg>
+<arg>Tidanat</arg>
+<arg>Kumpuak</arg>
+<arg>1234567899999</arg>
+<arg>12/08/1997</arg>
+<arg>Yaya Kumpuak</arg>
+</arguments>
+<kw name="1. Select country (Switzerland)" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-country-package/div/div/div/div/mat-card[3]/span</arg>
+</arguments>
+<msg timestamp="20200818 17:32:31.623" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div/div/mat-card[3]/span'.</msg>
+<status status="PASS" starttime="20200818 17:32:31.623" endtime="20200818 17:32:31.919"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:31.622" endtime="20200818 17:32:31.919"></status>
+</kw>
+<kw name="2. Select package (Package A)" library="keywords">
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>none</arg>
+<arg>ALT+ARROW_DOWN</arg>
+</arguments>
+<msg timestamp="20200818 17:32:31.921" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
+<msg timestamp="20200818 17:32:31.922" level="INFO">Pressing special key ALT down.</msg>
+<msg timestamp="20200818 17:32:31.922" level="INFO">Pressing special key ARROW_DOWN down.</msg>
+<msg timestamp="20200818 17:32:31.922" level="INFO">Releasing special key ALT.</msg>
+<msg timestamp="20200818 17:32:31.922" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20200818 17:32:31.921" endtime="20200818 17:32:31.957"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:31.920" endtime="20200818 17:32:31.957"></status>
+</kw>
+<kw name="3. Select Start date (21/08/2020)" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[1]/div/div[1]/div[2]/mat-datepicker-toggle/button</arg>
+</arguments>
+<msg timestamp="20200818 17:32:31.957" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[1]/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
+<status status="PASS" starttime="20200818 17:32:31.957" endtime="20200818 17:32:32.463"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="mat-datepicker-0"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]</arg>
+</arguments>
+<msg timestamp="20200818 17:32:32.463" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-0"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200818 17:32:32.463" endtime="20200818 17:32:32.845"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[4]/td[6]/div[1]</arg>
+</arguments>
+<msg timestamp="20200818 17:32:32.845" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[4]/td[6]/div[1]'.</msg>
+<status status="PASS" starttime="20200818 17:32:32.845" endtime="20200818 17:32:33.106"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:31.957" endtime="20200818 17:32:33.106"></status>
+</kw>
+<kw name="4. Select End date (26/08/2020)" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[2]/div/div[1]/div[2]/mat-datepicker-toggle/button</arg>
+</arguments>
+<msg timestamp="20200818 17:32:33.107" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[2]/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
+<status status="PASS" starttime="20200818 17:32:33.106" endtime="20200818 17:32:33.391"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="mat-datepicker-1"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]</arg>
+</arguments>
+<msg timestamp="20200818 17:32:33.391" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-1"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200818 17:32:33.391" endtime="20200818 17:32:33.764"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="mat-datepicker-1"]/div/mat-month-view/table/tbody/tr[5]/td[4]/div[1]</arg>
+</arguments>
+<msg timestamp="20200818 17:32:33.765" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-1"]/div/mat-month-view/table/tbody/tr[5]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200818 17:32:33.764" endtime="20200818 17:32:34.157"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:33.106" endtime="20200818 17:32:34.158"></status>
+</kw>
+<kw name="5. Click next button" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-country-package/div/div[1]/div/form/button</arg>
+</arguments>
+<msg timestamp="20200818 17:32:34.160" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div[1]/div/form/button'.</msg>
+<status status="PASS" starttime="20200818 17:32:34.160" endtime="20200818 17:32:34.504"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:34.158" endtime="20200818 17:32:34.504"></status>
+</kw>
+<kw name="6. Wait until page contains country and price" library="keywords">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Switzerland</arg>
+</arguments>
+<status status="PASS" starttime="20200818 17:32:34.504" endtime="20200818 17:32:34.582"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>357.00</arg>
+</arguments>
+<status status="PASS" starttime="20200818 17:32:34.582" endtime="20200818 17:32:34.645"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:34.504" endtime="20200818 17:32:34.645"></status>
+</kw>
+<kw name="7. Input traveller information" library="keywords">
+<arguments>
+<arg>${title}</arg>
+<arg>${customer_firstname}</arg>
+<arg>${customer_lastname}</arg>
+<arg>${id_card}</arg>
+<arg>${birth_date}</arg>
+<arg>${beneficially}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[2]/input</arg>
+<arg>${customer_firstname}</arg>
+</arguments>
+<msg timestamp="20200818 17:32:34.645" level="INFO">Typing text 'Tidanat' into text field 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[2]/input'.</msg>
+<status status="PASS" starttime="20200818 17:32:34.645" endtime="20200818 17:32:35.050"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[3]/input</arg>
+<arg>${customer_lastname}</arg>
+</arguments>
+<msg timestamp="20200818 17:32:35.052" level="INFO">Typing text 'Kumpuak' into text field 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[3]/input'.</msg>
+<status status="PASS" starttime="20200818 17:32:35.052" endtime="20200818 17:32:35.381"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[2]/div/div[1]/input</arg>
+<arg>${id_card}</arg>
+</arguments>
+<msg timestamp="20200818 17:32:35.382" level="INFO">Typing text '1234567899999' into text field 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[2]/div/div[1]/input'.</msg>
+<status status="PASS" starttime="20200818 17:32:35.381" endtime="20200818 17:32:35.763"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[3]/input</arg>
+<arg>${beneficially}</arg>
+</arguments>
+<msg timestamp="20200818 17:32:35.764" level="INFO">Typing text 'Yaya Kumpuak' into text field 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[3]/input'.</msg>
+<status status="PASS" starttime="20200818 17:32:35.763" endtime="20200818 17:32:36.139"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:34.645" endtime="20200818 17:32:36.139"></status>
+</kw>
+<kw name="8. Click submit button" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[4]/div/div[2]/button</arg>
+</arguments>
+<msg timestamp="20200818 17:32:36.140" level="INFO">Clicking element 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[4]/div/div[2]/button'.</msg>
+<status status="PASS" starttime="20200818 17:32:36.140" endtime="20200818 17:32:36.402"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:36.139" endtime="20200818 17:32:36.402"></status>
+</kw>
+<kw name="9. Wait until page contains exactly information" library="keywords">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Switzerland</arg>
+</arguments>
+<status status="PASS" starttime="20200818 17:32:36.404" endtime="20200818 17:32:36.441"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>357.00</arg>
+</arguments>
+<status status="PASS" starttime="20200818 17:32:36.442" endtime="20200818 17:32:36.467"></status>
+</kw>
+<status status="PASS" starttime="20200818 17:32:36.403" endtime="20200818 17:32:36.468"></status>
+</kw>
+<kw name="10. Click payment button" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:btn_payment</arg>
+</arguments>
+<msg timestamp="20200818 17:32:36.469" level="INFO">Clicking element 'id:btn_payment'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200818 17:32:36.901" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200818 17:32:36.523" endtime="20200818 17:32:36.901"></status>
+</kw>
+<msg timestamp="20200818 17:32:36.910" level="FAIL">Element with locator 'id:btn_payment' not found.</msg>
+<status status="FAIL" starttime="20200818 17:32:36.469" endtime="20200818 17:32:36.910"></status>
+</kw>
+<status status="FAIL" starttime="20200818 17:32:36.468" endtime="20200818 17:32:36.911"></status>
+</kw>
+<status status="FAIL" starttime="20200818 17:32:31.620" endtime="20200818 17:32:36.911"></status>
+</kw>
+<status status="FAIL" starttime="20200818 17:32:31.619" endtime="20200818 17:32:36.912" critical="yes">Element with locator 'id:btn_payment' not found.</status>
+</test>
+<status status="FAIL" starttime="20200818 17:32:23.825" endtime="20200818 17:32:36.923"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Success 1 Traveller">Success 1 Traveller</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
