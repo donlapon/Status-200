@@ -3,6 +3,7 @@ package com.travelinsurance.web.insured_info;
 import java.time.LocalDate;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -10,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class InsuredInfo {
     @Id private ObjectId id;
 
+    @Indexed(unique = true)
     @Field("insurance_number")
     private String insuranceNumber;
 
@@ -34,6 +36,7 @@ public class InsuredInfo {
     @Field("payment_status")
     private boolean paymentStatus;
 
+    @Indexed(unique = true)
     @Field("id_number")
     private String idNumber;
 

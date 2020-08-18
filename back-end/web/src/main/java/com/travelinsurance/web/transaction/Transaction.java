@@ -1,10 +1,12 @@
 package com.travelinsurance.web.transaction;
 
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "transaction")
 public class Transaction {
+    @Indexed(unique = true)
     @Field("ref_id")
     private String refId;
 
