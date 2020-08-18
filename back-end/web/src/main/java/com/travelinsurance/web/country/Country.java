@@ -6,8 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "country")
 public class Country {
-    @Indexed(unique = true)
-    @Field("country_code")
+    @Indexed(name = "country_code", unique = true)
     private String countryCode;
 
     @Field("country_name")
