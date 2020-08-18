@@ -3,20 +3,20 @@ package com.travelinsurance.web.insurance_package;
 import com.mongodb.DBObject;
 
 public class InsurancePackageResponse {
-    private String insurancePackageName;
+    private String countryCode;
     private DBObject[] insurancePackageList;
 
-    public InsurancePackageResponse(String insurancePackageName, DBObject[] insurancePackageList) {
-        this.insurancePackageName = insurancePackageName;
+    public InsurancePackageResponse(String countryCode, DBObject[] insurancePackageList) {
+        this.countryCode = countryCode;
         this.insurancePackageList = insurancePackageList;
     }
 
-    public String getInsurancePackageName() {
-        return insurancePackageName;
+    public String getCountryCode() {
+        return countryCode;
     }
 
-    public void setInsurancePackageName(String insurancePackageName) {
-        this.insurancePackageName = insurancePackageName;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public DBObject[] getInsurancePackageList() {
