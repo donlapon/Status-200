@@ -1,5 +1,10 @@
 package com.travelinsurance.web.insurance_package;
 
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-public interface InsurancePackageRepository extends MongoRepository<InsurancePackage, String> {}
+public interface InsurancePackageRepository extends MongoRepository<InsurancePackage, String> {
+    @Query("{countryCode : ?0}")
+    InsurancePackage findPackageByCountryCode(String countryCode);
+}
