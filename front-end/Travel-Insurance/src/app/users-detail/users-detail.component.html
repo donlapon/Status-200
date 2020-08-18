@@ -1,25 +1,29 @@
-<!-- Header Allianz -->
 <div class="container">
   <!-- Card price of premium insurance -->
   <div class="d-flex flex-row top">
-    <div class="card mb-5 center" style="background-color: white; width: 50%;">
+    <div
+      class="card text-white mb-5 center"
+      style="background-color: rgb(36, 71, 145); width: 63%;"
+    >
       <div class="card-body">
-        <p class="card-text alignleft">Premium</p>
+        <p class="card-text alignleft">Premium Insurance</p>
         <p class="card-text alignright">357.00 THB</p>
         <br />
         <div style="clear: both;"></div>
 
-        <p class="card-text alignleft">(Switzerland)</p>
-        <p class="card-text alignright">PER PERSON</p>
+        <p class="card-text1 alignleft">(Switzerland)</p>
+        <p class="card-text1 alignright">Per Person</p>
       </div>
     </div>
   </div>
 
   <!-- Form user detail -->
-  <div class="col-lg-8 top center1">
-    <div class="card">
-      <div class="card-header mb-3">
-        Traveller
+  <div class="col-lg-8 top1 center1 down">
+    <div class="card color">
+      <div class="card-header mb-3" style="background-color: rgb(36, 71, 145);">
+        <p class="center1 card-text" style="color: white; text-align: center;">
+          Traveller
+        </p>
       </div>
       <!-- Test -->
       <form>
@@ -64,15 +68,18 @@
                 placeholder="CitzenID 13 digits"
               />
             </div>
-
-            <div class="form-group col-md-4">
-              <label>Date of Birth:</label>
-              <input
-                type="text"
-                class="form-control"
-                id=""
-                placeholder="Date of Birth"
-              />
+            <div class="form-group col-md-2">
+              <label>Date of birth</label>
+              <!-- <br /> -->
+              <mat-form-field>
+                <!-- <mat-label>Birth date</mat-label> -->
+                <input matInput [matDatepicker]="picker1" [formControl]="" />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker1"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
             </div>
           </div>
         </div>
@@ -98,9 +105,11 @@
                 <option>3</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">
-              Submit
-            </button>
+            <div class="col align-self-center">
+              <button type="submit" class="btn btn-primary">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </form>

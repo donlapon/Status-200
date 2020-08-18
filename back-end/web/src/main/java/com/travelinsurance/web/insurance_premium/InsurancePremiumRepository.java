@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.Query;
 
 public interface InsurancePremiumRepository extends MongoRepository<InsurancePremium, String> {
     @Query("{start: {$lte: ?0}, end: {$gte: ?0}}")
-    List<InsurancePremium> findPricePerPersonByDuration(long duration);
+    InsurancePremium findPricePerPersonByDuration(long duration);
 }
