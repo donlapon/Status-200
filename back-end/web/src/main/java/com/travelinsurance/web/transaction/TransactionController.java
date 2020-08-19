@@ -3,7 +3,9 @@ package com.travelinsurance.web.transaction;
 import com.travelinsurance.web.insured_info.InsuredInfo;
 import com.travelinsurance.web.insured_info.InsuredInfoRepository;
 import com.travelinsurance.web.util.SequenceGenerator;
+import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +21,8 @@ public class TransactionController {
 
     @CrossOrigin
     @PostMapping("/v1/confirmPayment")
+    @Timed
+    @Transactional(timeout = 120)
     public TransactionResponse saveTransaction(@RequestBody NewTransactionRequest request) {
         Transaction tx = new Transaction();
         tx.setBankName(request.getBankName());
