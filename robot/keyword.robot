@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 
 *** Variables ***
-${URL}    http://localhost:4200/countrypackage
+${URL}    http://167.99.68.78
 
 
 *** Keywords ***
@@ -25,7 +25,7 @@ Buy insurance package at Allianz Insurance website
     13. Wait until page contains payment information
 
 0. Go to Allianz Insurance website
-    Open Browser    ${URL}    Chrome
+    Open Browser    ${URL}    Chrome    remote_url=http://206.189.154.4:4444/wd/hub    desired_capabilities=browserName:chrome
 1. Select country (Switzerland)
     Click Element    id:country_name
 2. Scroll down and read package
