@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2004d8e3-64e2-459d-9595-dfeb22166c87",
+		"_postman_id": "7bc5b700-f7d6-4329-9770-0cd76a700387",
 		"name": "Status-200",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "477a9103-327e-4545-ac9b-89338ccc02c6",
+						"id": "5e8cf161-3dbb-44cc-9222-738b3a684dc3",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -41,10 +41,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/country",
+					"raw": "http://167.99.70.167:8080/api/v1/country",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"167",
+						"99",
+						"70",
+						"167"
 					],
 					"port": "8080",
 					"path": [
@@ -57,71 +60,35 @@
 			"response": []
 		},
 		{
-			"name": "PostDate",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "152b0cb5-f000-42ce-8783-f956e9a238b8",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"\r",
-							"\r",
-							"pm.test(\"Body is correct\", function () {\r",
-							"    pm.response.to.have.body(\"response_body_string\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/insurance",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"insurance"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "GetPackageList",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "931c3be8-3fa2-4c63-b578-ebae8c8e21a5",
+						"id": "d5fe07ac-4d40-4724-8916-10f5fc060ae6",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Check all package\", function () {\r",
+							"pm.test(\"Check avaliable packages equal 3 \", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.length).to.eql(3);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Check insurancePackageName of first index is CH\", function () {\r",
+							"pm.test(\"Check countryCode at second index is CH\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].insurancePackageName).to.eql(\"CH\");\r",
+							"    pm.expect(jsonData[2].countryCode).to.eql(\"CH\");\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Check package_name of first index is A\", function () {\r",
+							"pm.test(\"Check package_name at zero index of countryCode:'CH' is A\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData[0].insurancePackageList[0].package_name).to.eql(\"A\");\r",
+							"    pm.expect(jsonData[2].insurancePackageList[0].package_name).to.eql(\"A\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check insurancePackageList of countryCode:'JP' is Null\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].insurancePackageList).to.eql([]);\r",
 							"});\r",
 							""
 						],
@@ -133,10 +100,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/package",
+					"raw": "http://167.99.70.167:8080/api/v1/package",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"167",
+						"99",
+						"70",
+						"167"
 					],
 					"port": "8080",
 					"path": [
@@ -149,15 +119,25 @@
 			"response": []
 		},
 		{
-			"name": "PostUserDetail",
+			"name": "PostTotalPrice",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "2f75a490-1c48-4ef0-abe8-0185a7268e27",
+						"id": "02bfe660-6ab4-4f64-8e14-dc428d604fb9",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check departureDate is 2020-08-24\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.departureDate).to.eql(\"2020-08-24\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check arrivalDate is 2020-08-30\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.arrivalDate).to.eql(\"2020-08-30\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -167,29 +147,103 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"departureDate\": \"2020-08-24\",\r\n  \"arrivalDate\": \"2020-08-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/userdetail",
+					"raw": "http://167.99.70.167:8080/api/v1/totalPrice",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"167",
+						"99",
+						"70",
+						"167"
 					],
 					"port": "8080",
 					"path": [
 						"api",
 						"v1",
-						"userdetail"
+						"totalPrice"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GetInsurancePremium",
+			"name": "PostlnsuredInfo",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "8de2d32a-792b-4e51-b477-990bfb6a3d76",
+						"id": "2577635b-4ea7-4aa0-be0f-4b5777460230",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check destinationCountry at zero index is CH\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].destinationCountry).to.eql(\"CH\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check departureDate is 2020-08-24\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].departureDate).to.eql(\"2020-08-24\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check arrivalDate is 2020-08-30\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].arrivalDate).to.eql(\"2020-08-30\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"destinationCountry\": \"CH\",\r\n    \"packageName\": \"string\",\r\n    \"departureDate\": \"2020-08-24\",\r\n    \"arrivalDate\": \"2020-08-30\",\r\n    \"duration\": 0,\r\n    \"totalPrice\": 0,\r\n    \"idNumber\": \"string\",\r\n    \"titleName\": \"string\",\r\n    \"firstname\": \"string\",\r\n    \"lastname\": \"string\",\r\n    \"dateOfBirth\": \"2020-08-19\",\r\n    \"beneficiaryName\": \"string\",\r\n    \"phoneNumber\": \"string\",\r\n    \"email\": \"string\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://167.99.70.167:8080/api/v1/insuredInfo",
+					"protocol": "http",
+					"host": [
+						"167",
+						"99",
+						"70",
+						"167"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"insuredInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPackageByCountryCode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d13db759-33f5-4146-b124-04f986fa49ec",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -203,22 +257,25 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/insurance/:package_id",
+					"raw": "http://167.99.70.167:8080/api/v1/package/:countryCode",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"167",
+						"99",
+						"70",
+						"167"
 					],
 					"port": "8080",
 					"path": [
 						"api",
 						"v1",
-						"insurance",
-						":package_id"
+						"package",
+						":countryCode"
 					],
 					"variable": [
 						{
-							"key": "package_id",
-							"value": ""
+							"key": "countryCode",
+							"value": "CH"
 						}
 					]
 				}
@@ -226,90 +283,12 @@
 			"response": []
 		},
 		{
-			"name": "GetUserDetail",
+			"name": "GetCurrentDate",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "8aebc810-676a-4d55-a506-7bb646ce1a2d",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/payment/insurance_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"payment",
-						"insurance_id"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PostConfirmPayment",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "c77f6081-8285-4241-9c4a-375879708666",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/payment/:insurance_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"payment",
-						":insurance_id"
-					],
-					"variable": [
-						{
-							"key": "insurance_id",
-							"value": ""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetConfirmPayment",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "7d90d05e-c9f8-4ecc-b99a-c0d60158b604",
+						"id": "7d338775-cd22-4afe-acd8-1817c9c65aa6",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -323,22 +302,112 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/payment/:insurance_id",
+					"raw": "http://167.99.70.167:8080/api/v1/currentDate?zone=UTC%2B7",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"167",
+						"99",
+						"70",
+						"167"
 					],
 					"port": "8080",
 					"path": [
 						"api",
 						"v1",
-						"payment",
-						":insurance_id"
+						"currentDate"
 					],
-					"variable": [
+					"query": [
 						{
-							"key": "insurance_id",
-							"value": ""
+							"key": "zone",
+							"value": "UTC%2B7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCurrentDateAndMaxArrivalDate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0669100f-924d-4638-b28d-884fb2dcab3f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://167.99.70.167:8080/api/v1/currentDateAndMaxArrivalDate?zone=UTC%2B7",
+					"protocol": "http",
+					"host": [
+						"167",
+						"99",
+						"70",
+						"167"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"currentDateAndMaxArrivalDate"
+					],
+					"query": [
+						{
+							"key": "zone",
+							"value": "UTC%2B7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMaxArrivalDateFromDepartureDate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe947aa1-5057-446a-953c-2f9f90db3fdc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://167.99.70.167:8080/api/v1/maxArrivalDateFromDepartureDate?departure_date=2020-09-19",
+					"protocol": "http",
+					"host": [
+						"167",
+						"99",
+						"70",
+						"167"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"maxArrivalDateFromDepartureDate"
+					],
+					"query": [
+						{
+							"key": "departure_date",
+							"value": "2020-09-19"
 						}
 					]
 				}
