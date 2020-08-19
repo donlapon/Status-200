@@ -6,6 +6,7 @@
 }
 .top1 {
   padding-top: 15px;
+  padding-bottom: 30px;
 }
 .center1 {
   margin: auto;
@@ -15,10 +16,18 @@
   /* box-shadow: 0 8px 16px 0 rgb(33, 83, 190); */
   /* box-shadow: 5px 10px 18px #888888; */
 }
-.card-text {
+.card-text-title {
   font-size: 20px;
   font-weight: 400;
 }
 .shadow {
   box-shadow: 0 8px 16px 0 rgb(33, 83, 190);
+}
+
+.fonts {
+  font-size: 20px;
+  font-weight: 500;
+}
+.padding-bottom {
+  padding-bottom: 30px;
 }
