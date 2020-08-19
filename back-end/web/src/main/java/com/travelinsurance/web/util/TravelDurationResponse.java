@@ -3,13 +3,13 @@ package com.travelinsurance.web.util;
 import java.time.LocalDate;
 
 public class TravelDurationResponse {
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private LocalDate departureDate;
+    private LocalDate arrivalDate;
     private long duration;
 
-    public TravelDurationResponse(LocalDate startDate, LocalDate endDate, long duration) {
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public TravelDurationResponse(LocalDate departureDate, LocalDate arrivalDate, long duration) {
+        this.departureDate = departureDate;
+        this.arrivalDate = arrivalDate;
         this.duration = duration;
     }
 
@@ -21,19 +21,19 @@ public class TravelDurationResponse {
         this.duration = duration;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getDepartureDate() {
+        return departureDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setDepartureDate(LocalDate departureDate) {
+        this.departureDate = departureDate;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public LocalDate getArrivalDate() {
+        return arrivalDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
+    public void setArrivalDate(LocalDate arrivalDate) {
+        this.arrivalDate = arrivalDate;
     }
 }

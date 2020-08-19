@@ -7,8 +7,8 @@ public class TravelDurationWithTotalPriceResponse extends TravelDurationResponse
     private double totalPrice;
 
     public TravelDurationWithTotalPriceResponse(
-            LocalDate startDate, LocalDate endDate, long duration, double totalPrice) {
-        super(startDate, endDate, duration);
+            LocalDate departureDate, LocalDate arrivalDate, long duration, double totalPrice) {
+        super(departureDate, arrivalDate, duration);
         this.totalPrice = totalPrice;
     }
 
