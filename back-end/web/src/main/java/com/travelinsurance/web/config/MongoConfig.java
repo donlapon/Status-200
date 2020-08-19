@@ -1,4 +1,4 @@
-package com.travelinsurance.web;
+package com.travelinsurance.web.config;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;

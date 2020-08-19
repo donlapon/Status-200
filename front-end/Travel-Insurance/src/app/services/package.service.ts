@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Package, allPackage } from './../model/package';
+import { Package } from './../model/package';
 import { of, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DateTime } from '../model/dateTime';
@@ -13,8 +13,8 @@ export class PackageService {
   getAllPackage(): Observable <Package[]>{
     // console.log("debug")
     // console.log(allPackage)
-    // this.http.get<Package[]>("http://localhost:8080//v1/duration")
-    return of(allPackage);
+  return  this.http.get<Package[]>("http://localhost:8080/api/v1/package")
+    // return of(allPackage);
   }
 
 

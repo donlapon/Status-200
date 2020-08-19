@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "transaction")
 public class Transaction {
-    @Indexed(name = "ref_id", unique = true)
+    @Field("ref_id")
     private String refId;
 
     @Field("bank_name")

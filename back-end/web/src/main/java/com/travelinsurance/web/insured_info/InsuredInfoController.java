@@ -1,9 +1,11 @@
 package com.travelinsurance.web.insured_info;
 
 import com.travelinsurance.web.util.SequenceGenerator;
+import io.micrometer.core.annotation.Timed;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,8 @@ public class InsuredInfoController {
 
     @CrossOrigin
     @PostMapping("/v1/insuredInfo")
+    @Timed
+    @Transactional(timeout = 120)
     public List<InsuredInfo> saveInsuredInfo(@RequestBody NewInsuredInfoRequest[] requests) {
         List<String> newInsuranceNumberList = new ArrayList<String>();
         for (NewInsuredInfoRequest request : requests) {
@@ -39,7 +43,7 @@ public class InsuredInfoController {
             insuredInfo.setPhoneNumber(request.getPhoneNumber());
             insuredInfo.setEmail(request.getEmail());
             insuredInfo.setPaymentStatus(false);
-            String newInsuranceNumber = new SequenceGenerator().getUniqueId(3, 3);
+            String newInsuranceNumber = new SequenceGenerator().getUniqueId();
             String insuranceNumberPrefix = "ALV-";
             newInsuranceNumber = insuranceNumberPrefix + newInsuranceNumber;
             insuredInfo.setInsuranceNumber(newInsuranceNumber);
