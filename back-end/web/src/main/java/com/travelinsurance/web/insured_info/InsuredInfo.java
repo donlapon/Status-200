@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class InsuredInfo {
     @Id private ObjectId id;
 
-    @Indexed(name = "insurance_number", unique = true)
+    @Field("insurance_number")
     private String insuranceNumber;
 
     @Field("destination_country")
@@ -35,7 +35,7 @@ public class InsuredInfo {
     @Field("payment_status")
     private boolean paymentStatus;
 
-    @Indexed(name = "id_number", unique = true)
+    @Field("id_number")
     private String idNumber;
 
     @Field("title_name")
