@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from './../services/user.service';
 import { UserDetail } from '../model/user-detail';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users-detail',
@@ -12,11 +13,18 @@ import { Title } from '@angular/platform-browser';
 export class UsersDetailComponent implements OnInit {
 
   userDetailForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
-              private userDetail: UserService
-              ) { }
 
+  constructor(private formBuilder: FormBuilder , private activatedRoute: ActivatedRoute , private userDetail: UserService) { }
+  private customerDate: Date;
   ngOnInit(): void {
+      this.activatedRoute.params.subscribe(
+        data=>{
+          console.log(data.id)
+           this.customerDate = data.id ;
+          
+        }
+      )
+    
     this.userDetailForm = this.formBuilder.group({
       title: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],

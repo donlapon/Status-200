@@ -33,8 +33,9 @@
           </mat-form-field>
           <!-- <button  type="submit" class="btn">Submit</button> -->
         </div>
-        <button [disabled]="!f.startDate.invalid" [routerLink]="['/userdetail']" type="submit"
+        <button [routerLink]="['/userdetail']" (click)="saveDate()"  type="submit"
           class="btn mt-7">Next</button>
+          <!-- <app-users-detail></app-users-detail> -->
 
         <!-- <button type="submit" class="btn">Submit</button> -->
 
@@ -58,14 +59,14 @@
             </th>
           </tr>
         </thead>
-        <tbody *ngFor="let p of pk">
+        <tbody *ngFor="let p of selectedPackage">
           <tr>
             <td class="test">
               {{p.detail}}
             </td>
             <th class="tablePrice">
               <div class="flex d-flex justify-content-end">
-                {{p.detail_price|number : '2.2-2'}}
+                {{p.coverage|number : '2.2-2'}}
 
               </div>
             </th>
