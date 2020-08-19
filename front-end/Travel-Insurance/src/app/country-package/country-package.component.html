@@ -7,6 +7,7 @@
         <h1 class="p-4">Choose Destination</h1>
 
         <mat-card class=" p-0  mb-3 country " *ngFor="let i of cap, let k = index " [class.selected]="i.status">
+          
           <mat-card-header class="headCountry ">
           </mat-card-header>
           <span class="matCountry d-flex flex  align-items-center " (click)="packageDetail(i.countryCode) ">
@@ -23,6 +24,7 @@
               [matDatepicker]="picker1" placeholder="Departure date">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1 startView="year" [startAt]="minDate"></mat-datepicker>
+            <!-- <mat-error *ngIf=”dateCtrl.errors?.required && deptCtrl.touched”>Choose a Date</mat-error> -->
           </mat-form-field>
 
           <mat-form-field class=" enddate ml-3">
@@ -59,10 +61,10 @@
             </th>
           </tr>
         </thead>
-        <tbody *ngFor="let p of selectedPackage">
+        <tbody *ngFor="let p of selectedPackageList">
           <tr>
             <td class="test">
-              {{p.detail}}
+              {{p.benefit}}
             </td>
             <th class="tablePrice">
               <div class="flex d-flex justify-content-end">

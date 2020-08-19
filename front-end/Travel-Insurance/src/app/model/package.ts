@@ -1,10 +1,14 @@
-export interface InsurancePackageList {
-    package_name: string;
-    package_detail: any;
-    coverage: number[];
-}
-
 export interface Package {
-    insurancePackageName: string;
+    countryCode: string;
     insurancePackageList: InsurancePackageList[];
-}
+  }
+  
+  export interface InsurancePackageList {
+    package_name: string;
+    package_detail: Packagedetail[];
+  }
+  
+  export  interface Packagedetail {
+    benefit: string;
+    coverage: number;
+  }

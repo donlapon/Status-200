@@ -29,7 +29,7 @@ export class UserService {
                                   'email');
   //  const user2 = new UserDetail('Mrs', 'llll', 'oooo', 'llllll', '12/06/1997', 'gggg llll', 1);
   //  const user3 = new UserDetail('mr', 'pppp', 'iiii', 'llllll', '12/06/1997', 'gggg llll', 1);
-   return this.http.post<InsuredInfo[]>('http://localhost:8080/api/v1/insuredInfo', user1);
+   return this.http.post<InsuredInfo[]>('http://167.99.70.167:8080/api/v1/insuredInfo', user1);
 
   //  return of([user1, user2, user3]);
   }

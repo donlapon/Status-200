@@ -17,7 +17,7 @@ export class DateService {
   }
 
 getDate(): Observable <DateTime>{
-    return this.http.get<DateTime>("http://localhost:8080/api/v1/currentDateAndMaxArrivalDate");
+    return this.http.get<DateTime>("http://167.99.70.167:8080/api/v1/currentDateAndMaxArrivalDate");
 }
   postDate(date:DateTime) :Observable<DateTime>{
   //  const date1 = new Date("20/02/2019","23/03/2019");
@@ -25,7 +25,7 @@ getDate(): Observable <DateTime>{
   //  const date3 = new Date("20/02/2019","23/03/2019");
     console.log("tre",date)
   //  return this.httpClient.post<ProductResponse> (`product`,this.makeFormData(product));
-    return this.http.post<DateTime>("http://localhost:8080/api/v1/totalPrice",date)
+    return this.http.post<DateTime>("http://167.99.70.167:8080/api/v1/totalPrice",date)
     // return of([date1,date2,date3]);
   }
   makeFormDate(date :DateTime) : FormData{

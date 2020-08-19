@@ -27,6 +27,10 @@ import { UsersDetailComponent } from './users-detail/users-detail.component';
 import { TransactionDetailComponent } from './transaction-detail/transaction-detail.component';
 import { ShowUserDetailComponent } from './show-user-detail/show-user-detail.component';
 
+
+import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
+import { AppDateAdapter, APP_DATE_FORMATS } from './model/format-datepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +59,8 @@ import { ShowUserDetailComponent } from './show-user-detail/show-user-detail.com
     MatIconModule,
     MatDividerModule,
   ],
-  providers: [],
+  providers: [ {provide: DateAdapter, useClass: AppDateAdapter},
+    {provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
