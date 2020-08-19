@@ -1,8 +1,8 @@
 <div class="container">
   <!-- Card price of premium insurance -->
-  <div class="d-flex flex-row top">
+  <div class="d-flex flex-row">
     <div
-      class="card text-white mb-5 center"
+      class="card text-white mb-1 center"
       style="background-color: rgb(36, 71, 145); width: 63%;"
     >
       <div class="card-body">
@@ -59,7 +59,7 @@
         </div>
         <div class="col">
           <div class="form-row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-6">
               <label> Citzen ID:</label>
               <input
                 type="text"
@@ -68,18 +68,21 @@
                 placeholder="CitzenID 13 digits"
               />
             </div>
-            <div class="form-group col-md-2">
-              <label>Date of birth</label>
-              <!-- <br /> -->
-              <mat-form-field>
-                <!-- <mat-label>Birth date</mat-label> -->
-                <input matInput [matDatepicker]="picker1" [formControl]="" />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker1"
-                ></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-              </mat-form-field>
+
+            <div class="r">
+              <div class="form-group col-md-5 r">
+                <label>Date of birth</label>
+                <!-- <br /> -->
+                <mat-form-field>
+                  <!-- <mat-label>Birth date</mat-label> -->
+                  <input matInput [matDatepicker]="picker1" [formControl]="" />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker1"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
             </div>
           </div>
         </div>
@@ -93,27 +96,15 @@
             placeholder="Beneficially"
           />
         </div>
-
-        <div class="col">
-          <div class="row">
-            <div class="form-group col-md-4">
-              <label for="inputState">Quantity</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-            </div>
-            <div class="col align-self-center">
-              <button
-                [routerLink]="'/showuserdetail'"
-                type="submit"
-                class="btn btn-primary"
-              >
-                Submit
-              </button>
-            </div>
+        <div class="text-center">
+          <div class="col mt-4 mb-4">
+            <button
+              [routerLink]="'/showuserdetail'"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </form>
