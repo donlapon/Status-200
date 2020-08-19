@@ -37,7 +37,7 @@ public class TransactionController {
             insuredInfo.setPaymentStatus(true);
             insuredInfoRepository.save(insuredInfo);
         }
-        tx.setRefId(new SequenceGenerator().getUniqueId(10, 12));
+        tx.setRefId(new SequenceGenerator().getUniqueId());
         transactionRepository.save(tx);
         return new TransactionResponse(
                 tx.getRefId(),

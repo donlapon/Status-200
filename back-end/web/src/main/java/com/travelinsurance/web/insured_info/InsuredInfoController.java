@@ -43,7 +43,7 @@ public class InsuredInfoController {
             insuredInfo.setPhoneNumber(request.getPhoneNumber());
             insuredInfo.setEmail(request.getEmail());
             insuredInfo.setPaymentStatus(false);
-            String newInsuranceNumber = new SequenceGenerator().getUniqueId(3, 3);
+            String newInsuranceNumber = new SequenceGenerator().getUniqueId();
             String insuranceNumberPrefix = "ALV-";
             newInsuranceNumber = insuranceNumberPrefix + newInsuranceNumber;
             insuredInfo.setInsuranceNumber(newInsuranceNumber);
