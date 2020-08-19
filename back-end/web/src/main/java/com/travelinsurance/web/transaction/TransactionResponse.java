@@ -1,28 +1,27 @@
 package com.travelinsurance.web.transaction;
 
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-
-@Document(collection = "transaction")
-public class Transaction {
-    @Field("ref_id")
+public class TransactionResponse {
     private String refId;
-
-    @Field("bank_name")
     private String bankName;
-
-    @Field("account_number")
     private String accountNumber;
-
-    @Field("amount")
     private double amount;
-
-    @Field("note")
     private String note;
-
-    @Field("insurance_number_list")
     private String[] insuranceNumberList;
+
+    public TransactionResponse(
+            String refId,
+            String bankName,
+            String accountNumber,
+            double amount,
+            String note,
+            String[] insuranceNumberList) {
+        this.refId = refId;
+        this.bankName = bankName;
+        this.accountNumber = accountNumber;
+        this.amount = amount;
+        this.note = note;
+        this.insuranceNumberList = insuranceNumberList;
+    }
 
     public String getRefId() {
         return refId;

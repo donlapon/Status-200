@@ -1,6 +1,5 @@
 package com.travelinsurance.web.insurance_premium;
 
-import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
