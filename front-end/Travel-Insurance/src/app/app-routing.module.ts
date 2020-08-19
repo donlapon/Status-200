@@ -11,10 +11,11 @@ const routes: Routes = [
   { path: 'countrypackage', component: CountryPackageComponent },
   { path: 'userdetail', component: UsersDetailComponent },
   { path: 'showuserdetail', component: ShowUserDetailComponent },
+  { path: 'termsandconditions', component: TransactionDetailComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
