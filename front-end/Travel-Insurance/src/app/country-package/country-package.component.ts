@@ -1,127 +1,135 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Country } from './../model/country';
-import { Package } from './../model/package';
+import { Package, InsurancePackageList, Packagedetail } from './../model/package';
 import { CountryService } from './../services/country.service';
 import { PackageService } from './../services/package.service';
 import { DateService } from './../services/date.service';
 import { DateTime } from './../model/dateTime';
 
+
 @Component({
   selector: 'app-country-package',
   templateUrl: './country-package.component.html',
   styleUrls: ['./country-package.component.css']
+
 })
 export class CountryPackageComponent implements OnInit {
   status: boolean;
-  cardStatus:boolean;
+  cardStatus: boolean;
   count: Number;
   date: FormGroup;
   cap: Country[] = [];
+  ht: Object;
+  customerDate: DateTime;
   // dataSource = new MatTableDataSource<Product>();
-  minDate : Date;
-  maxDate : Date;
+  minDate: Date;
+  maxDate: Date;
   dt: DateTime;
+  selectedPackageList: Packagedetail[];
+  selectedPackage: InsurancePackageList[];
   pk: Package[] = [];
-  pack: string[] =["Ergonomic Metal Tuna","Gorgeous Soft Bacon","Toys"]
-  constructor(private  fb: FormBuilder,
-              private country: CountryService,
-              private dateInject: DateService,
-              private packkage: PackageService,
-              private datetime:  DateService
-              ) {
-           
-               }
+  pack: string[] = ["Ergonomic Metal Tuna", "Gorgeous Soft Bacon", "Toys"]
+  constructor(private fb: FormBuilder,
+    private country: CountryService,
+    private dateInject: DateService,
+    private packkage: PackageService,
+    private datetime: DateService
+  ) {
+
+  }
 
   ngOnInit(): void {
-    this.date =  this.fb.group({
-      startDate : ['',Validators.requiredTrue],
-      endDate : ['',Validators.requiredTrue ]
+    this.date = this.fb.group({
+      startDate: ['', Validators.requiredTrue],
+      endDate: ['', Validators.requiredTrue]
     });
     // console.log("de")
     this.getAllCountries();
-    this. getAllPackage();
+    this.getAllPackage();
     this.getDateTime();
   }
 
-  getDate( ) :void{
+  getDate(): void {
     // const currentYear = new Date().getFullYear;
     this.minDate = new Date();
-   const  stDate =   this.dt.endDate.split("-");
-
-   const year = stDate[0];
-   const  month = stDate[1];
+    console.log("test",this.dt.endDate);
+    
+    if(this.dt.arrivalDate!=null){
+    const stDate = this.dt.arrivalDate.split("-");
+    console.log(stDate)
+    const year = stDate[0];
+    const month = stDate[1];
     const day = stDate[2];
     this.minDate = new Date();
-    this.maxDate = new Date( Number(year)
-    , Number(month)-1, Number(day));
-    console.log(this.maxDate)
+    this.maxDate = new Date(Number(year)
+      , Number(month) - 1, Number(day));
+    }
   }
-  getAllCountries(): void{
+  getAllCountries(): void {
     this.country.getAllCountry().subscribe((data) => {
       this.cap = data;
 
-    this.cap.forEach(country => {
-          country.status= false;
+      this.cap.forEach(country => {
+        country.status = false;
 
       });
       // console.log("t",this.cap)
       return this.cap;
-      
-    });
-  }
-  getAllPackage(): void{
-    this.packkage.getAllPackage().subscribe((data) =>{
-      
-      this.pk = data;
 
-      return this.pk ;
     });
   }
-  
-  getDateTime(): void{
-    this.datetime.getDate().subscribe((data)=>{
+  getAllPackage(): void {
+    this.packkage.getAllPackage().subscribe((data) => {
+      this.pk = data;
+      console.table(data);
+
+      return this.pk;
+    });
+  }
+
+  getDateTime(): void {
+    this.datetime.getDate().subscribe((data) => {
+      console.log("result ", data);
       this.dt = data;
       this.getDate();
 
     })
   }
-  get f(){
-      return this.date.controls;
+  get f() {
+    return this.date.controls;
   }
-  saveDate(){
-     const  start_date:string  =  this.date.controls.startDate.value;
-     const  end_date:string  =  this.date.controls.endDate.value;
-     const date = new DateTime(start_date, end_date);
-   this.dateInject.postDate(date).subscribe(date=>{
-       console.log("date Done")
-    })
-    console.log(this.date.controls.startDate.invalid);
-  }
-  packageDetail(countryCode:string){
-    
-    this.cap.forEach(country => {
-      // if(!country.status ){
+  saveDate() {
+    const departureDate: string = this.date.controls.startDate.value;
+    const arrivalDate: string = this.date.controls.endDate.value;
+     this.customerDate = new DateTime(departureDate, arrivalDate);
+     console.log("trst",this.customerDate)
+    this.dateInject.postDate(this.customerDate).subscribe(date  => {
+      console.table(date);
       
-      if(countryCode == country.countryCode){
-        if(country.status){
-          country.status = false;
+      console.log("date Done")
+    })
+    
+  }
 
-        }else{
-          country.status =true;
-        }
+  packageDetail(countryCode: string) {
+    console.log(this.pk)
+    this.status = false;
+    this.pk.forEach(_p => {
+ 
 
+      if (countryCode == _p.countryCode) {
 
+        this.status = true;
+        this.selectedPackage = _p.insurancePackageList;
+        this.selectedPackageList =  this.selectedPackage[0].package_detail
+        console.log(this.selectedPackageList)
       }
-      // this.pk.forEach(element => {
-      //   console.log(          element[2].insurancePackageList
-      //     )
-      //     // element[2].insurancePackageList[0]
-      // });
-      // console.log('package', this.pk[2].insurancePackageList);
+    
       
     });
     this.status = true;
 
- }
+
+  }
 }

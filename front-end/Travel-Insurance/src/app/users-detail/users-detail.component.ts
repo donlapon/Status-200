@@ -15,12 +15,24 @@ export class UsersDetailComponent implements OnInit {
 
   userDetailForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
+              private activatedRoute: ActivatedRoute,
               private userDetail: UserService,
               private router: Router
               ) { }
 
+  // constructor(private formBuilder: FormBuilder, 
+  //             private activatedRoute: ActivatedRoute, 
+  //             private userDetail: UserService) { }
+  private customerDate: Date;
   ngOnInit(): void {
-    this.userDetailForm = this.formBuilder.group({
+      this.activatedRoute.params.subscribe(
+        data => {
+          console.log(data.id)
+          this.customerDate = data.id ;
+        }
+      );
+
+      this.userDetailForm = this.formBuilder.group({
       title: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],
       lastName: ['', Validators.requiredTrue],
