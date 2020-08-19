@@ -30,35 +30,35 @@
         <div class="col">
           <div class="form-row">
             <div class="form-group col-md-2">
-              <label>Title</label>
+              <label>Title: {{ users.title }}</label>
             </div>
             <div class="form-group col-md-5">
-              <label>Firstname</label>
+              <label>Firstname: {{ users.firstName }} </label>
             </div>
             <div class="form-group col-md-5">
-              <label>Lastname</label>
+              <label>Lastname: {{ users.lastName }}</label>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="form-row">
             <div class="form-group col-md-8">
-              <label>Citizen ID :</label>
+              <label>Citizen ID: {{ users.citizenId }}</label>
             </div>
             <div class="form-group col-md-2">
-              <label>Date of birth</label>
+              <label>Date of birth: {{ users.dateOfBirth }}</label>
             </div>
           </div>
         </div>
 
         <div class="form-group col-md-12">
-          <label> Beneficially</label>
+          <label> Beneficially: {{ users.beneficially }}</label>
         </div>
 
         <div class="col">
           <div class="row">
             <div class="form-group col-md-4">
-              <label>Quantity</label>
+              <!-- <label>Quantity</label> -->
             </div>
             <div class="col align-self-center">
               <button
@@ -75,4 +75,9 @@
       <!-- Close Header traveller -->
     </div>
   </div>
+</div>
+
+<div>
+  <button (click)="onSave()">save</button>
+  
 </div>

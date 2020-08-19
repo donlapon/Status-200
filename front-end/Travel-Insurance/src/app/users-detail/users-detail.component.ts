@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from './../services/user.service';
 import { UserDetail } from '../model/user-detail';
 import { Title } from '@angular/platform-browser';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users-detail',
@@ -10,10 +11,12 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./users-detail.component.css']
 })
 export class UsersDetailComponent implements OnInit {
+  user: any;
 
   userDetailForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
-              private userDetail: UserService
+              private userDetail: UserService,
+              private router: Router
               ) { }
 
   ngOnInit(): void {
@@ -28,22 +31,16 @@ export class UsersDetailComponent implements OnInit {
     });
   }
 
-  get f(){
-    return this.userDetailForm.controls;
-}
+//   get f(){
+//     return this.userDetailForm.controls;
+// }
   saveData(): void{
-    const user = new UserDetail(
-                                this.f.title.value,
-                                this.f.firstName.value,
-                                this.f.lastName.value,
-                                this.f.citizenId.value,
-                                this.f.dateOfBirth.value,
-                                this.f.beneficially.value,
-                                this.f.numberOfTraveller.value,
-                                );
-    this.userDetail.postUserDetail(user).subscribe(users => {
-      console.log('USER', users);
-    });
+    this.user = this.userDetailForm.getRawValue();
+    this.router.navigateByUrl('/showuserdetail', { state: this.user } );
+    // this.userDetail.sendInsuredInfo(this.user).subscribe(users => {
+    //   console.log('USER', users);
+    //   this.router.navigateByUrl('/showuserdetail', { state: this.user } );
+    // });
   }
 
 }

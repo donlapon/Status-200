@@ -17,7 +17,7 @@ export class DateService {
   }
 
 getDate(): Observable <DateTime>{
-    return this.http.get<DateTime>("http://localhost:8080/api/v1/travel_time?zone=UTC%2B7");
+    return this.http.get<DateTime>('http://167.99.70.167:8080/api/v1/currentDateAndMaxArrivalDate');
 }
   postDate(date) :Observable<DateTime[]>{
   //  const date1 = new Date("20/02/2019","23/03/2019");

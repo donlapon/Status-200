@@ -29,9 +29,10 @@
       <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
         <div class="col">
           <div class="form-row">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-2"
+            >
               <label>Title</label>
-              <select class="form-control">
+              <select class="form-control" formControlName="title">
                 <option value="Miss">Miss</option>
                 <option value="Mrs">Mrs.</option>
                 <option value="Mr">Mr.</option>
@@ -44,6 +45,7 @@
                 class="form-control"
                 id=""
                 placeholder="Firstname"
+                formControlName="firstName"
               />
             </div>
             <div class="form-group col-md-5">
@@ -53,6 +55,7 @@
                 class="form-control"
                 id=""
                 placeholder="Lastname"
+                formControlName="lastName"
               />
             </div>
           </div>
@@ -66,6 +69,7 @@
                 class="form-control"
                 id=""
                 placeholder="CitzenID 13 digits"
+                formControlName="citizenId"
               />
             </div>
             <div class="form-group col-md-2">
@@ -73,7 +77,7 @@
               <!-- <br /> -->
               <mat-form-field>
                 <!-- <mat-label>Birth date</mat-label> -->
-                <input matInput [matDatepicker]="picker1" [formControl]="" />
+                <input matInput [matDatepicker]="picker1" formControlName="dateOfBirth"/>
                 <mat-datepicker-toggle
                   matSuffix
                   [for]="picker1"
@@ -87,6 +91,7 @@
         <div class="form-group col-md-12">
           <label> Beneficially</label>
           <input
+          formControlName="beneficially"
             type="text"
             class="form-control"
             id=""
@@ -98,7 +103,7 @@
           <div class="row">
             <div class="form-group col-md-4">
               <label for="inputState">Quantity</label>
-              <select id="inputState" class="form-control">
+              <select id="inputState" class="form-control" formControlName="numberOfTraveller">
                 <option selected>Choose...</option>
                 <option value=1>1</option>
                 <option value=1>2</option>
@@ -112,6 +117,9 @@
                 class="btn btn-primary"
               >
                 Submit
+              </button>
+              <button (ngSubmit) = "saveData()">
+                saveData
               </button>
             </div>
           </div>

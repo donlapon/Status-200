@@ -1,27 +1,27 @@
 export class UserDetail {
 
-    title: string;
-    firstName: string;
-    lastName: string;
+    titleName: string;
+    firstname: string;
+    lastname: string;
     citizenId: string;
     dateOfBirth: string;
     beneficially: string;
     numberOfTraveller: number;
-
+    email: string;
     constructor(
-        title: string,
-        firstName: string,
-        lastName: string,
+        titleName: string,
+        firstname: string,
+        lastname: string,
         citizenId: string,
         dateOfBirth: string,
         beneficially: string,
-        numberOfTraveller: number ){
-            this.title = title;
-            this.firstName = firstName;
-            this.lastName = lastName;
+        email: string){
+            this.titleName = titleName;
+            this.firstname = firstname;
+            this.lastname = lastname;
             this.citizenId = citizenId;
             this.dateOfBirth = dateOfBirth;
             this.beneficially = beneficially;
-            this.numberOfTraveller = numberOfTraveller;
+            this.email = email;
     }
 }
