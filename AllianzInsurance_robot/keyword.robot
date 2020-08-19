@@ -9,14 +9,14 @@ ${URL}    http://localhost:4200/countrypackage
 *** Keywords ***
 
 Buy insurance package at Allianz Insurance website
-    [Arguments]         ${country_name}    ${start_date}    ${end_date}    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}
+    [Arguments]         ${country_name}    ${start_date}    ${end_date}    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson} 
     1. Select country (Switzerland)   ${country_name}
     2. Scroll down and read package
     3. Select Start date (21/08/2020)    ${start_date}  
     4. Select End date (26/08/2020)    ${end_date}    
     5. Click next button
     6. Wait until page contains country and price
-    7. Input traveller information    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}
+    7. Input traveller information    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson} 
     8. Click submit button
     9. Wait until page contains exactly information
     10. Click payment button
@@ -27,44 +27,33 @@ Buy insurance package at Allianz Insurance website
 0. Go to Allianz Insurance website
     Open Browser    ${URL}    Chrome
 1. Select country (Switzerland)
-    Click Element    xpath=/html/body/app-root/app-country-package/div/div/div/div/mat-card[3]/span
+    Click Element    id:country_name
 2. Scroll down and read package
     press keys    none    ALT+ARROW_DOWN	
-    #Scroll Element Into View
-    #Click Element    id:package_name
+    
 3. Select Start date (21/08/2020)
-    click element    xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[1]/div/div[1]/div[2]/mat-datepicker-toggle/button
-    click element    xpath=//*[@id="mat-datepicker-0"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]
-    click element    xpath=//*[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[4]/td[6]/div[1]
-    #select date !!! ${start_date}
+    
+    #select date !!! id:start_date    ${start_date}
 4. Select End date (26/08/2020)
-    #select date !!! ${end_date}
-    click element    xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[2]/div/div[1]/div[2]/mat-datepicker-toggle/button
-    click element    xpath=//*[@id="mat-datepicker-1"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]
-    click element    xpath=//*[@id="mat-datepicker-1"]/div/mat-month-view/table/tbody/tr[5]/td[4]/div[1]
-    #Wait Until Page Contains    8/21/2020
+    #select date !!! id:end_date    ${end_date}
+    
 5. Click next button
-    #Click Element    id:btn_next
-    click element    xpath=/html/body/app-root/app-country-package/div/div[1]/div/form/button
+    Click Element    id:btn_next
 6. Wait until page contains country and price
     Wait Until Page Contains    Switzerland
     Wait Until Page Contains    357.00
 7. Input traveller information
-    [Arguments]    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    
-    #Select Radio Button    title    ${title}
-    #Select Radio Button     /html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[1]/select    ${title}
-    Input Text    xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[2]/input    ${customer_firstname}
-    Input Text    xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[3]/input    ${customer_lastname}
-    Input Text    xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[2]/div/div[1]/input    ${id_card}
-    #select date    id:citizen_id    ${birth_date}
-    Input Text    xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[3]/input    ${beneficially}
-    #Input Text    id:email    ${email}
-    #Input Text    id:telno    ${telno}
-    
-    
-
+    [Arguments]    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson}    
+    Select Radio Button    title    ${title}
+    Input Text    id:customer_firstname    ${customer_firstname}
+    Input Text    id:customer_lastname    ${customer_lastname}
+    Input Text    id:id_card    ${id_card}
+    #select date !!! id:birth_date    ${birth_date}
+    Input Text    id:beneficially   ${beneficially}
+    Select Radio Button    numperson    ${numperson}
+   
 8. Click submit button
-    Click Element    xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[4]/div/div[2]/button 
+    Click Element    id:btn_next
 
 9. Wait until page contains exactly information
     Wait Until Page Contains    Switzerland
