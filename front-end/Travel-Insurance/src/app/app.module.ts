@@ -30,6 +30,7 @@ import { ShowUserDetailComponent } from './show-user-detail/show-user-detail.com
 
 import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
 import { AppDateAdapter, APP_DATE_FORMATS } from './model/format-datepicker';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AppDateAdapter, APP_DATE_FORMATS } from './model/format-datepicker';
     // InsurancePremiumComponent,
     TransactionDetailComponent,
     ShowUserDetailComponent,
+    TermsAndConditionsComponent,
   ],
   imports: [
     BrowserModule,

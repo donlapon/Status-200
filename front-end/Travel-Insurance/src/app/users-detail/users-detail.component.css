@@ -4,7 +4,7 @@
 .center {
   margin: auto;
   /* width: 50%; */
-  padding: 10px;
+  /* padding: 10px; */
   /* background-color: rgb(36, 71, 145); */
 }
 .top1 {
@@ -39,4 +39,11 @@
 }
 .down {
   padding-bottom: 15px;
+}
+.r {
+  /* margin-left: auto; */
+  margin-left: 17px;
+}
+.center1 {
+  float: center;
 }
