@@ -1,9 +1,10 @@
 export class DateTime {
-    startDate:string
-    endDate :string
-    constructor( start_date:string, end_date:string){
-        this.startDate =start_date;
-        this.endDate = end_date;
+    departureDate:string
+    arrivalDate :string
+    endDate?: string
+    constructor( departureDate:string, arrivalDate:string){
+        this.departureDate =departureDate;
+        this.arrivalDate = arrivalDate;
     }
 }
 

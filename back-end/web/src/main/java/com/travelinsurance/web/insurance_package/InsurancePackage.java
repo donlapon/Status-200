@@ -1,6 +1,7 @@
 package com.travelinsurance.web.insurance_package;
 
 import com.mongodb.DBObject;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 

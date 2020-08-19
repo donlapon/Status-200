@@ -26,7 +26,7 @@
         </p>
       </div>
       <!-- Test -->
-      <form>
+      <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
         <div class="col">
           <div class="form-row">
             <div class="form-group col-md-2">

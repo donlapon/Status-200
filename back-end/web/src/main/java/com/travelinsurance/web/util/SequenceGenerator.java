@@ -2,10 +2,10 @@ package com.travelinsurance.web.util;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class GenerateUniqueId {
+public class SequenceGenerator {
     private static final AtomicLong LAST_TIME_MS = new AtomicLong();
 
-    public static String get() {
+    public synchronized String getUniqueId() {
         long now = System.currentTimeMillis();
         while (true) {
             long lastTime = LAST_TIME_MS.get();

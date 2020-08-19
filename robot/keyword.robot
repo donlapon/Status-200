@@ -9,14 +9,14 @@ ${URL}    http://localhost:4200/countrypackage
 *** Keywords ***
 
 Buy insurance package at Allianz Insurance website
-    [Arguments]    ${start_date}    ${end_date}    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}
-    1. Select country (Switzerland)
-    2. Select package (Package A)
-    3. Select Start date (21/08/2020)    ${start_date}
-    4. Select End date (26/08/2020)    ${end_date}
+    [Arguments]         ${country_name}    ${start_date}    ${end_date}    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson} 
+    1. Select country (Switzerland)   ${country_name}
+    2. Scroll down and read package
+    3. Select Start date (21/08/2020)    ${start_date}  
+    4. Select End date (26/08/2020)    ${end_date}    
     5. Click next button
     6. Wait until page contains country and price
-    7. Input traveller information    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}
+    7. Input traveller information    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson} 
     8. Click submit button
     9. Wait until page contains exactly information
     10. Click payment button
@@ -27,32 +27,33 @@ Buy insurance package at Allianz Insurance website
 0. Go to Allianz Insurance website
     Open Browser    ${URL}    Chrome
 1. Select country (Switzerland)
-    Click Element    id:btn_CH
-2. Select package (Package A)
-    Click Element    id:btn_package
+    Click Element    id:country_name
+2. Scroll down and read package
+    press keys    none    ALT+ARROW_DOWN	
+    
 3. Select Start date (21/08/2020)
-    #select date !!! ${start_date}
+    
+    #select date !!! id:start_date    ${start_date}
 4. Select End date (26/08/2020)
-    #select date !!! ${end_date}
+    #select date !!! id:end_date    ${end_date}
+    
 5. Click next button
     Click Element    id:btn_next
 6. Wait until page contains country and price
     Wait Until Page Contains    Switzerland
     Wait Until Page Contains    357.00
 7. Input traveller information
-    [Arguments]    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    
+    [Arguments]    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson}    
     Select Radio Button    title    ${title}
     Input Text    id:customer_firstname    ${customer_firstname}
     Input Text    id:customer_lastname    ${customer_lastname}
     Input Text    id:id_card    ${id_card}
-    #select date    id:citizen_id    ${birth_date}
-    Input Text    id:beneficially    ${beneficially}
-    Input Text    id:email    ${email}
-    Input Text    id:telno    ${telno}
-    
-
+    #select date !!! id:birth_date    ${birth_date}
+    Input Text    id:beneficially   ${beneficially}
+    Select Radio Button    numperson    ${numperson}
+   
 8. Click submit button
-    Click Element    id:btn_submit 
+    Click Element    id:btn_next
 
 9. Wait until page contains exactly information
     Wait Until Page Contains    Switzerland
