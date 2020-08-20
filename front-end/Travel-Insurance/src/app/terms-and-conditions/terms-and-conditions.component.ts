@@ -14,13 +14,15 @@ export class TermsAndConditionsComponent implements OnInit {
   constructor(private userService: UserService, private router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log("hs", history.state);
     this.users = history.state;
-    // console.log('this.users term condition', this.users);
+    
+    console.log('this.users term condition', this.users);
     // this.router.navigateByUrl('/transactiondetail', { state: this.users } );
   }
   back(){
     // this.location.back();
-    console.log('debug');
+    // console.log('debug');
     
   }
   onSave(): void{

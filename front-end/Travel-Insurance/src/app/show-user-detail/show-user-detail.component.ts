@@ -30,8 +30,8 @@ export class ShowUserDetailComponent implements OnInit {
   }
 
   onSave(): void{
+    this.router.navigateByUrl('/termsandconditions', { state: this.users } );
     this.userService.sendInsuredInfo(this.users).subscribe(users => {
-      this.router.navigateByUrl('/termsandconditions', { state: this.users } );
       // console.log('USER', users);
     });
   }
