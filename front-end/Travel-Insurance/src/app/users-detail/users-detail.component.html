@@ -7,8 +7,14 @@
     >
       <div class="card-body">
         <p class="card-text alignleft">Premium Insurance</p>
-        <p class="card-text alignright">{{ dateDetailValue | json }} </p>
+        <p class="card-text alignright">{{ dateDetailValue?.totalPrice }} </p>
         <br />
+        <p class="card-text alignright">Day: {{ dateDetailValue?.duration }} </p>
+        <br>
+        <p class="card-text alignright">End: {{ dateDetailValue?.arrivalDate }} </p>
+        <br>
+        <p class="card-text alignright">Start: {{ dateDetailValue?.departureDate }} </p>
+        <br>
         <div style="clear: both;"></div>
 
         <p class="card-text1 alignleft">(Switzerland)</p>
