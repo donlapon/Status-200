@@ -10,7 +10,7 @@
       
           <mat-card-header class="headCountry ">
           </mat-card-header>
-          <span class="matCountry d-flex flex  align-items-center " (click)="packageDetail(i.countryCode,k,i.status) ">
+          <span class="matCountry d-flex flex  align-items-center " id="country_name" (click)="packageDetail(i.countryCode,k,i.status) ">
             {{i.countryName}} <img class="ml-5 " style="height: 30px; " [src]="i.imgUrl" alt="">
           </span>
         </mat-card>
@@ -30,14 +30,14 @@
           <mat-form-field class=" enddate ml-3"  *ngIf="f.startDate.dirty">
             <input matInput [min]="f.startDate.value" [max]="maxDate" formControlName="endDate" [formControl]=""
               [matDatepicker]="picker2" placeholder="Arrival date" >
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker-toggle matSuffix [for]="picker2" id="start_date"></mat-datepicker-toggle>
             <mat-datepicker #picker2 startView="year" [startAt]="minDate"></mat-datepicker>
             <!-- <small *ngIf="date.hasError('notValid')">Not valid</small> -->
 
           </mat-form-field>
           <!-- <button  type="submit" class="btn">Submit</button> -->
         </div>
-        <button  (click)="saveDate()"  type="submit" [disabled]="!f.startDate.dirty || !f.endDate.dirty "
+        <button  id="btn_next" (click)="saveDate()"  type="submit" [disabled]="!f.startDate.dirty || !f.endDate.dirty "
           class="btn mt-7"[routerLink]="['/userdetail']"
           >Next</button>
           <!-- <app-users-detail></app-users-detail> -->

@@ -46,9 +46,9 @@ export class UsersDetailComponent implements OnInit {
       // this.setName();
   }
 
-//   get f(){
-//     return this.userDetailForm.controls;
-// }
+  get f(){
+    return this.userDetailForm.controls;
+}
   // saveData(): void{
   
   //   const user = new UserDetail(

@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class TransactionDetailComponent implements OnInit {
   name: string;
 
-  constructor(private activatedroute: ActivatedRoute) { }
+  constructor(private activatedroute: ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.name = history.state;
