@@ -59,6 +59,8 @@ Buy insurance package at Allianz Insurance website
     click element    xpath=//*[@id="mat-datepicker-2"]/div/mat-multi-year-view/table/tbody/tr[2]/td[2]/div[1]
     click element    xpath=//*[@id="mat-datepicker-2"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]
     click element    xpath=//*[@id="mat-datepicker-2"]/div/mat-month-view/table/tbody/tr[3]/td[3]/div[1]
+    #Input Text    id:customer_phone   ${customer_phone}
+    #Input Text    id:customer_email   ${customer_email}
     Input Text    id:beneficially   ${beneficially}
     
    
