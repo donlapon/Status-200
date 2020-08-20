@@ -26,7 +26,7 @@ Buy insurance package at Allianz Insurance website
 
 0. Go to Allianz Insurance website
     
-    Open Browser    ${URL}    Chrome    #remote_url=http://206.189.154.4:4444/wd/hub    desired_capabilities=browserName:chrome
+    Open Browser    ${URL}    Chrome    remote_url=http://206.189.154.4:4444/wd/hub    desired_capabilities=browserName:chrome
     Maximize Browser Window
 1. Select country (Switzerland)
     Click Element    id:CH
