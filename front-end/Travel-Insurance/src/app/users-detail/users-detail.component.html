@@ -13,7 +13,7 @@
         <div style="clear: both;"></div>
 
         <p class="card-text alignleft">
-          Duration:
+          Duration
         </p>
         <p class="card-text1 alignleft" style="padding-left: 20px;">
           {{ dateDetailValue?.departureDate }} -
@@ -73,35 +73,13 @@
                 formControlName="lastName"
               />
             </div>
-
-            <div class="form-group col-md-5">
-              <label>Phone number: </label>
-              <input
-                id="customer_firstname"
-                type="text"
-                class="form-control"
-                id="customer_phone"
-                placeholder="Phone number"
-                formControlName="phoneNumber"
-              />
-            </div>
-
-            <div class="form-group col-md-5">
-              <label>Email: </label>
-              <input
-                type="text"
-                class="form-control"
-                id="email"
-                placeholder="Email"
-                formControlName="email"
-              />
-            </div>
           </div>
         </div>
+
         <div class="col">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label> Citzen ID:</label>
+              <label> Citzen ID</label>
               <input
                 type="text"
                 class="form-control"
@@ -128,18 +106,45 @@
               </mat-form-field>
             </div>
           </div>
+        </div>
 
+        <div class="col">
           <div class="form-row">
-            <div class="form-group col-md-12">
-              <label> Beneficially</label>
+            <div class="form-group col-md-6">
+              <label>Email </label>
               <input
-                formControlName="beneficially"
                 type="text"
                 class="form-control"
-                id="beneficially"
-                placeholder="Beneficially"
+                id="email"
+                placeholder="Email"
+                formControlName="email"
               />
             </div>
+
+            <div class="form-group col-md-6" style="padding-left: 10%;">
+              <label>Phone number </label>
+              <input
+                id="customer_firstname"
+                type="text"
+                class="form-control"
+                id="customer_phone"
+                placeholder="Phone number"
+                formControlName="phoneNumber"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col form-row">
+          <div class="form-group col-md-12">
+            <label> Beneficially</label>
+            <input
+              formControlName="beneficially"
+              type="text"
+              class="form-control"
+              id="beneficially"
+              placeholder="Beneficially"
+            />
           </div>
         </div>
 
