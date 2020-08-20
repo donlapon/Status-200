@@ -42,13 +42,13 @@ export class UsersDetailComponent implements OnInit {
       numberOfTraveller: ['', Validators.requiredTrue]
     });
 
-      // this.callDateDetail();
+      this.callDateDetail();
       // this.setName();
   }
 
-  get f(){
-    return this.userDetailForm.controls;
-}
+//   get f(){
+//     return this.userDetailForm.controls;
+// }
   saveData(): void{
   
     const user = new UserDetail(
