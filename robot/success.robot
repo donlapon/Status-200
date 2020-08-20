@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Resource    keyword.robot
 Suite Setup   0. Go to Allianz Insurance Website
 Test Template     Buy insurance package at Allianz Insurance website  
-Suite Teardown    14. Close browser chrome
+#Suite Teardown    14. Close browser chrome
 
 *** Test cases ***                                                                        ${title}    ${customer_firstname}    ${customer_lastname}    ${customer_phone}    ${customer_email}    ${id_card}        ${beneficially}    
 
