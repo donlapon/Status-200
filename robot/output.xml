@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200820 20:05:45.870" rpa="false">
-<suite id="s1" name="Success" source="C:\Users\tidanatkum\Documents\final\Status-200\robot\success.robot">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200820 23:17:20.774" rpa="false">
+<suite id="s1" name="Success" source="C:\Users\Krittinonphr\Documents\Status-200\robot\success.robot">
 <kw name="0. Go to Allianz Insurance website" library="keyword" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -8,21 +8,21 @@
 <arg>${URL}</arg>
 <arg>Chrome</arg>
 </arguments>
-<msg timestamp="20200820 20:05:46.466" level="INFO">Opening browser 'Chrome' to base url 'http://167.99.68.78'.</msg>
-<status status="PASS" starttime="20200820 20:05:46.464" endtime="20200820 20:05:56.213"></status>
+<msg timestamp="20200820 23:17:21.409" level="INFO">Opening browser 'Chrome' to base url 'http://167.99.68.78'.</msg>
+<status status="PASS" starttime="20200820 23:17:21.409" endtime="20200820 23:17:27.638"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200820 20:05:56.213" endtime="20200820 20:05:58.386"></status>
+<status status="PASS" starttime="20200820 23:17:27.639" endtime="20200820 23:17:29.798"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>0.5 seconds</arg>
+<arg>3 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:05:58.387" endtime="20200820 20:05:58.387"></status>
+<status status="PASS" starttime="20200820 23:17:29.798" endtime="20200820 23:17:29.800"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:05:46.464" endtime="20200820 20:05:58.387"></status>
+<status status="PASS" starttime="20200820 23:17:21.408" endtime="20200820 23:17:29.800"></status>
 </kw>
 <test id="s1-t1" name="1 traveller wants to buy insurance package A, 6 days for Switzerland trip">
 <kw name="Buy insurance package at Allianz Insurance website" library="keyword">
@@ -36,23 +36,30 @@
 <arg>Yaya Kumpuak</arg>
 </arguments>
 <kw name="1. Select country (Switzerland)" library="keyword">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>4 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200820 23:17:29.808" endtime="20200820 23:17:29.809"></status>
+</kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>id:CH</arg>
 </arguments>
-<msg timestamp="20200820 20:05:58.387" level="INFO">Clicking element 'id:CH'.</msg>
-<status status="PASS" starttime="20200820 20:05:58.387" endtime="20200820 20:05:59.635"></status>
+<msg timestamp="20200820 23:17:29.809" level="INFO">Clicking element 'id:CH'.</msg>
+<status status="PASS" starttime="20200820 23:17:29.809" endtime="20200820 23:17:38.049"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:05:58.387" endtime="20200820 20:05:59.635"></status>
+<status status="PASS" starttime="20200820 23:17:29.807" endtime="20200820 23:17:38.049"></status>
 </kw>
 <kw name="2. Scroll down and read package" library="keyword">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>0.5 seconds</arg>
+<arg>5 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:05:59.636" endtime="20200820 20:05:59.636"></status>
+<status status="PASS" starttime="20200820 23:17:38.052" endtime="20200820 23:17:38.052"></status>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
@@ -60,14 +67,14 @@
 <arg>none</arg>
 <arg>ALT+ARROW_DOWN</arg>
 </arguments>
-<msg timestamp="20200820 20:05:59.637" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
-<msg timestamp="20200820 20:05:59.637" level="INFO">Pressing special key ALT down.</msg>
-<msg timestamp="20200820 20:05:59.637" level="INFO">Pressing special key ARROW_DOWN down.</msg>
-<msg timestamp="20200820 20:05:59.637" level="INFO">Releasing special key ALT.</msg>
-<msg timestamp="20200820 20:05:59.637" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20200820 20:05:59.636" endtime="20200820 20:06:00.169"></status>
+<msg timestamp="20200820 23:17:38.054" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
+<msg timestamp="20200820 23:17:38.054" level="INFO">Pressing special key ALT down.</msg>
+<msg timestamp="20200820 23:17:38.055" level="INFO">Pressing special key ARROW_DOWN down.</msg>
+<msg timestamp="20200820 23:17:38.055" level="INFO">Releasing special key ALT.</msg>
+<msg timestamp="20200820 23:17:38.055" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20200820 23:17:38.053" endtime="20200820 23:17:43.099"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:05:59.635" endtime="20200820 20:06:00.169"></status>
+<status status="PASS" starttime="20200820 23:17:38.050" endtime="20200820 23:17:43.100"></status>
 </kw>
 <kw name="3. Select Start date (21/08/2020)" library="keyword">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -75,40 +82,40 @@
 <arguments>
 <arg>xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[1]/div/div[1]/div[2]/mat-datepicker-toggle/button</arg>
 </arguments>
-<msg timestamp="20200820 20:06:00.169" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[1]/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
-<status status="PASS" starttime="20200820 20:06:00.169" endtime="20200820 20:06:01.530"></status>
+<msg timestamp="20200820 23:17:43.103" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[1]/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
+<status status="PASS" starttime="20200820 23:17:43.102" endtime="20200820 23:17:53.543"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>0.5 seconds</arg>
+<arg>1 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:01.530" endtime="20200820 20:06:01.530"></status>
+<status status="PASS" starttime="20200820 23:17:53.544" endtime="20200820 23:17:53.545"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-0"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:01.530" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-0"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:01.530" endtime="20200820 20:06:02.840"></status>
+<msg timestamp="20200820 23:17:53.545" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-0"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:17:53.545" endtime="20200820 23:17:55.826"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>0.5 seconds</arg>
+<arg>1 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:02.840" endtime="20200820 20:06:02.841"></status>
+<status status="PASS" starttime="20200820 23:17:55.826" endtime="20200820 23:17:55.827"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[4]/td[6]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:02.843" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[4]/td[6]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:02.843" endtime="20200820 20:06:04.093"></status>
+<msg timestamp="20200820 23:17:55.828" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-0"]/div/mat-month-view/table/tbody/tr[4]/td[6]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:17:55.828" endtime="20200820 23:17:58.058"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:00.169" endtime="20200820 20:06:04.094"></status>
+<status status="PASS" starttime="20200820 23:17:43.101" endtime="20200820 23:17:58.059"></status>
 </kw>
 <kw name="4. Select End date (26/08/2020)" library="keyword">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -116,40 +123,40 @@
 <arguments>
 <arg>xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[2]/div/div[1]/div[2]/mat-datepicker-toggle/button</arg>
 </arguments>
-<msg timestamp="20200820 20:06:04.095" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[2]/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
-<status status="PASS" starttime="20200820 20:06:04.095" endtime="20200820 20:06:05.371"></status>
+<msg timestamp="20200820 23:17:58.062" level="INFO">Clicking element 'xpath=/html/body/app-root/app-country-package/div/div/div[1]/form/div/mat-form-field[2]/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
+<status status="PASS" starttime="20200820 23:17:58.061" endtime="20200820 23:18:00.328"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>0.5 seconds</arg>
+<arg>1 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:05.371" endtime="20200820 20:06:05.372"></status>
+<status status="PASS" starttime="20200820 23:18:00.328" endtime="20200820 23:18:00.329"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-1"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:05.372" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-1"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:05.372" endtime="20200820 20:06:06.661"></status>
+<msg timestamp="20200820 23:18:00.330" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-1"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:18:00.330" endtime="20200820 23:18:02.576"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>0.5 seconds</arg>
+<arg>1 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:06.661" endtime="20200820 20:06:06.661"></status>
+<status status="PASS" starttime="20200820 23:18:02.576" endtime="20200820 23:18:02.578"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-1"]/div/mat-month-view/table/tbody/tr[5]/td[4]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:06.661" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-1"]/div/mat-month-view/table/tbody/tr[5]/td[4]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:06.661" endtime="20200820 20:06:07.893"></status>
+<msg timestamp="20200820 23:18:02.578" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-1"]/div/mat-month-view/table/tbody/tr[5]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:18:02.578" endtime="20200820 23:18:04.822"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:04.094" endtime="20200820 20:06:07.893"></status>
+<status status="PASS" starttime="20200820 23:17:58.060" endtime="20200820 23:18:04.823"></status>
 </kw>
 <kw name="5. Click next button" library="keyword">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -157,10 +164,17 @@
 <arguments>
 <arg>id:btn_next</arg>
 </arguments>
-<msg timestamp="20200820 20:06:07.896" level="INFO">Clicking element 'id:btn_next'.</msg>
-<status status="PASS" starttime="20200820 20:06:07.896" endtime="20200820 20:06:09.287"></status>
+<msg timestamp="20200820 23:18:04.825" level="INFO">Clicking element 'id:btn_next'.</msg>
+<status status="PASS" starttime="20200820 23:18:04.824" endtime="20200820 23:18:07.173"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:07.893" endtime="20200820 20:06:09.288"></status>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>2 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20200820 23:18:07.173" endtime="20200820 23:18:07.174"></status>
+</kw>
+<status status="PASS" starttime="20200820 23:18:04.823" endtime="20200820 23:18:07.175"></status>
 </kw>
 <kw name="7. Input traveller information" library="keyword">
 <arguments>
@@ -178,12 +192,12 @@
 <arg>none</arg>
 <arg>ALT+ARROW_UP</arg>
 </arguments>
-<msg timestamp="20200820 20:06:09.293" level="INFO">Sending key(s) ('ALT+ARROW_UP',) to page.</msg>
-<msg timestamp="20200820 20:06:09.293" level="INFO">Pressing special key ALT down.</msg>
-<msg timestamp="20200820 20:06:09.293" level="INFO">Pressing special key ARROW_UP down.</msg>
-<msg timestamp="20200820 20:06:09.293" level="INFO">Releasing special key ALT.</msg>
-<msg timestamp="20200820 20:06:09.294" level="INFO">Releasing special key ARROW_UP.</msg>
-<status status="PASS" starttime="20200820 20:06:09.288" endtime="20200820 20:06:09.853"></status>
+<msg timestamp="20200820 23:18:07.180" level="INFO">Sending key(s) ('ALT+ARROW_UP',) to page.</msg>
+<msg timestamp="20200820 23:18:07.180" level="INFO">Pressing special key ALT down.</msg>
+<msg timestamp="20200820 23:18:07.180" level="INFO">Pressing special key ARROW_UP down.</msg>
+<msg timestamp="20200820 23:18:07.180" level="INFO">Releasing special key ALT.</msg>
+<msg timestamp="20200820 23:18:07.181" level="INFO">Releasing special key ARROW_UP.</msg>
+<status status="PASS" starttime="20200820 23:18:07.178" endtime="20200820 23:18:09.227"></status>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
@@ -191,44 +205,26 @@
 <arg>id:title</arg>
 <arg>${title}</arg>
 </arguments>
-<msg timestamp="20200820 20:06:09.853" level="INFO">Selecting options from selection list 'id:title' by value Ms.</msg>
-<status status="PASS" starttime="20200820 20:06:09.853" endtime="20200820 20:06:13.782"></status>
+<msg timestamp="20200820 23:18:09.228" level="INFO">Selecting options from selection list 'id:title' by value Ms.</msg>
+<status status="PASS" starttime="20200820 23:18:09.227" endtime="20200820 23:18:23.603"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[2]/input</arg>
+<arg>id:customer_firstname</arg>
 <arg>${customer_firstname}</arg>
 </arguments>
-<msg timestamp="20200820 20:06:13.782" level="INFO">Typing text 'Tidanat' into text field 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[2]/input'.</msg>
-<status status="PASS" starttime="20200820 20:06:13.782" endtime="20200820 20:06:15.772"></status>
+<msg timestamp="20200820 23:18:23.605" level="INFO">Typing text 'Tidanat' into text field 'id:customer_firstname'.</msg>
+<status status="PASS" starttime="20200820 23:18:23.604" endtime="20200820 23:18:30.066"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[3]/input</arg>
+<arg>id:customer_lastname</arg>
 <arg>${customer_lastname}</arg>
 </arguments>
-<msg timestamp="20200820 20:06:15.772" level="INFO">Typing text 'Kumpuak' into text field 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[1]/div/div[3]/input'.</msg>
-<status status="PASS" starttime="20200820 20:06:15.772" endtime="20200820 20:06:17.665"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:customer_phone</arg>
-<arg>${customer_phone}</arg>
-</arguments>
-<msg timestamp="20200820 20:06:17.667" level="INFO">Typing text '0955166862' into text field 'id:customer_phone'.</msg>
-<status status="PASS" starttime="20200820 20:06:17.666" endtime="20200820 20:06:19.627"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id:email</arg>
-<arg>${customer_email}</arg>
-</arguments>
-<msg timestamp="20200820 20:06:19.629" level="INFO">Typing text 'farz.fj@gmail.com' into text field 'id:email'.</msg>
-<status status="PASS" starttime="20200820 20:06:19.628" endtime="20200820 20:06:21.587"></status>
+<msg timestamp="20200820 23:18:30.068" level="INFO">Typing text 'Kumpuak' into text field 'id:customer_lastname'.</msg>
+<status status="PASS" starttime="20200820 23:18:30.067" endtime="20200820 23:18:36.511"></status>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
@@ -236,12 +232,12 @@
 <arg>none</arg>
 <arg>ALT+ARROW_DOWN</arg>
 </arguments>
-<msg timestamp="20200820 20:06:21.588" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
-<msg timestamp="20200820 20:06:21.588" level="INFO">Pressing special key ALT down.</msg>
-<msg timestamp="20200820 20:06:21.588" level="INFO">Pressing special key ARROW_DOWN down.</msg>
-<msg timestamp="20200820 20:06:21.588" level="INFO">Releasing special key ALT.</msg>
-<msg timestamp="20200820 20:06:21.588" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20200820 20:06:21.588" endtime="20200820 20:06:22.135"></status>
+<msg timestamp="20200820 23:18:36.512" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
+<msg timestamp="20200820 23:18:36.513" level="INFO">Pressing special key ALT down.</msg>
+<msg timestamp="20200820 23:18:36.513" level="INFO">Pressing special key ARROW_DOWN down.</msg>
+<msg timestamp="20200820 23:18:36.513" level="INFO">Releasing special key ALT.</msg>
+<msg timestamp="20200820 23:18:36.513" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20200820 23:18:36.512" endtime="20200820 23:18:38.548"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -249,8 +245,8 @@
 <arg>id:id_card</arg>
 <arg>${id_card}</arg>
 </arguments>
-<msg timestamp="20200820 20:06:22.136" level="INFO">Typing text '1234567899999' into text field 'id:id_card'.</msg>
-<status status="PASS" starttime="20200820 20:06:22.135" endtime="20200820 20:06:24.126"></status>
+<msg timestamp="20200820 23:18:38.550" level="INFO">Typing text '1234567899999' into text field 'id:id_card'.</msg>
+<status status="PASS" starttime="20200820 23:18:38.549" endtime="20200820 23:18:44.994"></status>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
@@ -258,95 +254,85 @@
 <arg>none</arg>
 <arg>ALT+ARROW_DOWN</arg>
 </arguments>
-<msg timestamp="20200820 20:06:24.126" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
-<msg timestamp="20200820 20:06:24.126" level="INFO">Pressing special key ALT down.</msg>
-<msg timestamp="20200820 20:06:24.126" level="INFO">Pressing special key ARROW_DOWN down.</msg>
-<msg timestamp="20200820 20:06:24.126" level="INFO">Releasing special key ALT.</msg>
-<msg timestamp="20200820 20:06:24.126" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20200820 20:06:24.126" endtime="20200820 20:06:24.685"></status>
+<msg timestamp="20200820 23:18:44.998" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
+<msg timestamp="20200820 23:18:44.998" level="INFO">Pressing special key ALT down.</msg>
+<msg timestamp="20200820 23:18:44.998" level="INFO">Pressing special key ARROW_DOWN down.</msg>
+<msg timestamp="20200820 23:18:44.998" level="INFO">Releasing special key ALT.</msg>
+<msg timestamp="20200820 23:18:44.999" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20200820 23:18:44.994" endtime="20200820 23:18:47.049"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[2]/div[1]/div[2]/mat-form-field/div/div[1]/div[2]/mat-datepicker-toggle/button</arg>
+<arg>xpath=/html/body/app-root/app-users-detail/div[2]/div/form/div[2]/div/div[2]/mat-form-field/div/div[1]/div[2]/mat-datepicker-toggle/button</arg>
 </arguments>
-<msg timestamp="20200820 20:06:24.687" level="INFO">Clicking element 'xpath=/html/body/app-root/app-users-detail/div/div[2]/div/form/div[2]/div[1]/div[2]/mat-form-field/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
-<status status="PASS" starttime="20200820 20:06:24.686" endtime="20200820 20:06:25.990"></status>
+<msg timestamp="20200820 23:18:47.050" level="INFO">Clicking element 'xpath=/html/body/app-root/app-users-detail/div[2]/div/form/div[2]/div/div[2]/mat-form-field/div/div[1]/div[2]/mat-datepicker-toggle/button'.</msg>
+<status status="PASS" starttime="20200820 23:18:47.049" endtime="20200820 23:18:51.318"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>0.5 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:25.990" endtime="20200820 20:06:25.990"></status>
+<status status="PASS" starttime="20200820 23:18:51.318" endtime="20200820 23:18:51.320"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-2"]/mat-calendar-header/div/div/button[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:25.990" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/mat-calendar-header/div/div/button[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:25.990" endtime="20200820 20:06:27.265"></status>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>0.5 seconds</arg>
-</arguments>
-<status status="PASS" starttime="20200820 20:06:27.266" endtime="20200820 20:06:27.267"></status>
+<msg timestamp="20200820 23:18:51.321" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/mat-calendar-header/div/div/button[1]'.</msg>
+<status status="PASS" starttime="20200820 23:18:51.320" endtime="20200820 23:18:52.602"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-2"]/mat-calendar-header/div/div/button[2]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:27.269" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/mat-calendar-header/div/div/button[2]'.</msg>
-<status status="PASS" starttime="20200820 20:06:27.268" endtime="20200820 20:06:28.577"></status>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>0.5 seconds</arg>
-</arguments>
-<status status="PASS" starttime="20200820 20:06:28.577" endtime="20200820 20:06:28.578"></status>
+<msg timestamp="20200820 23:18:52.604" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/mat-calendar-header/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20200820 23:18:52.603" endtime="20200820 23:18:53.891"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-2"]/div/mat-multi-year-view/table/tbody/tr[2]/td[2]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:28.580" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/div/mat-multi-year-view/table/tbody/tr[2]/td[2]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:28.579" endtime="20200820 20:06:29.847"></status>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>0.5 seconds</arg>
-</arguments>
-<status status="PASS" starttime="20200820 20:06:29.847" endtime="20200820 20:06:29.848"></status>
+<msg timestamp="20200820 23:18:53.892" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/div/mat-multi-year-view/table/tbody/tr[2]/td[2]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:18:53.891" endtime="20200820 23:18:55.128"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-2"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:29.848" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:29.848" endtime="20200820 20:06:31.126"></status>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>0.5 seconds</arg>
-</arguments>
-<status status="PASS" starttime="20200820 20:06:31.127" endtime="20200820 20:06:31.128"></status>
+<msg timestamp="20200820 23:18:55.129" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/div/mat-year-view/table/tbody/tr[3]/td[4]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:18:55.129" endtime="20200820 23:18:56.366"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="mat-datepicker-2"]/div/mat-month-view/table/tbody/tr[3]/td[3]/div[1]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:31.128" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/div/mat-month-view/table/tbody/tr[3]/td[3]/div[1]'.</msg>
-<status status="PASS" starttime="20200820 20:06:31.128" endtime="20200820 20:06:32.355"></status>
+<msg timestamp="20200820 23:18:56.368" level="INFO">Clicking element 'xpath=//*[@id="mat-datepicker-2"]/div/mat-month-view/table/tbody/tr[3]/td[3]/div[1]'.</msg>
+<status status="PASS" starttime="20200820 23:18:56.367" endtime="20200820 23:18:57.622"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${customer_email}</arg>
+</arguments>
+<msg timestamp="20200820 23:18:57.624" level="INFO">Typing text 'farz.fj@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20200820 23:18:57.623" endtime="20200820 23:18:59.616"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:customer_phone</arg>
+<arg>${customer_phone}</arg>
+</arguments>
+<msg timestamp="20200820 23:18:59.617" level="INFO">Typing text '0955166862' into text field 'id:customer_phone'.</msg>
+<status status="PASS" starttime="20200820 23:18:59.616" endtime="20200820 23:19:01.508"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -354,38 +340,46 @@
 <arg>id:beneficially</arg>
 <arg>${beneficially}</arg>
 </arguments>
-<msg timestamp="20200820 20:06:32.355" level="INFO">Typing text 'Yaya Kumpuak' into text field 'id:beneficially'.</msg>
-<status status="PASS" starttime="20200820 20:06:32.355" endtime="20200820 20:06:34.322"></status>
+<msg timestamp="20200820 23:19:01.510" level="INFO">Typing text 'Yaya Kumpuak' into text field 'id:beneficially'.</msg>
+<status status="PASS" starttime="20200820 23:19:01.509" endtime="20200820 23:19:03.470"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:09.288" endtime="20200820 20:06:34.322"></status>
+<status status="PASS" starttime="20200820 23:18:07.175" endtime="20200820 23:19:03.470"></status>
 </kw>
 <kw name="8. Click submit button" library="keyword">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>1 seconds</arg>
+<arg>4 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:34.323" endtime="20200820 20:06:34.325"></status>
+<status status="PASS" starttime="20200820 23:19:03.471" endtime="20200820 23:19:03.471"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>id:btn_save</arg>
 </arguments>
-<msg timestamp="20200820 20:06:34.325" level="INFO">Clicking element 'id:btn_save'.</msg>
-<status status="PASS" starttime="20200820 20:06:34.325" endtime="20200820 20:06:36.643"></status>
+<msg timestamp="20200820 23:19:03.472" level="INFO">Clicking element 'id:btn_save'.</msg>
+<status status="PASS" starttime="20200820 23:19:03.471" endtime="20200820 23:19:11.825"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:34.323" endtime="20200820 20:06:36.644"></status>
+<status status="PASS" starttime="20200820 23:19:03.470" endtime="20200820 23:19:11.825"></status>
 </kw>
 <kw name="10. Click payment button" library="keyword">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>1 seconds</arg>
+<arg>8 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:36.645" endtime="20200820 20:06:36.646"></status>
+<status status="PASS" starttime="20200820 23:19:11.827" endtime="20200820 23:19:11.828"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:36.644" endtime="20200820 20:06:36.646"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=/html/body/app-root/app-show-user-detail/div[2]/div/div[6]/div/div[2]/div[2]/button</arg>
+</arguments>
+<msg timestamp="20200820 23:19:11.829" level="INFO">Clicking element 'xpath=/html/body/app-root/app-show-user-detail/div[2]/div/div[6]/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20200820 23:19:11.829" endtime="20200820 23:19:28.080"></status>
+</kw>
+<status status="PASS" starttime="20200820 23:19:11.826" endtime="20200820 23:19:28.081"></status>
 </kw>
 <kw name="11. Read term &amp; agreement" library="keyword">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -393,27 +387,27 @@
 <arguments>
 <arg>Terms and Conditions</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:36.646" endtime="20200820 20:06:37.713"></status>
+<status status="PASS" starttime="20200820 23:19:28.083" endtime="20200820 23:19:36.155"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:36.646" endtime="20200820 20:06:37.713"></status>
+<status status="PASS" starttime="20200820 23:19:28.082" endtime="20200820 23:19:36.155"></status>
 </kw>
 <kw name="12. Click I accept term &amp; agreement button" library="keyword">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>1 seconds</arg>
+<arg>5 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:37.714" endtime="20200820 20:06:37.715"></status>
+<status status="PASS" starttime="20200820 23:19:36.156" endtime="20200820 23:19:36.157"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="btn_accept"]</arg>
 </arguments>
-<msg timestamp="20200820 20:06:37.715" level="INFO">Clicking element 'xpath=//*[@id="btn_accept"]'.</msg>
-<status status="PASS" starttime="20200820 20:06:37.715" endtime="20200820 20:06:39.988"></status>
+<msg timestamp="20200820 23:19:36.158" level="INFO">Clicking element 'xpath=//*[@id="btn_accept"]'.</msg>
+<status status="PASS" starttime="20200820 23:19:36.157" endtime="20200820 23:19:46.469"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:37.713" endtime="20200820 20:06:39.989"></status>
+<status status="PASS" starttime="20200820 23:19:36.156" endtime="20200820 23:19:46.470"></status>
 </kw>
 <kw name="13. Wait until page contains payment information" library="keyword">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -421,7 +415,7 @@
 <arguments>
 <arg>Allianz Bank</arg>
 </arguments>
-<status status="PASS" starttime="20200820 20:06:39.989" endtime="20200820 20:06:41.062"></status>
+<status status="PASS" starttime="20200820 23:19:46.474" endtime="20200820 23:19:51.545"></status>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
@@ -429,20 +423,20 @@
 <arg>none</arg>
 <arg>ALT+ARROW_DOWN</arg>
 </arguments>
-<msg timestamp="20200820 20:06:41.066" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
-<msg timestamp="20200820 20:06:41.066" level="INFO">Pressing special key ALT down.</msg>
-<msg timestamp="20200820 20:06:41.066" level="INFO">Pressing special key ARROW_DOWN down.</msg>
-<msg timestamp="20200820 20:06:41.066" level="INFO">Releasing special key ALT.</msg>
-<msg timestamp="20200820 20:06:41.066" level="INFO">Releasing special key ARROW_DOWN.</msg>
-<status status="PASS" starttime="20200820 20:06:41.063" endtime="20200820 20:06:42.101"></status>
+<msg timestamp="20200820 23:19:51.546" level="INFO">Sending key(s) ('ALT+ARROW_DOWN',) to page.</msg>
+<msg timestamp="20200820 23:19:51.547" level="INFO">Pressing special key ALT down.</msg>
+<msg timestamp="20200820 23:19:51.547" level="INFO">Pressing special key ARROW_DOWN down.</msg>
+<msg timestamp="20200820 23:19:51.547" level="INFO">Releasing special key ALT.</msg>
+<msg timestamp="20200820 23:19:51.547" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20200820 23:19:51.545" endtime="20200820 23:19:56.572"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:06:39.989" endtime="20200820 20:06:42.102"></status>
+<status status="PASS" starttime="20200820 23:19:46.471" endtime="20200820 23:19:56.573"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:05:58.387" endtime="20200820 20:06:42.102"></status>
+<status status="PASS" starttime="20200820 23:17:29.804" endtime="20200820 23:19:56.573"></status>
 </kw>
-<status status="PASS" starttime="20200820 20:05:58.387" endtime="20200820 20:06:42.104" critical="yes"></status>
+<status status="PASS" starttime="20200820 23:17:29.801" endtime="20200820 23:19:56.577" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200820 20:05:45.877" endtime="20200820 20:06:42.110"></status>
+<status status="PASS" starttime="20200820 23:17:20.783" endtime="20200820 23:19:56.595"></status>
 </suite>
 <statistics>
 <total>
