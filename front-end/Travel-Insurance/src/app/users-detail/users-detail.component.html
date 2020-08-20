@@ -1,17 +1,27 @@
 <div class="container">
   <!-- Card price of premium insurance -->
-  <div class="d-flex flex-row top">
+  <div class="d-flex flex-row">
     <div
-      class="card text-white mb-5 center"
+      class="card text-white mb-1 center"
       style="background-color: rgb(36, 71, 145); width: 63%;"
     >
       <div class="card-body">
         <p class="card-text alignleft">Premium Insurance</p>
-        <p class="card-text alignright">357.00 THB</p>
+        <p class="card-text alignright">{{ dateDetailValue?.totalPrice }}</p>
+        <br />
+        <p class="card-text alignright">Day: {{ dateDetailValue?.duration }}</p>
+        <br />
+        <p class="card-text alignright">
+          End: {{ dateDetailValue?.arrivalDate }}
+        </p>
+        <br />
+        <p class="card-text alignright">
+          Start: {{ dateDetailValue?.departureDate }}
+        </p>
         <br />
         <div style="clear: both;"></div>
 
-        <p class="card-text1 alignleft">(Switzerland)</p>
+        <p class="card-text alignleft">Switzerland</p>
         <p class="card-text1 alignright">Per Person</p>
       </div>
     </div>
@@ -29,51 +39,60 @@
       <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
         <div class="col">
           <div class="form-row">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
               <label>Title</label>
-              <select class="form-control">
-                <option value="Miss">Miss</option>
-                <option value="Mrs">Mrs.</option>
-                <option value="Mr">Mr.</option>
+              <select class="form-control" id="title" formControlName="title">
+                <option value="Ms" id="ms">Ms.</option>
+                <option value="Mrs" id="mrs">Mrs.</option>
+                <option value="Mr" id="mr">Mr.</option>
               </select>
             </div>
+
             <div class="form-group col-md-5">
-              <label>Firstname</label>
+              <label>First name</label>
               <input
+                id="customer_firstname"
                 type="text"
                 class="form-control"
                 id=""
-                placeholder="Firstname"
+                placeholder="First name"
+                formControlName="firstName"
               />
             </div>
             <div class="form-group col-md-5">
-              <label>Lastname</label>
+              <label>Last name</label>
               <input
                 type="text"
                 class="form-control"
-                id=""
-                placeholder="Lastname"
+                id="customer_lastname"
+                placeholder="Last name"
+                formControlName="lastName"
               />
             </div>
           </div>
         </div>
         <div class="col">
           <div class="form-row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-6">
               <label> Citzen ID:</label>
               <input
                 type="text"
                 class="form-control"
-                id=""
+                id="id_card"
                 placeholder="CitzenID 13 digits"
+                formControlName="citizenId"
               />
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-5" style="padding-left: 10%;">
               <label>Date of birth</label>
               <!-- <br /> -->
               <mat-form-field>
                 <!-- <mat-label>Birth date</mat-label> -->
-                <input matInput [matDatepicker]="picker1" [formControl]="" />
+                <input
+                  matInput
+                  [matDatepicker]="picker1"
+                  formControlName="dateOfBirth"
+                />
                 <mat-datepicker-toggle
                   matSuffix
                   [for]="picker1"
@@ -82,42 +101,48 @@
               </mat-form-field>
             </div>
           </div>
-        </div>
 
-        <div class="form-group col-md-12">
-          <label> Beneficially</label>
-          <input
-            type="text"
-            class="form-control"
-            id=""
-            placeholder="Beneficially"
-          />
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label> Beneficially</label>
+              <input
+                formControlName="beneficially"
+                type="text"
+                class="form-control"
+                id="beneficially"
+                placeholder="Beneficially"
+              />
+            </div>
+          </div>
         </div>
 
         <div class="col">
           <div class="row">
-            <div class="form-group col-md-4">
-              <label for="inputState">Quantity</label>
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option value="1">1</option>
-                <option value="1">2</option>
-                <option value="1">3</option>
-              </select>
-            </div>
-            <div class="col align-self-center">
+            <div class="form-group col-md-4"></div>
+            <div
+              class="col align-self-center"
+              style="padding-left: 8%; padding-top: 15px; padding-bottom: 30px;"
+            >
               <button
-                [routerLink]="'/showuserdetail'"
+                id="btn_save"
+                (ngSubmit)="saveData()"
                 type="submit"
                 class="btn btn-primary"
               >
-                Submit
+                Save
               </button>
+              <!-- <button (ngSubmit) = "saveData()">
+                saveData
+              </button> -->
             </div>
           </div>
         </div>
+        <!-- </form> -->
+        <!-- Close Header traveller -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
       </form>
-      <!-- Close Header traveller -->
     </div>
   </div>
 </div>

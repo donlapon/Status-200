@@ -7,7 +7,7 @@ export class UserDetail {
     dateOfBirth: string;
     beneficially: string;
     numberOfTraveller: number;
-
+    email: string;
     constructor(
         title: string,
         firstName: string,
@@ -15,13 +15,13 @@ export class UserDetail {
         citizenId: string,
         dateOfBirth: string,
         beneficially: string,
-        numberOfTraveller: number ){
-            this.title = title;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.citizenId = citizenId;
-            this.dateOfBirth = dateOfBirth;
-            this.beneficially = beneficially;
-            this.numberOfTraveller = numberOfTraveller;
+        email: string) {
+        this.title = title;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.citizenId = citizenId;
+        this.dateOfBirth = dateOfBirth;
+        this.beneficially = beneficially;
+        this.email = email;
     }
 }

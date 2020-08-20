@@ -1,17 +1,16 @@
 <div class="container">
   <!-- Card price of premium insurance -->
   <div class="d-flex flex-row top">
-    <div
-      class="card text-white mb-5 center"
-      style="background-color: rgb(36, 71, 145); width: 63%;"
-    >
+    <div class="card text-white mb-1 center" style="background-color: rgb(36, 71, 145); width: 63%;">
       <div class="card-body">
         <p class="card-text alignleft">Premium Insurance</p>
-        <p class="card-text alignright">357.00 THB</p>
+        <p class="card-text alignright">End {{users.dateDetailValue?.arrivalDate}}</p>
+        <p class="card-text alignright">Start {{users.dateDetailValue?.departureDate}}</p>
+
         <br />
         <div style="clear: both;"></div>
 
-        <p class="card-text1 alignleft">(Switzerland)</p>
+        <h3 class="card-text1 alignleft">Switzerland</h3>
         <p class="card-text1 alignright">Per Person</p>
       </div>
     </div>
@@ -22,57 +21,53 @@
     <div class="card color">
       <div class="card-header mb-3" style="background-color: rgb(36, 71, 145);">
         <p class="center1 card-text" style="color: white; text-align: center;">
-          Traveller
+          Detail of traveller
         </p>
       </div>
-      <!-- Test -->
-      <form>
-        <div class="col">
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <label>Title</label>
-            </div>
-            <div class="form-group col-md-5">
-              <label>Firstname</label>
-            </div>
-            <div class="form-group col-md-5">
-              <label>Lastname</label>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-row">
-            <div class="form-group col-md-8">
-              <label>Citizen ID :</label>
-            </div>
-            <div class="form-group col-md-2">
-              <label>Date of birth</label>
-            </div>
-          </div>
-        </div>
+      <!-- Detail user for show  -->
+      <div class="col s">
+        <!-- <img src="/assets/pngfuel.com.png" /> -->
+        <span class="topic pad-left-30">Full name: </span>
+        <span class="text-of-topic" style="padding-left: 5%;">
+          {{ users.title }}
+        </span>
+        <span class="pad-left-10 text-of-topic"> {{ users.firstName }}</span>
+        <span class="text-of-topic pad-left-10">{{ users.lastName }} </span>
 
-        <div class="form-group col-md-12">
-          <label> Beneficially</label>
+        <div class="col top3">
+          <span class="topic" style="padding-left: 24%;">Citizen ID: </span>
+          <span class="text-of-topic" style="padding-left: 5%;">
+            {{ users.citizenId }}</span>
         </div>
+        <div class="col top3">
+          <span class="topic" style="padding-left: 24%;">Date of birth: </span>
+          <span class="text-of-topic" style="padding-left: 5%;">
+            {{ users.dateOfBirth }}</span>
+        </div>
+      </div>
 
-        <div class="col">
-          <div class="row">
-            <div class="form-group col-md-4">
-              <label>Quantity</label>
-            </div>
-            <div class="col align-self-center">
-              <button
-                [routerLink]="'/transactiondetail'"
-                type="payment"
-                class="btn btn-primary"
-              >
-                Payment
-              </button>
-            </div>
+      <div class="col top3">
+        <span class="topic" style="padding-left: 25%;"> Beneficially: </span>
+        <span class="text-of-topic" style="padding-left: 5%;">
+          {{ users.beneficially }}</span>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col center1" style="padding-left: 8%; padding-top: 35px; padding-bottom: 30px;">
+            <!-- <button (click)="onSave()" [routerLink]="'/termsandconditions'" type="payment" class="btn btn-primary"> -->
+          <div clas   s="col-md-4"></div>
+          <div
+            class="col center1"
+            style="padding-left: 8%; padding-top: 35px; padding-bottom: 30px;"
+          >
+            <button
+              (click)="onSave()"
+              [routerLink]="'/termsandconditions'"
+              type="payment"
+              class="btn btn-primary"
+            >
+              Payment
+            </button>
           </div>
-        </div>
-      </form>
-      <!-- Close Header traveller -->
-    </div>
-  </div>
-</div>
