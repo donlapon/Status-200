@@ -59,7 +59,7 @@ public class InsuredInfoController {
     }
 
     @CrossOrigin
-    @GetMapping("/v1/insuredInfo/{insuranceNumber}")
+    @GetMapping("/v1/insuredInfo/insuranceNumber/{insuranceNumber}")
     public InsuredInfo getInsuredInfoByInsuranceNumber(@PathVariable String insuranceNumber) {
         InsuredInfo insuredInfo =
                 insuredInfoRepository.findInsuranceInfoByInsuranceNumber(insuranceNumber);
@@ -67,7 +67,7 @@ public class InsuredInfoController {
     }
 
     @CrossOrigin
-    @GetMapping("/v1/insuredInfo/{idNumber}")
+    @GetMapping("/v1/insuredInfo/idNumber/{idNumber}")
     public InsuredInfo getInsuredInfoByIdNumber(@PathVariable String idNumber) {
         InsuredInfo insuredInfo = insuredInfoRepository.findInsuranceInfoByIdNumber(idNumber);
         return insuredInfo;
