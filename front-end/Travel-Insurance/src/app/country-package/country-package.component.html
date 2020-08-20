@@ -10,7 +10,7 @@
       
           <mat-card-header class="headCountry ">
           </mat-card-header>
-          <span class="matCountry d-flex flex  align-items-center " id="country_name" (click)="packageDetail(i.countryCode,k,i.status) ">
+          <span class="matCountry d-flex flex  align-items-center " [id]="i.countryCode" (click)="packageDetail(i.countryCode,k,i.status) ">
             {{i.countryName}} <img class="ml-5 " style="height: 30px; " [src]="i.imgUrl" alt="">
           </span>
         </mat-card>
@@ -29,7 +29,7 @@
 
           <mat-form-field class=" enddate ml-3"  *ngIf="f.startDate.dirty">
             <input matInput [min]="f.startDate.value" [max]="maxDate" formControlName="endDate" [formControl]=""
-              [matDatepicker]="picker2" placeholder="Arrival date" >
+              [matDatepicker]="picker2" placeholder="Return date" >
             <mat-datepicker-toggle matSuffix [for]="picker2" id="start_date"></mat-datepicker-toggle>
             <mat-datepicker #picker2 startView="year" [startAt]="minDate"></mat-datepicker>
             <!-- <small *ngIf="date.hasError('notValid')">Not valid</small> -->
@@ -57,10 +57,10 @@
         <thead>
           <tr>
             <th>
-              Benifits
+              Benefits
             </th>
             <th>
-              Price(THB)
+              Price (THB)
             </th>
           </tr>
         </thead>

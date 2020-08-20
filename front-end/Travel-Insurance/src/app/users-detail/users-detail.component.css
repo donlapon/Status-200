@@ -7,6 +7,11 @@
   /* padding: 10px; */
   /* background-color: rgb(36, 71, 145); */
 }
+.StartDayEnd{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
 .top1 {
   padding-top: 15px;
 }
