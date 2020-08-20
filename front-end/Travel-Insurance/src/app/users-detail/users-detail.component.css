@@ -10,24 +10,37 @@
 .StartDayEnd{
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  /* justify-content: end; */
+  align-items: flex-end;
+  font-size: 17px;
+  /* font-weight: 200; */
+}
+.StartDayEnd span{
+  margin: 8px 0px;
+  font-size: 17px;
 }
 .top1 {
   padding-top: 15px;
 }
 .card-text {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 17px;
+  margin: 8px 0px;
+  /* font-weight: 400; */
 }
 .card-text1 {
+  margin: 8px 0px;
   font-size: 17px;
-  font-weight: 200;
+  /* font-weight: 200; */
 }
 .alignleft {
   float: left;
 }
 .alignright {
   float: right;
+}
+.aligncenter {
+  float: left;
+  text-align: center;
 }
 .center1 {
   margin: auto;

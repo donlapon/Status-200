@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+// import { Location } from '@angular/common';
 @Component({
   selector: 'app-terms-and-conditions',
   templateUrl: './terms-and-conditions.component.html',
@@ -7,12 +7,12 @@ import { Location } from '@angular/common';
 })
 export class TermsAndConditionsComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
   back(){
-    this.location.back();
+    // this.location.back();
   }
 }
