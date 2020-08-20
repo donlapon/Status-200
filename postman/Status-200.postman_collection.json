@@ -65,7 +65,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d5fe07ac-4d40-4724-8916-10f5fc060ae6",
+						"id": "36beedf5-caaa-4d07-8309-7b90a5ad2f38",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -220,7 +220,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "[\r\n    {\r\n    \"destinationCountry\": \"CH\",\r\n    \"packageName\": \"string\",\r\n    \"departureDate\": \"2020-08-24\",\r\n    \"arrivalDate\": \"2020-08-30\",\r\n    \"duration\": 0,\r\n    \"totalPrice\": 0,\r\n    \"idNumber\": \"string\",\r\n    \"titleName\": \"string\",\r\n    \"firstname\": \"string\",\r\n    \"lastname\": \"string\",\r\n    \"dateOfBirth\": \"2020-08-19\",\r\n    \"beneficiaryName\": \"string\",\r\n    \"phoneNumber\": \"string\",\r\n    \"email\": \"string\"\r\n  }\r\n]",
+					"raw": "[\r\n    {\r\n    \"destinationCountry\": \"CH\",\r\n    \"packageName\": \"A\",\r\n    \"departureDate\": \"2020-08-24\",\r\n    \"arrivalDate\": \"2020-08-30\",\r\n    \"duration\": 7,\r\n    \"totalPrice\": 400,\r\n    \"idNumber\": \"1234567890AA\",\r\n    \"titleName\": \"Ms\",\r\n    \"firstname\": \"Selena\",\r\n    \"lastname\": \"Loose\",\r\n    \"dateOfBirth\": \"2020-08-19\",\r\n    \"beneficiaryName\": \"Helena Loose\",\r\n    \"phoneNumber\": \"0234765789\",\r\n    \"email\": \"selena@gmail.com\"\r\n  }\r\n]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -256,7 +256,24 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							"\r",
+							"pm.test(\"Check countryCode from Package equal CH\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.countryCode).to.eql(\"CH\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check package_name from insurancePackageList at zero index equal A\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.insurancePackageList[0].package_name).to.eql(\"A\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check all package details have 13\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.insurancePackageList[0].package_detail.length).to.eql(13);\r",
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -301,7 +318,13 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain currentDate\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"currentDate\");\r",
+							"});\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -345,6 +368,18 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain departureDate\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"departureDate\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain arrivalDate\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"arrivalDate\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain duration\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"duration\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -389,6 +424,18 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain departureDate\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"departureDate\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain arrivalDate\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"arrivalDate\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contain duration\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"duration\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -418,6 +465,129 @@
 							"key": "departure_date",
 							"value": "2020-09-19"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetInsuredInfoByInsuranceNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ba15fba-5f62-4be3-9300-f52a2cfef6c8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response include ALV-1597892161637\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"ALV-1597892161637\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json()\r",
+							"pm.test(\"Check beneficiaryName equal = \" + (jsonData.beneficiaryName), function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.beneficiaryName).to.eql(\"Selena\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check destinationCountry equal = \" + (jsonData.destinationCountry), function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.destinationCountry).to.eql(\"CH\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://167.99.70.167:8080/api/v1/insuredInfo/insuranceNumber/:insuranceNumber",
+					"protocol": "http",
+					"host": [
+						"167",
+						"99",
+						"70",
+						"167"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"insuredInfo",
+						"insuranceNumber",
+						":insuranceNumber"
+					],
+					"variable": [
+						{
+							"key": "insuranceNumber",
+							"value": "ALV-1597892161637"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostConfirmPayment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5991a7ae-25d7-4bb7-b8d2-d9663ee7911a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check insuranceNumberList at zero index is 2020-08-24\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.insuranceNumberList[0]).to.eql(\"ALV-1597892161637\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check bankName equal Allianz Bank'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.bankName).to.eql(\"Allianz Bank\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response include refId\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"refId\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bankName\": \"Allianz Bank\",\r\n  \"accountNumber\": \"1234567890\",\r\n  \"amount\": 440,\r\n  \"note\": \"insurance travel\",\r\n  \"insuranceNumberList\": [\r\n    \"ALV-1597892161637\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://167.99.70.167:8080/api/v1/confirmPayment",
+					"protocol": "http",
+					"host": [
+						"167",
+						"99",
+						"70",
+						"167"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"confirmPayment"
 					]
 				}
 			},
