@@ -17,9 +17,9 @@ export class ShowUserDetailComponent implements OnInit {
   ngOnInit(): void {
     // console.log(history.state);
     this.users = history.state;
-    console.log('this.users value', this.users);
-    console.log('this.users.title value', this.users.title);
-    
+    // console.log('this.users value', this.users);
+    // console.log('this.users.title value', this.users.title);
+
   }
 
   onSave(): void{
