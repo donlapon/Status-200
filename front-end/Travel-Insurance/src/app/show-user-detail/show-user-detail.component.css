@@ -4,7 +4,7 @@
 .center {
   margin: auto;
   /* width: 50%; */
-  padding: 10px;
+
   /* background-color: rgb(36, 71, 145); */
 }
 .top1 {
@@ -39,4 +39,20 @@
 }
 .down {
   padding-bottom: 15px;
+}
+.topic {
+  font-size: 17px;
+  font-weight: 450;
+  text-align: center;
+}
+.text-of-topic {
+  color: rgb(36, 71, 145);
+  font-size: 17px;
+}
+.pad-left-10 {
+  padding-left: 10px;
+}
+
+.pad-left-30 {
+  padding-left: 25%;
 }
