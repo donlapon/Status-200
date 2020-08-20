@@ -27,46 +27,28 @@ export class UsersDetailComponent implements OnInit {
               private dateService: DateService
               ) { }
 
-    
   private customerDate: DateTime;
   ngOnInit(): void {
 
-      this.customerDate  =  this.dateService.dateTime;
+    this.customerDate  =  this.dateService.dateTime;
     this.userDetailForm = this.formBuilder.group({
-      title: ['', Validators.requiredTrue],
+      beneficially: ['', Validators.requiredTrue],
+      dateOfBirth: ['', Validators.requiredTrue],
+      email: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],
       lastName: ['', Validators.requiredTrue],
-      citizenId: ['', Validators.requiredTrue],
-      dateOfBirth: ['', Validators.requiredTrue],
-      beneficially: ['', Validators.requiredTrue],
-      numberOfTraveller: ['', Validators.requiredTrue]
+      idNumber: ['', Validators.requiredTrue],
+      phoneNumber: ['', Validators.requiredTrue],
+      title: ['', Validators.requiredTrue]
     });
 
-      this.callDateDetail();
-      // this.setName();
+    this.callDateDetail();
   }
 
   get f(){
     return this.userDetailForm.controls;
 }
-  // saveData(): void{
-  
-  //   const user = new UserDetail(
-  //                               this.f.title.value,
-  //                               this.f.firstName.value,
-  //                               this.f.lastName.value,
-  //                               this.f.citizenId.value,
-  //                               this.f.dateOfBirth.value,
-  //                               this.f.beneficially.value,
-  //                               this.f.numberOfTraveller.value,
-  //                               );
-  //   // this.userDetail.postUserDetail(user).subscribe(users => {
-  //   //   console.log('USER', users);
 
-  //   // });
-  //   console.log(user);
-
-  //   this.userDetail.getUserDetail(user);
   callDateDetail(): void{
     this.dateValue = history.state;
 

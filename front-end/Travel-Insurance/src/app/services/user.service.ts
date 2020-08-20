@@ -19,21 +19,23 @@ export class UserService {
     console.log('insuredInfo', insuredInfo);
 
     const dateOfBirth = '2020-08-19';
-    const user = new InsuredInfo('destinationCountry',
-      'packageName',
-      '2020-08-18',
-      '2020-08-18',
-      0,
-      0,
-      insuredInfo.citizenId,
-      insuredInfo.firstName,
-      insuredInfo.title,
-      insuredInfo.lastName,
+    const user = new InsuredInfo({...insuredInfo})
 
-      dateOfBirth,
-      insuredInfo.beneficially,
-      '',
-      insuredInfo.email);
+    // const user = new InsuredInfo({'destinationCountry',
+    //   'packageName',
+    //   '2020-08-18',
+    //   '2020-08-18',
+    //   0,
+    //   0,
+    //   insuredInfo.citizenId,
+    //   insuredInfo.firstName,
+    //   insuredInfo.title,
+    //   insuredInfo.lastName,
+
+    //   dateOfBirth,
+    //   insuredInfo.beneficially,
+    //   '',
+    //   insuredInfo.email);
     console.log('ddd', user);
     return this.http.post<InsuredInfo[]>('http://167.99.70.167:8080/api/v1/insuredInfo', [user]);
 
