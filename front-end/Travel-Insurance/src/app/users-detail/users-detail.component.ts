@@ -84,6 +84,7 @@ export class UsersDetailComponent implements OnInit {
     console.log(this.dateDetailValue);
 
     this.user = this.userDetailForm.getRawValue();
+    this.user.dateDetailValue = this.dateDetailValue;
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
 
   }

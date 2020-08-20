@@ -15,11 +15,16 @@ export class ShowUserDetailComponent implements OnInit {
   ngOnInit(): void {
     // console.log(history.state);
     this.users = history.state;
+    console.log('user', this.users);
     // console.log('this.users value', this.users);
     // console.log('this.users.title value', this.users.title);
 
   }
 
-
+  onSave(): void{
+    this.userService.sendInsuredInfo(this.users).subscribe(users => {
+      console.log('USER', users);
+    });
+  }
 
 }
