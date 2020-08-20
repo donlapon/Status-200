@@ -62,10 +62,10 @@ export class UsersDetailComponent implements OnInit {
   //                               );
   //   // this.userDetail.postUserDetail(user).subscribe(users => {
   //   //   console.log('USER', users);
-     
+
   //   // });
   //   console.log(user);
-    
+
   //   this.userDetail.getUserDetail(user);
   callDateDetail(): void{
     this.dateValue = history.state;
@@ -85,6 +85,8 @@ export class UsersDetailComponent implements OnInit {
 
     this.user = this.userDetailForm.getRawValue();
     this.user.dateDetailValue = this.dateDetailValue;
+    console.log('user to go', this.user);
+
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
 
   }
