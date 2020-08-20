@@ -4,7 +4,9 @@
     <div class="card text-white mb-1 center" style="background-color: rgb(36, 71, 145); width: 63%;">
       <div class="card-body">
         <p class="card-text alignleft">Premium Insurance</p>
-        <p class="card-text alignright">357.00 THB</p>
+        <p class="card-text alignright">End {{users.dateDetailValue?.arrivalDate}}</p>
+        <p class="card-text alignright">Start {{users.dateDetailValue?.departureDate}}</p>
+
         <br />
         <div style="clear: both;"></div>
 
@@ -54,14 +56,18 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="col center1" style="padding-left: 8%; padding-top: 35px; padding-bottom: 30px;">
-            <button (click)="onSave()" [routerLink]="'/termsandconditions'" type="payment" class="btn btn-primary" id="btn_payment">
+            <!-- <button (click)="onSave()" [routerLink]="'/termsandconditions'" type="payment" class="btn btn-primary"> -->
+          <div clas   s="col-md-4"></div>
+          <div
+            class="col center1"
+            style="padding-left: 8%; padding-top: 35px; padding-bottom: 30px;"
+          >
+            <button
+              (click)="onSave()"
+              [routerLink]="'/termsandconditions'"
+              type="payment"
+              class="btn btn-primary"
+            >
               Payment
             </button>
           </div>
-        </div>
-      </div>
-
-      <div></div>
-    </div>
-  </div>
-</div>
