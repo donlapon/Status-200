@@ -72,7 +72,7 @@ console.log('this.dateValue', this.dateValue);
     this.user.countryName = this.customerDate.countryName;
     this.user.packageName = this.customerDate.packageName;
     
-    console.log('user to go', this.user.dateOfBirth);
+    // console.log('user to go', this.user);
 
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
 
