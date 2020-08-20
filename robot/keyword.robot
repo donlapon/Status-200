@@ -44,13 +44,13 @@ Buy insurance package at Allianz Insurance website
     Wait Until Page Contains    357.00
 7. Input traveller information
     [Arguments]    ${title}    ${customer_firstname}    ${customer_lastname}    ${id_card}    ${birth_date}    ${beneficially}    ${numperson}    
-    Select Radio Button    title    ${title}
+    Select Radio Button    id:title    ${title}
     Input Text    id:customer_firstname    ${customer_firstname}
     Input Text    id:customer_lastname    ${customer_lastname}
     Input Text    id:id_card    ${id_card}
     #select date !!! id:birth_date    ${birth_date}
     Input Text    id:beneficially   ${beneficially}
-    Select Radio Button    numperson    ${numperson}
+    
    
 8. Click submit button
     Click Element    id:btn_next
@@ -64,7 +64,7 @@ Buy insurance package at Allianz Insurance website
 11. Read term & agreement
     Wait Until Page Contains    Term & Agreement 
 12. Click I accept term & agreement button
-    Click Element    id:btn_term&agreement
+    Click Element    id:btn_accept
 13. Wait until page contains payment information
     Wait Until Page Contains    payment information
 14. Close browser chrome
