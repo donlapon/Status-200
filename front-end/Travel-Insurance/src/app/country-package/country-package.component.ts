@@ -16,11 +16,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CountryPackageComponent implements OnInit {
   status: boolean;
-  cardStatus: boolean;
-  count: Number;
+  // cardStatus: boolean;
+  // count: Number;
   date: FormGroup;
   cap: Country[] = [];
-  ht: Object;
+  // ht: Object;
   customerDate: DateTime;
   // dataSource = new MatTableDataSource<Product>();
   minDate: Date;
@@ -30,7 +30,7 @@ export class CountryPackageComponent implements OnInit {
   selectedPackageList: Packagedetail[];
   selectedPackage: InsurancePackageList[];
   pk: Package[] = [];
-  pack: string[] = ["Ergonomic Metal Tuna", "Gorgeous Soft Bacon", "Toys"]
+  // pack: string[] = ["Ergonomic Metal Tuna", "Gorgeous Soft Bacon", "Toys"]
   constructor(private fb: FormBuilder,
               private country: CountryService,
               // private dateInject: DateService,

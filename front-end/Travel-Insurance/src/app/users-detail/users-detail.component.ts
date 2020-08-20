@@ -62,23 +62,16 @@ export class UsersDetailComponent implements OnInit {
       // console.log(date);
       this.dateDetailValue = date;
       console.log(this.dateDetailValue.totalPrice);
-      return date;
+      // this.saveData();
     });
 
   }
   saveData(): void{
+    console.log(this.dateDetailValue);
+
     this.user = this.userDetailForm.getRawValue();
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
-    const fName = this.user.firstName + '' + this.user.lastName;
-    this.userFullName = fName;
-    // console.log('full', this.userFullName);
-    // this.router.navigateByUrl('/transactiondetail', { state: this.userFullName } );
-  }
 
-  // setName(): void{
-  //   this.user = this.userDetailForm.getRawValue();
-  //   const fullName = this.user.firstName + this.user.lastName;
-  //   console.log('fullname', fullName);
-  // }
+  }
 
 }
