@@ -7,7 +7,7 @@
   /* padding: 10px; */
   /* background-color: rgb(36, 71, 145); */
 }
-.StartDayEnd{
+.StartDayEnd {
   display: flex;
   flex-direction: column;
   /* justify-content: end; */
@@ -15,22 +15,19 @@
   font-size: 17px;
   /* font-weight: 200; */
 }
-.StartDayEnd span{
-  margin: 8px 0px;
-  font-size: 17px;
-}
+
 .top1 {
   padding-top: 15px;
 }
 .card-text {
   font-size: 17px;
   margin: 8px 0px;
-  /* font-weight: 400; */
+  font-weight: 400;
 }
 .card-text1 {
   margin: 8px 0px;
   font-size: 17px;
-  /* font-weight: 200; */
+  font-weight: 200;
 }
 .alignleft {
   float: left;

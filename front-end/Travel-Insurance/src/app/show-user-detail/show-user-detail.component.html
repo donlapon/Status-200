@@ -34,78 +34,78 @@
 
 <!-- Form user detail -->
 
-<div class="col top3">
-  <span class="topic" style="padding-left: 24%;">Citizen ID: </span>
-  <span class="text-of-topic" style="padding-left: 5%;">
-    {{ users.idNumber }}</span
-  >
-</div>
-<!-- <div class="col top3">
-  <span class="topic" style="padding-left: 24%;">Date of birth: </span>
-  <span class="text-of-topic" style="padding-left: 5%;">
-    {{ dateofusers }}</span
-  >
-</div> -->
+<div class="col-lg-8 top1 center1 down">
+  <div class="card color">
+    <div class="card-header mb-3" style="background-color: rgb(36, 71, 145);">
+      <p class="center1 card-text" style="color: white; text-align: center;">
+        Detail of traveller
+      </p>
+    </div>
 
-<div class="col s">
-  <span class="topic pad-left-30">Full name: </span>
-  <span class="text-of-topic" style="padding-left: 8%;">
-    {{ users.title }}
-  </span>
-  <span class="pad-left-10 text-of-topic"> {{ users.firstName }}</span>
-  <span class="text-of-topic pad-left-10">{{ users.lastName }} </span>
-  <div class="col top3">
-    <span class="topic" style="padding-left: 24%;">Citizen ID: </span>
-    <span class="text-of-topic" style="padding-left: 8%;">
-      {{ users.idNumber }}</span
-    >
-  </div>
-  <div class="col top3">
-    <span class="topic" style="padding-left: 24%;">Date of birth: </span>
-    <span class="text-of-topic" style="padding-left: 5%;">
-      {{ dateofusers }}</span
-    >
-  </div>
-</div>
-
-<div class="col top3">
-  <span class="topic" style="padding-left: 25%;"> Email: </span>
-  <span class="text-of-topic" style="padding-left: 12%;">
-    {{ users.email }}</span
-  >
-</div>
-
-<div class="col top3">
-  <span class="topic" style="padding-left: 25%;"> Phone number: </span>
-  <span class="text-of-topic" style="padding-left: 3%;">
-    {{ users.phoneNumber }}</span
-  >
-</div>
-
-<div class="col top3">
-  <span class="topic" style="padding-left: 25%;"> Beneficially: </span>
-  <span class="text-of-topic" style="padding-left: 6%;">
-    {{ users.beneficiaryName }}</span
-  >
-</div>
-
-<div class="col">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div
-      class="col center1"
-      style="padding-left: 8%; padding-top: 35px; padding-bottom: 30px;"
-    >
-      <div clas s="col-md-4"></div>
-      <div class="col center1" style="padding-top: 35px; padding-bottom: 30px;">
-        <button
-          (click)="onSave()"
-          [routerLink]="'/termsandconditions'"
-          type="payment"
-          class="btn btn-primary"
+    <div class="col s">
+      <span class="topic pad-left-30">Full name: </span>
+      <span class="text-of-topic" style="padding-left: 8%;">
+        {{ users.title }}
+      </span>
+      <span class="pad-left-10 text-of-topic"> {{ users.firstName }}</span>
+      <span class="text-of-topic pad-left-10">{{ users.lastName }} </span>
+      <div class="col top3">
+        <span class="topic" style="padding-left: 24%;">Citizen ID: </span>
+        <span class="text-of-topic" style="padding-left: 8%;">
+          {{ users.idNumber }}</span
         >
-          Payment
-        </button>
+      </div>
+      <div class="col top3">
+        <span class="topic" style="padding-left: 24%;">Date of birth: </span>
+        <span class="text-of-topic" style="padding-left: 5%;">
+          {{ dateofusers | date: "yyyy/MM/d" }}</span
+        >
+      </div>
+    </div>
+
+    <div class="col top3">
+      <span class="topic" style="padding-left: 25%;"> Email: </span>
+      <span class="text-of-topic" style="padding-left: 12%;">
+        {{ users.email }}</span
+      >
+    </div>
+
+    <div class="col top3">
+      <span class="topic" style="padding-left: 25%;"> Phone number: </span>
+      <span class="text-of-topic" style="padding-left: 3%;">
+        {{ users.phoneNumber }}</span
+      >
+    </div>
+
+    <div class="col top3">
+      <span class="topic" style="padding-left: 25%;"> Beneficially: </span>
+      <span class="text-of-topic" style="padding-left: 6%;">
+        {{ users.beneficiaryName }}</span
+      >
+    </div>
+
+    <div class="col">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div
+          class="col center1"
+          style="padding-left: 8%; padding-top: 35px; padding-bottom: 30px;"
+        >
+          <div clas s="col-md-4"></div>
+          <div
+            class="col center1"
+            style="padding-top: 35px; padding-bottom: 30px;"
+          >
+            <button
+              (click)="onSave()"
+              [routerLink]="'/termsandconditions'"
+              type="payment"
+              class="btn btn-primary"
+            >
+              Payment
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

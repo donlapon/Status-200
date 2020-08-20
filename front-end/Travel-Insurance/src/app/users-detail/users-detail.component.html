@@ -1,177 +1,185 @@
-<div class="container  d-flex flex-column ">
+<div class="container d-flex flex-column">
   <!-- Card price of premium insurance -->
   <div class="d-flex flex-row">
     <div
       class="card text-white mb-1 center"
       style="background-color: rgb(36, 71, 145); width: 63%;"
     >
-      <div class="card-body Premium Insurance    ">
-        <h1 class="card-text alignleft">Premium Insurance</h1>
-        <div class="StartDayEnd" >
-          <span class="card-text alignright">{{ dateDetailValue?.totalPrice|number : '2.2-2'  }} THB</span>
-          <span class="card-text alignright">Day: {{ dateDetailValue?.duration }}</span>
-          <span class="card-text alignright">
-            End: {{ dateDetailValue?.arrivalDate }}
-          </span>
-          <!-- <br /> -->
-          <span class="card-text alignright">
-            Start: {{ dateDetailValue?.departureDate }}
-          </span>
-          <!-- <br /> -->
-        </div>
-       
+      <div class="card-body">
+        <p class="card-text alignleft">Insurance Premium</p>
+        <p class="card-text alignright">
+          {{ dateDetailValue?.totalPrice | number: "2.2-2" }} THB
+        </p>
         <div style="clear: both;"></div>
 
-        <span class="card-text alignleft">Switzerland</span>
-        <span class="card-text1 alignright">Per Person</span>
+        <p class="card-text alignleft">
+          Duration:
+        </p>
+        <p class="card-text1 alignleft" style="padding-left: 20px;">
+          {{ dateDetailValue?.departureDate | date: "yyyy/MM/dd" }} -
+          {{ dateDetailValue?.arrivalDate | date: "yyyy/MM/dd" }}
+        </p>
+        <p class="card-text alignright">{{ dateDetailValue?.duration }} Days</p>
+        <div style="clear: both;"></div>
+
+        <p class="card-text alignleft">Country</p>
+        <p class="card-text alignright">Switzerland</p>
+        <div style="clear: both;"></div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Form user detail -->
-  <div class="col-lg-8 top1 center1 down">
-    <div class="card color">
-      <div class="card-header mb-3" style="background-color: rgb(36, 71, 145);">
-        <p class="center1 card-text" style="color: white; text-align: center;">
-          Traveller
-        </p>
+<!-- Form user detail -->
+
+<div class="col-lg-8 top1 center1 down">
+  <div class="card color">
+    <div class="card-header mb-3" style="background-color: rgb(36, 71, 145);">
+      <p class="center1 card-text" style="color: white; text-align: center;">
+        Traveller
+      </p>
+    </div>
+    <!-- Test -->
+    <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
+      <div class="col">
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label>Title</label>
+            <select class="form-control" id="title" formControlName="title">
+              <option value="" hidden selected>Select</option>
+              <option value="Ms" id="ms">Ms.</option>
+              <option value="Mrs" id="mrs">Mrs.</option>
+              <option value="Mr" id="mr">Mr.</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-5">
+            <label>First name</label>
+            <input
+              id="customer_firstname"
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              formControlName="firstName"
+            />
+          </div>
+
+          <div class="form-group col-md-5">
+            <label>Last name</label>
+            <input
+              id="customer_firstname"
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              formControlName="lastName"
+            />
+          </div>
+        </div>
       </div>
-      <!-- Test -->
-      <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
-        <div class="col">
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <label>Title</label>
-              <select class="form-control" id="title" formControlName="title">
-                <option value="" hidden selected>Select</option>
-                <option value="Ms" id="ms">Ms.</option>
-                <option value="Mrs" id="mrs">Mrs.</option>
-                <option value="Mr" id="mr">Mr.</option>
-              </select>
-            </div>
 
-            <div class="form-group col-md-5 ">
-              <label>First name</label>
+      <div class="col">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label> Citzen ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id_card"
+              placeholder="CitzenID 13 digits"
+              formControlName="idNumber"
+              required
+              maxlength="13"
+            />
+          </div>
+          <div class="form-group col-md-5" style="padding-left: 10%;">
+            <label>Date of birth</label>
+            <!-- <br /> -->
+            <mat-form-field>
+              <!-- <mat-label>Birth date</mat-label> -->
               <input
-                id="customer_firstname"
-                type="text"
-                class="form-control"
-                placeholder="First name"
-                formControlName="firstName"
-
+                matInput
+                [matDatepicker]="picker1"
+                formControlName="dateOfBirth"
               />
-            </div>
-
-            <div class="form-group col-md-5">
-              <label>Last name</label>
-              <input
-                id="customer_firstname"
-                type="text"
-                class="form-control"
-                placeholder="Last name"
-                formControlName="lastName"
-              />
-            </div>
-
-            <div class="form-group col-md-5">
-              <label>Phone number: </label>
-              <input
-                id="customer_firstname"
-                type="text"
-                class="form-control"
-                id="customer_phone"
-                placeholder="Phone number"
-                formControlName="phoneNumber"
-              />
-            </div>
-
-            <div class="form-group col-md-5">
-              <label>Email: </label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="Email"
-                formControlName="email"
-              />
-            </div>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
           </div>
         </div>
+      </div>
 
-        <div class="col">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label> Citzen ID</label>
-              <input
-                type="text"
-                class="form-control"
-                id="id_card"
-                placeholder="CitzenID 13 digits"
-                formControlName="idNumber"
-                required
-                maxlength="13"
-              />
-            </div>
-            <div class="form-group col-md-5" style="padding-left: 10%;">
-              <label>Date of birth</label>
-              <!-- <br /> -->
-              <mat-form-field>
-                <!-- <mat-label>Birth date</mat-label> -->
-                <input
-                  matInput
-                  [matDatepicker]="picker1"
-                  formControlName="dateOfBirth"
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker1"
-                ></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-
-        <div class="col form-row">
-          <div class="form-group col-md-12">
-            <label> Beneficially</label>
+      <div class="col">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Email </label>
             <input
               formControlName="beneficiaryName"
               type="text"
               class="form-control"
-              id="beneficially"
-              placeholder="Beneficially"
+              id="email"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+
+          <div class="form-group col-md-6" style="padding-left: 10%;">
+            <label>Phone number </label>
+            <input
+              id="customer_firstname"
+              type="text"
+              class="form-control"
+              id="customer_phone"
+              placeholder="Phone number"
+              formControlName="phoneNumber"
+              required
+              maxlength="10"
             />
           </div>
         </div>
+      </div>
 
-        <div class="col">
-          <div class="row">
-            <div class="form-group col-md-4"></div>
-            <div
-              class="col align-self-center"
-              style="padding-left: 8%; padding-top: 15px; padding-bottom: 30px;"
+      <div class="col form-row">
+        <div class="form-group col-md-12">
+          <label> Beneficially</label>
+          <input
+            formControlName="beneficiaryName"
+            type="text"
+            class="form-control"
+            id="beneficially"
+            placeholder="Beneficially"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <div class="form-group col-md-4"></div>
+          <div
+            class="col align-self-center"
+            style="padding-left: 8%; padding-top: 15px; padding-bottom: 30px;"
+          >
+            <button
+              id="btn_save"
+              (ngSubmit)="saveData()"
+              type="submit"
+              class="btn btn-primary"
             >
-              <button
-                id="btn_save"
-                (ngSubmit)="saveData()"
-                type="submit"
-                class="btn btn-primary"
-              >
-                Save
-              </button>
-              <!-- <button (ngSubmit) = "saveData()">
+              Save
+            </button>
+            <!-- <button (ngSubmit) = "saveData()">
                 saveData
               </button> -->
-            </div>
           </div>
         </div>
-        <!-- </form> -->
-        <!-- Close Header traveller -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <!-- </div> -->
-      </form>
-    </div>
+      </div>
+      <!-- </form> -->
+      <!-- Close Header traveller -->
+      <!-- </div> -->
+      <!-- </div> -->
+      <!-- </div> -->
+    </form>
   </div>
 </div>
