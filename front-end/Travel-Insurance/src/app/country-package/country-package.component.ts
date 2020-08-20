@@ -16,13 +16,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CountryPackageComponent implements OnInit {
   status: boolean;
-  cardStatus: boolean;
-  count: Number;
   date: FormGroup;
   cap: Country[] = [];
-  ht: Object;
   customerDate: DateTime;
-  // dataSource = new MatTableDataSource<Product>();
   minDate: Date;
   maxDate: Date;
   dateDetail: any;
@@ -30,13 +26,12 @@ export class CountryPackageComponent implements OnInit {
   selectedPackageList: Packagedetail[];
   selectedPackage: InsurancePackageList[];
   pk: Package[] = [];
-  pack: string[] = ["Ergonomic Metal Tuna", "Gorgeous Soft Bacon", "Toys"]
   constructor(private fb: FormBuilder,
-              private country: CountryService,
-              // private dateInject: DateService,
-              private packkage: PackageService,
-              private datetime: DateService,
-              private router: Router
+    private country: CountryService,
+    // private dateInject: DateService,
+    private packkage: PackageService,
+    private datetime: DateService,
+    private router: Router
   ) {
 
   }
@@ -45,27 +40,34 @@ export class CountryPackageComponent implements OnInit {
     this.date = this.fb.group({
       startDate: ['', Validators.requiredTrue],
       endDate: ['', Validators.requiredTrue]
-    });
-    // console.log("de")
+    })
     this.getAllCountries();
     this.getAllPackage();
     this.getDateTime();
   }
+  checkDates(date: FormGroup) {
+    if (date.controls.endDate.value < date.controls.startDate.value) {
+      // console.log("herhreeh")
+      return true
+    }
+    return null;
 
+  }
   getDate(): void {
-    // const currentYear = new Date().getFullYear;
     this.minDate = new Date();
     // console.log("test",this.dt.endDate);
 
-    if (this.dt.arrivalDate != null){
-    const stDate = this.dt.arrivalDate.split("-");
-    console.log(stDate)
-    const year = stDate[0];
-    const month = stDate[1];
-    const day = stDate[2];
-    this.minDate = new Date();
-    this.maxDate = new Date(Number(year)
-      , Number(month) - 1, Number(day));
+    if (this.dt.arrivalDate != null) {
+      const stDate = this.dt.arrivalDate.split("-");
+
+
+      const year = stDate[0];
+      const month = stDate[1];
+      const day = stDate[2];
+      this.minDate = new Date();//currentDate
+      this.maxDate = new Date(Number(year)//maximumDate
+        , Number(month), Number(day));
+
     }
   }
   getAllCountries(): void {
@@ -84,7 +86,7 @@ export class CountryPackageComponent implements OnInit {
   getAllPackage(): void {
     this.packkage.getAllPackage().subscribe((data) => {
       this.pk = data;
-      console.table(data);
+      // console.table(data);
 
       return this.pk;
     });
@@ -100,40 +102,91 @@ export class CountryPackageComponent implements OnInit {
   get f() {
     return this.date.controls;
   }
-  saveDate(): void{
+  // saveDate(): void{
+  //   const departureDate: string = this.date.controls.startDate.value;
+  //   const arrivalDate: string = this.date.controls.endDate.value;
+  //   this.customerDate = new DateTime(departureDate, arrivalDate);
+  //   // console.log("trst",this.customerDate)
+
+  //   // this.dateInject.postDate(this.customerDate).subscribe(date  => {
+  //   //   this.dateDetail = date;
+  //   //   console.log('dateDetail package-country', this.dateDetail);
+
+  //   //   this.router.navigateByUrl('/userdetail', { state: this.dateDetail } );
+  //   //   console.log('package date', history.state);
+  //   // });
+
+  //   this.router.navigateByUrl('/userdetail', { state: this.customerDate } );
+  //   console.log('package date', history.state);
+  // }
+
+  // packageDetail(countryCode: string) {
+  //   console.log(this.pk);
+  //   this.status = false;
+  //   this.pk.forEach(_p => {
+
+
+  //     if (countryCode === _p.countryCode) {
+
+  //       this.status = true;
+  //       this.selectedPackage = _p.insurancePackageList;
+  //       this.selectedPackageList =  this.selectedPackage[0].package_detail;
+  //       console.log(this.selectedPackageList)
+  //     }
+
+  //   });
+  //   this.status = true;
+  saveDate() {
+    // const departure: Date = this.date.controls.startDate.value;
+    // this.currentDateInput = departure;
     const departureDate: string = this.date.controls.startDate.value;
     const arrivalDate: string = this.date.controls.endDate.value;
     this.customerDate = new DateTime(departureDate, arrivalDate);
-    // console.log("trst",this.customerDate)
 
-    // this.dateInject.postDate(this.customerDate).subscribe(date  => {
-    //   this.dateDetail = date;
-    //   console.log('dateDetail package-country', this.dateDetail);
-
-    //   this.router.navigateByUrl('/userdetail', { state: this.dateDetail } );
-    //   console.log('package date', history.state);
-    // });
-
-    this.router.navigateByUrl('/userdetail', { state: this.customerDate } );
+    this.router.navigateByUrl('/userdetail', { state: this.customerDate });
     console.log('package date', history.state);
+    // console.log(arrival)
+    // if(departure > arrival){
+    // const departureDate = `${departure.getDate}-${departure.getMonth}-${departure.getFullYear}`
+    // const arrivalDate = `${arrival.getDate}-${arrival.getMonth}-${arrival.getFullYear}`
+
+    //  console.log("trst",this.customerDate)
+    // this.dateInject.sentCalculatePremuim(this.customerDate);
+    //     this.dateInject.postDate(this.customerDate).subscribe(date  => {
+    //       this.datetime.sentCalculatePremuim(date);
+    //       // console.table(date); 
+    //       console.log("date Done")
+    //       // [routerLink]="['/userdetail']"
+    //       // this.router.navigate(['/userdetail']);})
+
+    //   // }
+    // })}
   }
 
-  packageDetail(countryCode: string) {
-    console.log(this.pk);
-    this.status = false;
+
+  packageDetail(countryCode: string, i: number, currentStatus: boolean) {
+    // this.status = false;
     this.pk.forEach(_p => {
- 
+      if (currentStatus) {
+        this.status = false;
+        this.cap[i].status = false;
 
-      if (countryCode === _p.countryCode) {
+      } else {
+        if (countryCode === _p.countryCode) {
 
-        this.status = true;
-        this.selectedPackage = _p.insurancePackageList;
-        this.selectedPackageList =  this.selectedPackage[0].package_detail;
-        console.log(this.selectedPackageList)
+          this.selectedPackage = _p.insurancePackageList;
+          this.selectedPackageList = this.selectedPackage[0].package_detail
+          this.cap[i].status = true;
+          this.status = true;
+          // this.cap[i].status = true;
+          //   this.status = true;
+        }
       }
 
-    });
-    this.status = true;
+    }
+
+
+    );
 
 
   }

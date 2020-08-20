@@ -1,6 +1,6 @@
 import { UserDetail } from './user-detail';
 
-export class InsuredInfo extends UserDetail {
+export class InsuredInfo {
     destinationCountry: string;
     packageName: string;
     departureDate: string;
@@ -15,23 +15,23 @@ export class InsuredInfo extends UserDetail {
     beneficiaryName: string;
     phoneNumber: string;
     email: string;
-    constructor(
-        destinationCountry: string,
-        packageName: string,
-        departureDate: string,
-        arrivalDate: string,
-        duration: number,
-        totalPrice: number,
-        idNumber: string,
-        title: string,
-        firstName: string,
-        lastName: string,
-        dateOfBirth: string,
-        beneficiaryName: string,
-        phoneNumber: string,
-        email: string
+    constructor({
+        destinationCountry,
+        packageName,
+        departureDate,
+        arrivalDate,
+        duration,
+        totalPrice,
+        idNumber,
+        title,
+        firstName,
+        lastName,
+        dateOfBirth,
+        beneficiaryName,
+        phoneNumber,
+        email
+    }: any
     ) {
-        super(title, firstName, lastName, dateOfBirth, beneficiaryName, phoneNumber, email);
         this.destinationCountry = destinationCountry;
         this.packageName = packageName;
         this.departureDate = departureDate;
@@ -43,7 +43,7 @@ export class InsuredInfo extends UserDetail {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth,
-            this.beneficiaryName = beneficiaryName;
+        this.beneficiaryName = beneficiaryName;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }

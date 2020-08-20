@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from './../services/user.service';
 import { UserDetail } from '../model/user-detail';
 import { Title } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
-import { DateService } from './../services/date.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DateService } from '../services/date.service';
 import { DateTime } from '../model/dateTime';
 
 @Component({
@@ -17,7 +17,7 @@ export class UsersDetailComponent implements OnInit {
   dateValue: any;
   dateDetailValue: any;
   userDetailForm: FormGroup;
-  customerDate: DateTime;
+  // customerDate: DateTime;
   userFullName: any;
 
   constructor(private formBuilder: FormBuilder,
@@ -27,31 +27,27 @@ export class UsersDetailComponent implements OnInit {
               private dateService: DateService
               ) { }
 
-  // constructor(private formBuilder: FormBuilder, 
-  //             private activatedRoute: ActivatedRoute, 
-  //             private userDetail: UserService) { }
-  // private customerDate: Date;
+  private customerDate: DateTime;
   ngOnInit(): void {
-      // this.activatedRoute.params.subscribe(
-      //   data => {
-      //     console.log(data.id)
-      //     this.customerDate = data.id ;
-      //   }
-      // );
 
-      this.userDetailForm = this.formBuilder.group({
-      title: ['', Validators.requiredTrue],
+    this.customerDate  =  this.dateService.dateTime;
+    this.userDetailForm = this.formBuilder.group({
+      beneficially: ['', Validators.requiredTrue],
+      dateOfBirth: ['', Validators.requiredTrue],
+      email: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],
       lastName: ['', Validators.requiredTrue],
-      citizenId: ['', Validators.requiredTrue],
-      dateOfBirth: ['', Validators.requiredTrue],
-      beneficially: ['', Validators.requiredTrue],
-      numberOfTraveller: ['', Validators.requiredTrue]
+      idNumber: ['', Validators.requiredTrue],
+      phoneNumber: ['', Validators.requiredTrue],
+      title: ['', Validators.requiredTrue]
     });
 
-      this.callDateDetail();
-      // this.setName();
+    this.callDateDetail();
   }
+
+  get f(){
+    return this.userDetailForm.controls;
+}
 
   callDateDetail(): void{
     this.dateValue = history.state;
@@ -62,23 +58,19 @@ export class UsersDetailComponent implements OnInit {
       // console.log(date);
       this.dateDetailValue = date;
       console.log(this.dateDetailValue.totalPrice);
-      return date;
+      // this.saveData();
     });
 
   }
   saveData(): void{
+    console.log(this.dateDetailValue);
+
     this.user = this.userDetailForm.getRawValue();
+    this.user.dateDetailValue = this.dateDetailValue;
+    console.log('user to go', this.user);
+
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
-    const fName = this.user.firstName + '' + this.user.lastName;
-    this.userFullName = fName;
-    // console.log('full', this.userFullName);
-    // this.router.navigateByUrl('/transactiondetail', { state: this.userFullName } );
+
   }
 
-  // setName(): void{
-  //   this.user = this.userDetailForm.getRawValue();
-  //   const fullName = this.user.firstName + this.user.lastName;
-  //   console.log('fullname', fullName);
-  // }
-
-}
+  }

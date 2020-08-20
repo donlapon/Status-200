@@ -11,45 +11,33 @@ export class UserService {
   userDetail: UserDetail[] = [];
 
   constructor(private http: HttpClient) { }
+  getUserDetail(user): Observable<UserDetail[]>{
+    return this.userDetail = user;
+  }
 
   sendInsuredInfo(insuredInfo: UserDetail): Observable<InsuredInfo[]> {
-    const dateOfBirth = '2020-08-19';
-    const user = new InsuredInfo('destinationCountry',
-      'packageName',
-      '2020-08-18',
-      '2020-08-18',
-      0,
-      0,
-      insuredInfo.citizenId,
-      insuredInfo.firstName,
-      insuredInfo.title,
-      insuredInfo.lastName,
+    console.log('insuredInfo', insuredInfo);
 
-      dateOfBirth,
-      insuredInfo.beneficially,
-      '',
-      insuredInfo.email);
+    const dateOfBirth = '2020-08-19';
+    const user = new InsuredInfo({...insuredInfo})
+
+    // const user = new InsuredInfo({'destinationCountry',
+    //   'packageName',
+    //   '2020-08-18',
+    //   '2020-08-18',
+    //   0,
+    //   0,
+    //   insuredInfo.citizenId,
+    //   insuredInfo.firstName,
+    //   insuredInfo.title,
+    //   insuredInfo.lastName,
+
+    //   dateOfBirth,
+    //   insuredInfo.beneficially,
+    //   '',
+    //   insuredInfo.email);
     console.log('ddd', user);
     return this.http.post<InsuredInfo[]>('http://167.99.70.167:8080/api/v1/insuredInfo', [user]);
-    // postUserDetail(insuredInfo): Observable<InsuredInfo[]>{
-    //  const user1 = new InsuredInfo('destinationCountry',
-    //                                 'packageName',
-    //                                 '2020-08-18',
-    //                                 '2020-08-18',
-    //                                 0,
-    //                                 0,
-    //                                 'idNumber',
-    //                                 'titleName',
-    //                                 'firstname',
-    //                                 'lastname',
-    //                                 '2020-08-18',
-    //                                 'beneficiaryName',
-    //                                 'phoneNumber',
-    //                                 'email');
-    // //  const user2 = new UserDetail('Mrs', 'llll', 'oooo', 'llllll', '12/06/1997', 'gggg llll', 1);
-    // //  const user3 = new UserDetail('mr', 'pppp', 'iiii', 'llllll', '12/06/1997', 'gggg llll', 1);
-    //  return this.http.post<InsuredInfo[]>('http://167.99.70.167:8080/api/v1/insuredInfo', user1);
 
-    // //  return of([user1, user2, user3]);
   }
 }
