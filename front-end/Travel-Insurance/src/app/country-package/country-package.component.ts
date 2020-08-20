@@ -175,7 +175,7 @@ export class CountryPackageComponent implements OnInit {
         if (countryCode === _p.countryCode) {
 
           this.selectedPackage = _p.insurancePackageList;
-          this.selectedPackageList = this.selectedPackage[0].package_detail
+          this.selectedPackageList = this.selectedPackage[0].package_detail;
           this.cap[i].status = true;
           this.status = true;
           // this.cap[i].status = true;

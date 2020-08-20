@@ -51,17 +51,16 @@
       </span>
       <span class="pad-left-10 text-of-topic"> {{ users.firstName }}</span>
       <span class="text-of-topic pad-left-10">{{ users.lastName }} </span>
-
       <div class="col top3">
         <span class="topic" style="padding-left: 24%;">Citizen ID: </span>
-        <span class="text-of-topic" style="padding-left: 8%;">
-          {{ users.citizenId }}</span
+        <span class="text-of-topic" style="padding-left: 5%;">
+          {{ users.idNumber }}</span
         >
       </div>
       <div class="col top3">
         <span class="topic" style="padding-left: 24%;">Date of birth: </span>
         <span class="text-of-topic" style="padding-left: 5%;">
-          {{ users.dateOfBirth | date: "y/MM/d" }}</span
+          {{ users.dateOfBirth }}</span
         >
       </div>
     </div>
