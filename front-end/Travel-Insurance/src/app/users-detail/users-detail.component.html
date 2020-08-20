@@ -43,6 +43,7 @@
             <div class="form-group col-md-2">
               <label>Title</label>
               <select class="form-control" id="title" formControlName="title">
+                <option value="" hidden selected>Select</option>
                 <option value="Ms" id="ms">Ms.</option>
                 <option value="Mrs" id="mrs">Mrs.</option>
                 <option value="Mr" id="mr">Mr.</option>
@@ -55,7 +56,6 @@
                 id="customer_firstname"
                 type="text"
                 class="form-control"
-                id=""
                 placeholder="First name"
                 formControlName="firstName"
 
@@ -68,7 +68,6 @@
                 id="customer_firstname"
                 type="text"
                 class="form-control"
-                id=""
                 placeholder="Last name"
                 formControlName="lastName"
               />
@@ -109,6 +108,8 @@
                 id="id_card"
                 placeholder="CitzenID 13 digits"
                 formControlName="idNumber"
+                required
+                maxlength="13"
               />
             </div>
             <div class="form-group col-md-5" style="padding-left: 10%;">
@@ -154,6 +155,8 @@
                 id="customer_phone"
                 placeholder="Phone number"
                 formControlName="phoneNumber"
+                required
+                maxlength="10"
               />
             </div>
           </div>
