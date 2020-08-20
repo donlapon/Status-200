@@ -32,7 +32,7 @@ export class UsersDetailComponent implements OnInit {
 
     this.customerDate  =  this.dateService.dateTime;
     this.userDetailForm = this.formBuilder.group({
-      beneficially: ['', Validators.requiredTrue],
+      beneficiaryName: ['', Validators.requiredTrue],
       dateOfBirth: ['', Validators.requiredTrue],
       email: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],
@@ -51,8 +51,9 @@ export class UsersDetailComponent implements OnInit {
 
   callDateDetail(): void{
     this.dateValue = history.state;
+console.log('this.dateValue', this.dateValue);
 
-    this.customerDate = new DateTime(this.dateValue.departureDate, this.dateValue.arrivalDate);
+    this.customerDate = new DateTime(this.dateValue.departureDate, this.dateValue.arrivalDate, this.dateValue.countryName, this.dateValue.packageName);
 
     this.dateService.postDate(this.customerDate).subscribe(date  => {
       // console.log(date);
@@ -67,7 +68,11 @@ export class UsersDetailComponent implements OnInit {
 
     this.user = this.userDetailForm.getRawValue();
     this.user.dateDetailValue = this.dateDetailValue;
-    console.log('user to go', this.user);
+    
+    this.user.countryName = this.customerDate.countryName;
+    this.user.packageName = this.customerDate.packageName;
+    
+    console.log('user to go', this.user.dateOfBirth);
 
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
 

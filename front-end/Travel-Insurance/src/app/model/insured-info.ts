@@ -16,10 +16,9 @@ export class InsuredInfo {
     phoneNumber: string;
     email: string;
     constructor({
-        destinationCountry,
+        countryName,
         packageName,
-        departureDate,
-        arrivalDate,
+        dateDetailValue,
         duration,
         totalPrice,
         idNumber,
@@ -32,12 +31,12 @@ export class InsuredInfo {
         email
     }: any
     ) {
-        this.destinationCountry = destinationCountry;
+        this.destinationCountry = countryName;
         this.packageName = packageName;
-        this.departureDate = departureDate;
-        this.arrivalDate = arrivalDate;
-        this.duration = duration;
-        this.totalPrice = totalPrice;
+        this.departureDate = dateDetailValue.departureDate;
+        this.arrivalDate = dateDetailValue.arrivalDate;
+        this.duration = dateDetailValue.duration;
+        this.totalPrice = dateDetailValue.totalPrice;
         this.idNumber = idNumber;
         this.title = title;
         this.firstName = firstName;

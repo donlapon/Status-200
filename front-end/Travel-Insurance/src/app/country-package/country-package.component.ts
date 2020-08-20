@@ -26,6 +26,8 @@ export class CountryPackageComponent implements OnInit {
   selectedPackageList: Packagedetail[];
   selectedPackage: InsurancePackageList[];
   pk: Package[] = [];
+  packageName: string;
+  countryName: string;
   constructor(private fb: FormBuilder,
     private country: CountryService,
     // private dateInject: DateService,
@@ -102,46 +104,13 @@ export class CountryPackageComponent implements OnInit {
   get f() {
     return this.date.controls;
   }
-  // saveDate(): void{
-  //   const departureDate: string = this.date.controls.startDate.value;
-  //   const arrivalDate: string = this.date.controls.endDate.value;
-  //   this.customerDate = new DateTime(departureDate, arrivalDate);
-  //   // console.log("trst",this.customerDate)
-
-  //   // this.dateInject.postDate(this.customerDate).subscribe(date  => {
-  //   //   this.dateDetail = date;
-  //   //   console.log('dateDetail package-country', this.dateDetail);
-
-  //   //   this.router.navigateByUrl('/userdetail', { state: this.dateDetail } );
-  //   //   console.log('package date', history.state);
-  //   // });
-
-  //   this.router.navigateByUrl('/userdetail', { state: this.customerDate } );
-  //   console.log('package date', history.state);
-  // }
-
-  // packageDetail(countryCode: string) {
-  //   console.log(this.pk);
-  //   this.status = false;
-  //   this.pk.forEach(_p => {
-
-
-  //     if (countryCode === _p.countryCode) {
-
-  //       this.status = true;
-  //       this.selectedPackage = _p.insurancePackageList;
-  //       this.selectedPackageList =  this.selectedPackage[0].package_detail;
-  //       console.log(this.selectedPackageList)
-  //     }
-
-  //   });
-  //   this.status = true;
   saveDate() {
     // const departure: Date = this.date.controls.startDate.value;
     // this.currentDateInput = departure;
     const departureDate: string = this.date.controls.startDate.value;
     const arrivalDate: string = this.date.controls.endDate.value;
-    this.customerDate = new DateTime(departureDate, arrivalDate);
+    this.customerDate = new DateTime(departureDate, arrivalDate, this.countryName, this.packageName);
+console.log('this.customerDate', this.customerDate);
 
     this.router.navigateByUrl('/userdetail', { state: this.customerDate });
     console.log('package date', history.state);
@@ -164,7 +133,7 @@ export class CountryPackageComponent implements OnInit {
   }
 
 
-  packageDetail(countryCode: string, i: number, currentStatus: boolean) {
+  packageDetail(countryCode: string, countryName: string, i: number, currentStatus: boolean) {
     // this.status = false;
     this.pk.forEach(_p => {
       if (currentStatus) {
@@ -174,8 +143,11 @@ export class CountryPackageComponent implements OnInit {
       } else {
         if (countryCode === _p.countryCode) {
 
+          this.countryName = countryName;
+
           this.selectedPackage = _p.insurancePackageList;
           this.selectedPackageList = this.selectedPackage[0].package_detail;
+          this.packageName = this.selectedPackage[0].package_name;
           this.cap[i].status = true;
           this.status = true;
           // this.cap[i].status = true;

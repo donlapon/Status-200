@@ -9,15 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShowUserDetailComponent implements OnInit {
   users: any;
+  dateofusers: string;
   constructor(private activatedroute: ActivatedRoute,
               private userService: UserService) {
   }
   ngOnInit(): void {
     // console.log(history.state);
     this.users = history.state;
-    const dateofusers =    this.users.dateOfBirth
-    // const alldate=  dateofusers.getDate()+'/'+ dateofusers.getMonth() +'/' + dateofusers.getFullYear();
-    this.users.dateOfBirth = dateofusers.getDate()+'/'+ dateofusers.getMonth() +'/' + dateofusers.getFullYear();
+    this.dateofusers =     this.users.dateOfBirth.getDate()+'/'+ this.users.dateOfBirth.getMonth() +'/' + this.users.dateOfBirth.getFullYear()
+    // const alldate=  this.users.dateOfBirth.getDate()+'/'+ dateofusers.getMonth() +'/' + dateofusers.getFullYear();
     // console.log("gre",alldate);
     
     console.log('user', this.users);

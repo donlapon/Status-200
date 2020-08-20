@@ -10,7 +10,7 @@
       
           <mat-card-header class="headCountry ">
           </mat-card-header>
-          <span class="matCountry d-flex flex  align-items-center " [id]="i.countryCode" (click)="packageDetail(i.countryCode,k,i.status) ">
+          <span class="matCountry d-flex flex  align-items-center " [id]="i.countryCode" (click)="packageDetail(i.countryCode, i.countryName,k,i.status) ">
             {{i.countryName}} <img class="ml-5 " style="height: 30px; " [src]="i.imgUrl" alt="">
           </span>
         </mat-card>
