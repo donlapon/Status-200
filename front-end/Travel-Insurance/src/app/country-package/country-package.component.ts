@@ -109,8 +109,10 @@ export class CountryPackageComponent implements OnInit {
     // this.currentDateInput = departure;
     const departureDate: string = this.date.controls.startDate.value;
     const arrivalDate: string = this.date.controls.endDate.value;
+    console.log('start date', departureDate, 'end date', arrivalDate);
+    
     this.customerDate = new DateTime(departureDate, arrivalDate, this.countryName, this.packageName);
-console.log('this.customerDate', this.customerDate);
+// console.log('this.customerDate', this.customerDate);
 
     this.router.navigateByUrl('/userdetail', { state: this.customerDate });
     console.log('package date', history.state);

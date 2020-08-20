@@ -16,7 +16,7 @@ export class UserService {
   }
 
   sendInsuredInfo(insuredInfo: UserDetail): Observable<InsuredInfo[]> {
-    console.log('insuredInfo', insuredInfo);
+    // console.log('insuredInfo', insuredInfo);
 
     const dateOfBirth = '2020-08-19';
     const user = new InsuredInfo({...insuredInfo})
@@ -36,7 +36,7 @@ export class UserService {
     //   insuredInfo.beneficially,
     //   '',
     //   insuredInfo.email);
-    console.log('ddd', user);
+    // console.log('ddd', user);
     return this.http.post<InsuredInfo[]>('http://167.99.70.167:8080/api/v1/insuredInfo', [user]);
 
   }

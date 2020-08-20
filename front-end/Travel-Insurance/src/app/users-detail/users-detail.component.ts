@@ -41,7 +41,8 @@ export class UsersDetailComponent implements OnInit {
       phoneNumber: ['', Validators.requiredTrue],
       title: ['', Validators.requiredTrue]
     });
-
+    // console.log('Form', this.userDetailForm);
+    
     this.callDateDetail();
   }
 
@@ -51,20 +52,22 @@ export class UsersDetailComponent implements OnInit {
 
   callDateDetail(): void{
     this.dateValue = history.state;
-console.log('this.dateValue', this.dateValue);
+// console.log('this.dateValue', this.dateValue);
 
     this.customerDate = new DateTime(this.dateValue.departureDate, this.dateValue.arrivalDate, this.dateValue.countryName, this.dateValue.packageName);
-
+    // console.log('custom date', this.customerDate);
+    
     this.dateService.postDate(this.customerDate).subscribe(date  => {
-      // console.log(date);
+      this.dateDetailValue = date.arrivalDate
+      // console.log('date', date);
       this.dateDetailValue = date;
-      console.log(this.dateDetailValue.totalPrice);
+      // console.log('dateDetailValue', this.dateDetailValue);
       // this.saveData();
     });
 
   }
   saveData(): void{
-    console.log(this.dateDetailValue);
+    // console.log(this.dateDetailValue);
 
     this.user = this.userDetailForm.getRawValue();
     this.user.dateDetailValue = this.dateDetailValue;
@@ -72,7 +75,7 @@ console.log('this.dateValue', this.dateValue);
     this.user.countryName = this.customerDate.countryName;
     this.user.packageName = this.customerDate.packageName;
     
-    // console.log('user to go', this.user);
+    console.log('user to go', this.user);
 
     this.router.navigateByUrl('/showuserdetail', { state: this.user } );
 
