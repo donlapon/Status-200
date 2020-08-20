@@ -20,6 +20,12 @@ export class ShowUserDetailComponent implements OnInit {
 
   }
 
+  onSave(){
+    this.userService.sendInsuredInfo(this.users).subscribe(users=>{
+      console.log("user",users);
+      
+    })
+  }
 
 
 }
