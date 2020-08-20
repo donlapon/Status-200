@@ -1,14 +1,14 @@
-<div class="container">
+<div class="container  d-flex flex-column ">
   <!-- Card price of premium insurance -->
   <div class="d-flex flex-row">
     <div
       class="card text-white mb-1 center"
       style="background-color: rgb(36, 71, 145); width: 63%;"
     >
-      <div class="card-body Premium Insurance    d-flex flex-column  ">
+      <div class="card-body Premium Insurance    ">
         <h1 class="card-text alignleft">Premium Insurance</h1>
-        <div class="StartDayEnd ">
-          <span class="card-text alignright">{{ dateDetailValue?.totalPrice }}</span>
+        <div class="StartDayEnd" >
+          <span class="card-text alignright">{{ dateDetailValue?.totalPrice|number : '2.2-2'  }} THB</span>
           <span class="card-text alignright">Day: {{ dateDetailValue?.duration }}</span>
           <span class="card-text alignright">
             End: {{ dateDetailValue?.arrivalDate }}
@@ -22,8 +22,8 @@
        
         <div style="clear: both;"></div>
 
-        <p class="card-text alignleft">Switzerland</p>
-        <p class="card-text1 alignright">Per Person</p>
+        <span class="card-text alignleft">Switzerland</span>
+        <span class="card-text1 alignright">Per Person</span>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
               </select>
             </div>
 
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-5 ">
               <label>First name</label>
               <input
                 id="customer_firstname"
@@ -58,6 +58,7 @@
                 id=""
                 placeholder="First name"
                 formControlName="firstName"
+
               />
             </div>
 
@@ -88,7 +89,7 @@
             <div class="form-group col-md-5">
               <label>Email: </label>
               <input
-                type="text"
+                type="email"
                 class="form-control"
                 id="email"
                 placeholder="Email"
@@ -154,6 +155,7 @@
                 (ngSubmit)="saveData()"
                 type="submit"
                 class="btn btn-primary"
+                [disabled]="!f.beneficially.dirty||!f.dateOfBirth.dirty||!f.email.dirty||!f.firstName.dirty||!f.lastName.dirty||!f.idNumber.dirty||!f.title.dirty||!f.phoneNumber"
               >
                 Save
               </button>
