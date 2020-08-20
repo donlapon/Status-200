@@ -17,22 +17,22 @@ export class DateService {
   }
 
 getDate(): Observable <DateTime>{
-    return this.http.get<DateTime>("http://167.99.70.167:8080/api/v1/currentDateAndMaxArrivalDate");
+    return this.http.get<DateTime>('http://167.99.70.167:8080/api/v1/currentDateAndMaxArrivalDate');
 }
-  postDate(date:DateTime) :Observable<DateTime>{
+  postDate(date: DateTime): Observable<DateTime>{
   //  const date1 = new Date("20/02/2019","23/03/2019");
   //  const date2 = new Date("20/02/2019","23/03/2019");
   //  const date3 = new Date("20/02/2019","23/03/2019");
-    console.log("tre",date)
+    // console.log('date', date);
   //  return this.httpClient.post<ProductResponse> (`product`,this.makeFormData(product));
-    return this.http.post<DateTime>("http://167.99.70.167:8080/api/v1/totalPrice",date)
+    return this.http.post<DateTime>('http://167.99.70.167:8080/api/v1/totalPrice', date);
     // return of([date1,date2,date3]);
   }
-  makeFormDate(date :DateTime) : FormData{
+  makeFormDate(date: DateTime): FormData{
 
       const formData = new FormData();
-      formData.append("start_date", date.departureDate);
-      formData.append("end_date",date.arrivalDate);
+      formData.append('start_date', date.departureDate);
+      formData.append('end_date', date.arrivalDate);
       // DateTime fromDate = ToDateTime(date.start_date).Date;
       return formData;
   }
