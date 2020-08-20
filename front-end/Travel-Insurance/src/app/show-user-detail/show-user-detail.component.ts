@@ -1,8 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { Route } from '@angular/compiler/src/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { UserService } from './../services/user.service';
-import { from } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-user-detail',
@@ -22,11 +20,6 @@ export class ShowUserDetailComponent implements OnInit {
 
   }
 
-  onSave(): void{
-    this.userService.sendInsuredInfo(this.users).subscribe(users => {
-      console.log('USER', users);
-    });
 
-  }
 
 }

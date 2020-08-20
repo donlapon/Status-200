@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from './../services/user.service';
 import { UserDetail } from '../model/user-detail';
 import { Title } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
-import { DateService } from './../services/date.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DateService } from '../services/date.service';
 import { DateTime } from '../model/dateTime';
 
 @Component({
@@ -17,7 +17,7 @@ export class UsersDetailComponent implements OnInit {
   dateValue: any;
   dateDetailValue: any;
   userDetailForm: FormGroup;
-  customerDate: DateTime;
+  // customerDate: DateTime;
   userFullName: any;
 
   constructor(private formBuilder: FormBuilder,
@@ -27,19 +27,12 @@ export class UsersDetailComponent implements OnInit {
               private dateService: DateService
               ) { }
 
-  // constructor(private formBuilder: FormBuilder, 
-  //             private activatedRoute: ActivatedRoute, 
-  //             private userDetail: UserService) { }
-  // private customerDate: Date;
+    
+  // private customerDate: DateTime;
   ngOnInit(): void {
-      // this.activatedRoute.params.subscribe(
-      //   data => {
-      //     console.log(data.id)
-      //     this.customerDate = data.id ;
-      //   }
-      // );
 
-      this.userDetailForm = this.formBuilder.group({
+      // this.customerDate  =  this.dateService.dateTime;
+    this.userDetailForm = this.formBuilder.group({
       title: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],
       lastName: ['', Validators.requiredTrue],
@@ -49,36 +42,31 @@ export class UsersDetailComponent implements OnInit {
       numberOfTraveller: ['', Validators.requiredTrue]
     });
 
-      this.callDateDetail();
+      // this.callDateDetail();
       // this.setName();
   }
 
-  callDateDetail(): void{
-    this.dateValue = history.state;
-
-    this.customerDate = new DateTime(this.dateValue.departureDate, this.dateValue.arrivalDate);
-
-    this.dateService.postDate(this.customerDate).subscribe(date  => {
-      // console.log(date);
-      this.dateDetailValue = date;
-      console.log(this.dateDetailValue.totalPrice);
-      return date;
-    });
-
-  }
+  get f(){
+    return this.userDetailForm.controls;
+}
   saveData(): void{
-    this.user = this.userDetailForm.getRawValue();
-    this.router.navigateByUrl('/showuserdetail', { state: this.user } );
-    const fName = this.user.firstName + '' + this.user.lastName;
-    this.userFullName = fName;
-    // console.log('full', this.userFullName);
-    // this.router.navigateByUrl('/transactiondetail', { state: this.userFullName } );
+  
+    const user = new UserDetail(
+                                this.f.title.value,
+                                this.f.firstName.value,
+                                this.f.lastName.value,
+                                this.f.citizenId.value,
+                                this.f.dateOfBirth.value,
+                                this.f.beneficially.value,
+                                this.f.numberOfTraveller.value,
+                                );
+    // this.userDetail.postUserDetail(user).subscribe(users => {
+    //   console.log('USER', users);
+     
+    // });
+    console.log(user);
+    
+    this.userDetail.getUserDetail(user);
+
   }
-
-  // setName(): void{
-  //   this.user = this.userDetailForm.getRawValue();
-  //   const fullName = this.user.firstName + this.user.lastName;
-  //   console.log('fullname', fullName);
-  // }
-
 }
