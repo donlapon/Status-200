@@ -28,10 +28,10 @@ export class UsersDetailComponent implements OnInit {
               ) { }
 
     
-  // private customerDate: DateTime;
+  private customerDate: DateTime;
   ngOnInit(): void {
 
-      // this.customerDate  =  this.dateService.dateTime;
+      this.customerDate  =  this.dateService.dateTime;
     this.userDetailForm = this.formBuilder.group({
       title: ['', Validators.requiredTrue],
       firstName: ['', Validators.requiredTrue],
@@ -49,24 +49,43 @@ export class UsersDetailComponent implements OnInit {
 //   get f(){
 //     return this.userDetailForm.controls;
 // }
-  saveData(): void{
+  // saveData(): void{
   
-    const user = new UserDetail(
-                                this.f.title.value,
-                                this.f.firstName.value,
-                                this.f.lastName.value,
-                                this.f.citizenId.value,
-                                this.f.dateOfBirth.value,
-                                this.f.beneficially.value,
-                                this.f.numberOfTraveller.value,
-                                );
-    // this.userDetail.postUserDetail(user).subscribe(users => {
-    //   console.log('USER', users);
+  //   const user = new UserDetail(
+  //                               this.f.title.value,
+  //                               this.f.firstName.value,
+  //                               this.f.lastName.value,
+  //                               this.f.citizenId.value,
+  //                               this.f.dateOfBirth.value,
+  //                               this.f.beneficially.value,
+  //                               this.f.numberOfTraveller.value,
+  //                               );
+  //   // this.userDetail.postUserDetail(user).subscribe(users => {
+  //   //   console.log('USER', users);
      
-    // });
-    console.log(user);
+  //   // });
+  //   console.log(user);
     
-    this.userDetail.getUserDetail(user);
+  //   this.userDetail.getUserDetail(user);
+  callDateDetail(): void{
+    this.dateValue = history.state;
+
+    this.customerDate = new DateTime(this.dateValue.departureDate, this.dateValue.arrivalDate);
+
+    this.dateService.postDate(this.customerDate).subscribe(date  => {
+      // console.log(date);
+      this.dateDetailValue = date;
+      console.log(this.dateDetailValue.totalPrice);
+      // this.saveData();
+    });
 
   }
-}
+  saveData(): void{
+    console.log(this.dateDetailValue);
+
+    this.user = this.userDetailForm.getRawValue();
+    this.router.navigateByUrl('/showuserdetail', { state: this.user } );
+
+  }
+
+  }
