@@ -5,25 +5,26 @@
       class="card text-white mb-1 center"
       style="background-color: rgb(36, 71, 145); width: 63%;"
     >
-      <div class="card-body Premium Insurance    d-flex flex-column  ">
-        <h1 class="card-text alignleft">Premium Insurance</h1>
-        <div class="StartDayEnd ">
-          <span class="card-text alignright">{{ dateDetailValue?.totalPrice }}</span>
-          <span class="card-text alignright">Day: {{ dateDetailValue?.duration }}</span>
-          <span class="card-text alignright">
-            End: {{ dateDetailValue?.arrivalDate }}
-          </span>
-          <!-- <br /> -->
-          <span class="card-text alignright">
-            Start: {{ dateDetailValue?.departureDate }}
-          </span>
-          <!-- <br /> -->
-        </div>
-       
+      <div class="card-body">
+        <p class="card-text alignleft">Insurance Premium</p>
+        <p class="card-text alignright">
+          {{ dateDetailValue?.totalPrice | number: "2.2-2" }} THB
+        </p>
         <div style="clear: both;"></div>
 
-        <p class="card-text alignleft">Switzerland</p>
-        <p class="card-text1 alignright">Per Person</p>
+        <p class="card-text alignleft">
+          Duration:
+        </p>
+        <p class="card-text1 alignleft" style="padding-left: 20px;">
+          {{ dateDetailValue?.departureDate }} -
+          {{ dateDetailValue?.arrivalDate }}
+        </p>
+        <p class="card-text alignright">{{ dateDetailValue?.duration }} Days</p>
+        <div style="clear: both;"></div>
+
+        <p class="card-text alignleft">Country</p>
+        <p class="card-text alignright">Switzerland</p>
+        <div style="clear: both;"></div>
       </div>
     </div>
   </div>
@@ -40,7 +41,7 @@
       <form [formGroup]="userDetailForm" (ngSubmit)="saveData()">
         <div class="col">
           <div class="form-row">
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
               <label>Title</label>
               <select class="form-control" id="title" formControlName="title">
                 <option value="Ms" id="ms">Ms.</option>

@@ -29,6 +29,10 @@
 .alignright {
   float: right;
 }
+.aligncenter {
+  float: left;
+  text-align: center;
+}
 .center1 {
   margin: auto;
 }
